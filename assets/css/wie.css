@@ -1,0 +1,717 @@
+/* ROOT VARIABLES for WIE Theme */
+:root {
+    --purple-primary: #af34ff;
+    --neon-soft: #ff9aff;
+    --cyan-glow: #00ffcc; /* Used for subtle contrast in the existing code */
+}
+
+/* ================= GLOBAL STYLES ================= */
+body {
+    background: #0f001a;
+    color: #e7d9ff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Section Spacing */
+section:not(#wie-hero) {
+    padding: 70px 20px; /* Base padding already exists */
+    margin-bottom: 50px; /* Add space between sections */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden; /* Prevent horizontal scroll from reveal animation */
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Global Titles */
+.section-title, .section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--neon-soft);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #e7d9ff;
+    margin-bottom: 50px;
+}
+
+/* ===================== NAVBAR (WIE THEME) ===================== */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    /* Subtle glow/border matching the hero overlay */
+    border-bottom: 1px solid rgba(255, 154, 255, 0.2); 
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+  }
+  
+  .logo-area a {
+      display: flex;
+      align-items: center;
+  }
+  
+  .logo-img {
+    width: 50px; /* Adjust size for the main IEEE logo */
+    filter: drop-shadow(0 0 6px rgba(255, 154, 255, 0.5)); /* Purple glow */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    color: #ffdaff; /* Light purple text */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.25s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--neon-soft); /* Neon Magenta */
+    text-shadow: 0 0 10px rgba(255, 154, 255, 0.8);
+  }
+  
+  /* PORTAL BUTTON */
+  .portal-btn {
+    background: linear-gradient(135deg, #d64fff, #af34ff);
+    padding: 10px 18px;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 12px rgba(200, 0, 255, 0.4);
+  }
+  
+  .portal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(255, 100, 255, 0.7);
+    color: #fff;
+  }
+  /* Responsive adjustments for Navbar */
+  @media (max-width: 768px) {
+      .nav-links {
+          display: none;
+      }
+      .nav-container {
+          justify-content: space-around;
+      }
+  }
+/* ======================= WIE HERO ======================= */
+#wie-hero {
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.wie-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(70,0,120,0.75), rgba(150,0,180,0.75));
+}
+
+.wie-hero-content {
+    position: relative;
+    margin-left: 8%;
+    max-width: 550px;
+    z-index: 2;
+}
+
+.wie-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff9aff, #c868ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 22px rgba(255, 150, 255, 0.4);
+}
+
+.wie-subtitle {
+    color: #ffe2ff;
+    margin-top: 12px;
+    font-size: 1.1rem;
+}
+
+.wie-btn {
+    margin-top: 24px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #d64fff, #af34ff);
+    color: white;
+    border-radius: 40px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 0 14px rgba(200, 0, 255, 0.5);
+    transition: 0.3s;
+}
+.wie-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.7);
+}
+
+/* ===================== MEGA COMPETITIONS ===================== */
+#competitions {
+    padding-top: 50px; 
+}
+
+.competition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.competition-card {
+    background: #1f0532;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 154, 255, 0.3);
+    transition: 0.35s ease;
+}
+
+.competition-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(200, 0, 255, 0.2), 0 0 25px rgba(255, 154, 255, 0.5);
+}
+
+.competition-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.competition-title {
+    font-size: 1.5rem;
+    color: var(--neon-soft);
+    margin-bottom: 8px;
+}
+
+.competition-text {
+    color: #d8c2ff;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.competition-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #af34ff, #d64fff);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.competition-btn:hover { 
+    box-shadow: 0 10px 25px rgba(255, 100, 255, 0.6); 
+    color: #fff;
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* ===================== ABOUT IEEE WIE ===================== */
+#wie-about-wrapper {
+    /* Removed the global background and used section padding instead */
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px; /* Add margin-bottom here */
+}
+
+#wie-about {
+    /* No change */
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #3a0057, #5e008c);
+    border-radius: 12px;
+    max-width: 1100px; /* Adjusted to fit content */
+    margin: auto;
+}
+
+.wie-about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.wie-about-logo img {
+    width: 160px;
+    height: auto;
+    filter: drop-shadow(0 0 12px rgba(255, 60, 255, 0.3));
+    transition: 0.35s ease;
+}
+
+/* Glow hover effect */
+.wie-about-logo img:hover {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 25px rgba(255, 60, 255, 0.55));
+}
+
+/* Text */
+.wie-about-text h2 {
+    font-size: 2.3rem;
+    color: var(--neon-soft);
+    margin-bottom: 20px;
+}
+
+.wie-about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e7d9ff;
+    max-width: 650px;
+    text-align: justify;
+}
+
+/* Mobile Responsive */
+@media (max-width: 840px) {
+    .wie-about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .wie-about-text p {
+        margin: auto;
+    }
+}
+
+
+/* ===================== MISSION & VISION ===================== */
+#mv-section {
+    padding: 80px 20px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Title */
+.mv-title {
+    font-size: 2rem;
+    color: var(--neon-soft);
+    margin-bottom: 40px;
+    position: relative;
+    /* Removed individual reveal styles here, using the common .reveal class */
+}
+
+.mv-title::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    background: var(--neon-soft);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+/* Row wrapper */
+.mv-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 60px;
+    align-items: stretch;
+}
+
+.mv-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ===================== MISSION / VISION CARD ===================== */
+.mv-card {
+    flex: 1;
+    background: #4c1d72; /* WIE purple theme */
+    padding: 35px;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    box-shadow: 0 0 0 rgba(255, 60, 255, 0.0);
+}
+
+/* ⭐ NEW: Glow hover effect on card */
+.mv-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 28px rgba(255, 60, 255, 0.45);
+}
+
+/* Headings + text */
+.mv-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--neon-soft);
+}
+
+.mv-card p {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* ===================== IMAGE AREA ===================== */
+.mv-img {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+/* Image base */
+.mv-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: 0.4s ease;
+}
+
+/* ⭐ WIE magenta image glow */
+.mv-img:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 60, 255, 0.55);
+}
+
+/* Removed repeated animation keyframes from card/image hover for simplicity, 
+   the transform and shadow should be enough */
+
+
+@media (max-width: 860px) {
+    .mv-row,
+    .mv-row.reverse {
+        flex-direction: column;
+    }
+
+    .mv-card,
+    .mv-img img {
+        transform: none !important;
+    }
+}
+/* ===================== WIE EVENTS ===================== */
+#wie-events {
+    padding: 0 0 40px 0;
+    background: #1f0532;
+    margin-bottom: 50px;
+    padding-top: 0 !important;
+}
+
+.events-title {
+    font-size: 2.2rem;
+    color: var(--neon-soft);
+    margin-bottom: 35px;
+    position: relative;
+    text-align: left;
+}
+
+.events-title::after {
+    content: "";
+    width: 140px;
+    height: 3px;
+    background: var(--neon-soft);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    opacity: 0.6;
+}
+
+/* Grid Layout */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* Event Card */
+.event-card {
+    background: rgba(40, 0, 70, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    border: 1px solid rgba(255, 154, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: 0.35s ease;
+}
+
+/* Hover glow */
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(255, 154, 255, 0.45);
+    border-color: var(--neon-soft);
+}
+
+/* Event Image */
+.event-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* Meta (date + tag) */
+.event-meta {
+    display: flex;
+    gap: 10px;
+    padding: 12px 15px 5px 15px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: #eac6ff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-item.tag {
+    background: rgba(255, 154, 255, 0.15);
+    color: var(--neon-soft);
+}
+
+/* Title */
+.event-title {
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+/* Description */
+.event-desc {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: #d8c2ff;
+    padding: 0 15px 8px 15px;
+}
+
+
+/* ===================== WIE COMMITTEE ===================== */
+#wie-committee {
+    padding: 70px 20px;
+}
+
+.committee-title {
+    font-size: 2.2rem;
+    color: var(--neon-soft);
+    margin-bottom: 40px;
+    position: relative;
+    text-align: left;
+}
+
+.committee-title::after {
+    content: "";
+    width: 160px;
+    height: 3px;
+    background: var(--neon-soft);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    opacity: 0.6;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* Card styling */
+.committee-card {
+    background: rgba(40, 0, 70, 0.8);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 154, 255, 0.3);
+    backdrop-filter: blur(12px);
+    transition: 0.35s ease;
+}
+
+/* Counselor highlight */
+.committee-card.senior {
+    border-color: rgba(255, 80, 255, 0.55);
+    box-shadow: 0 0 18px rgba(255, 80, 255, 0.35);
+}
+
+/* Hover effect */
+.committee-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-soft);
+    box-shadow: 0 0 25px rgba(255, 154, 255, 0.45);
+}
+
+/* Member images */
+.committee-img {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    box-shadow: 0 0 10px rgba(255, 60, 255, 0.3);
+}
+
+/* Role label */
+.role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c9e9ff;
+    margin-bottom: 4px;
+}
+
+/* Member name */
+.name {
+    color: #d8e9ff;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* ======================= WIE BACKGROUND ANIMATION ======================= */
+.wie-floating-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1; /* BELOW TEXT, ABOVE BACKGROUND */
+}
+
+/* Floating circles */
+.wie-floating-bg .circle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 160, 255, 0.18);
+    border-radius: 50%;
+    animation: floatUp 14s infinite linear;
+}
+
+.c1 { top: 80%; left: 15%; animation-duration: 16s; }
+.c2 { top: 90%; left: 45%; animation-duration: 18s; width: 90px; height: 90px; }
+.c3 { top: 85%; left: 75%; animation-duration: 20s; width: 140px; height: 140px; }
+
+/* Floating triangles */
+.wie-floating-bg .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid rgba(240, 120, 255, 0.17);
+    animation: floatUp 13s infinite linear;
+}
+
+.t1 { top: 88%; left: 30%; animation-duration: 15s; }
+.t2 { top: 92%; left: 60%; animation-duration: 17s; }
+.t3 { top: 95%; left: 85%; animation-duration: 19s; }
+
+/* Floating Animation */
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Ensure text stays above animation */
+.wie-hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* ================= WIE Event Card Button ================= */
+.wie-event-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #d7b3ff; /* soft purple text */
+    text-decoration: none;
+    border: 1px solid rgba(200, 100, 255, 0.5);
+    border-radius: 12px;
+    transition: 0.3s ease;
+    backdrop-filter: blur(4px);
+    margin-left: 15px;
+}
+
+.wie-event-btn:hover {
+    background: rgba(200, 100, 255, 0.15);
+    box-shadow: 0 0 15px rgba(200, 100, 255, 0.6);
+    transform: translateY(-3px);
+    color: #eac6ff;
+}
+
+/* ===================== FOOTER (WIE THEME) ===================== */
+footer {
+    /* Dark deep purple background */
+    background: #1c002c; 
+    padding: 30px 25px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 154, 255, 0.2);
+  }
+  
+  .footer-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #d8c2ff; /* Pale purple text */
+    font-size: 0.95rem;
+  }
+  
+  .footer-links {
+      display: flex;
+      gap: 16px;
+  }
+  
+  .footer-links a {
+    color: var(--neon-soft); /* Neon Magenta */
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .footer-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--neon-soft);
+  }
+  
+  /* Responsive adjustments for Footer */
+  @media (max-width: 600px) {
+      .footer-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+      }
+  }

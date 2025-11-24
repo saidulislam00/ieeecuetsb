@@ -1,0 +1,444 @@
+/* ================= GLOBAL BACKGROUND ================= */
+body {
+  background: #000d17; /* dark navy same as homepage */
+  color: #d7eaff;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === GLOBAL CONTAINER FOR ALL SECTIONS AFTER HERO === */
+section:not(#ras-hero) .container,
+section:not(#ras-hero) {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* ================= NAVBAR (RAS THEME) ================= */
+.navbar {
+  width: 100%;
+  padding: 12px 0;
+  position: absolute; /* transparent over hero */
+  top: 0;
+  z-index: 1000;
+
+  background: transparent;      /* no background initially */
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 120, 60, 0.20); /* 🔶 RAS orange border */
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+/* LOGO */
+.logo-img {
+  width: 55px;
+  filter: drop-shadow(0 0 6px rgba(255, 120, 60, 0.35)); /* subtle orange glow */
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ff8f55;   /* soft orange */
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links li a {
+  color: #ffdacc;                   /* warm light-orange white */
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff7a3c;
+  text-shadow: 0 0 8px rgba(255, 120, 60, 0.65);
+}
+
+/* PORTAL BUTTON */
+.portal-btn {
+  background: linear-gradient(135deg, #ff6b3d, #ff8a4d); /* orange gradient */
+  padding: 10px 18px;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 120, 60, 0.45);
+}
+
+.portal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(255, 140, 70, 0.75);
+}
+
+/* ===================== HERO ===================== */
+#ras-hero {
+  position: relative;
+  height: 90vh;
+  background: #000c18;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Particle Canvas */
+#rasParticles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero Content */
+.ras-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+}
+
+.ras-title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ras-title span {
+  color: #ff7a3c;      /* orange robotics highlight */
+}
+
+.ras-subtitle {
+  color: #b4d8ff;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+.visit-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff6b3d, #ff8a4d);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(255, 120, 60, 0.45);
+  transition: 0.3s ease;
+}
+
+.visit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(255, 140, 70, 0.75);
+}
+
+/* ===================== ABOUT SECTION ===================== */
+
+#ras-about {
+  padding: 120px 0 80px;        /* space from hero + bottom */
+  text-align: left;
+}
+
+#ras-about .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 25px;
+}
+
+#ras-about .section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #ff7a3c;               /* RAS orange */
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+#ras-about .section-subtitle {
+  font-size: 1.15rem;
+  color: #8ecaff;
+  line-height: 1.7;
+  max-width: 850px;
+  text-align: left;
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+#ras-about.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.9s ease;
+}
+
+#ras-about.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 28px rgba(255, 122, 60, 0.45);
+}
+/* ===================== MISSION / VISION ===================== */
+#ras-mv {
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#ras-mv .container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Section title */
+.mv-title {
+  font-size: 2rem;
+  color: #ff7a3c;
+  margin-bottom: 40px;
+}
+
+/* Layout rows */
+.mv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+/* Reverse second row */
+.mv-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Mission / Vision Card */
+.mv-card {
+  flex: 1;
+  background: #10202e;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 122, 60, 0.3);
+  box-shadow: 0 0 18px rgba(255, 122, 60, 0.15);
+  transition: 0.3s;
+  text-align: justify;
+}
+
+.mv-card h3 {
+  font-size: 1.5rem;
+  color: #ff7a3c;
+  margin-bottom: 12px;
+}
+
+.mv-card p {
+  color: #d6e6ff;
+  line-height: 1.7;
+}
+
+/* Image Wrapper */
+.mv-img {
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mv-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.mv-img:hover img {
+  transform: scale(1.05);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+
+  .mv-row,
+  .mv-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mv-img,
+  .mv-card {
+    width: 100%;
+  }
+
+  .mv-card {
+    text-align: left;
+  }
+}
+
+@media (max-width: 550px) {
+  .mv-title {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  .mv-card {
+    padding: 25px;
+  }
+}
+
+/* ===================== EVENTS ===================== */
+#ras-events {
+  padding: 100px 50px;
+  margin-bottom: 40px;
+}
+
+.event-section-title{
+  font-size: 2rem;
+  color: #ff7a3c;
+  margin-bottom: 40px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 122, 60, 0.4);
+  transition: 0.3s;
+  min-height: 430px;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 122, 60, 0.4);
+}
+
+.event-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.event-desc{
+  text-align: justify;
+}
+/* ================= Event Card Button ================= */
+.event-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  color: #ff7a3c;
+  text-decoration: none;
+  border: 1px solid rgba(255, 122, 60, 0.5);
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.event-btn:hover {
+  background: rgba(255, 122, 60, 0.15);
+  box-shadow: 0 0 12px rgba(255, 122, 60, 0.5);
+  transform: translateY(-3px);
+  color: #ff9a60;
+}
+
+
+/* ===================== COMMITTEE ===================== */
+#ras-committee {
+  padding: 70px 20px;
+  margin-top: 150px;
+}
+
+.section-title{
+  font-size: 2rem;
+  color: #ff7a3c;
+  margin-bottom: 40px;
+}
+
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.committee-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 122, 60, 0.4);
+  transition: 0.3s;
+}
+
+.committee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 122, 60, 0.4);
+}
+
+.committee-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* ================= FOOTER (RAS THEME) ================= */
+footer {
+  background: rgba(0, 0, 0, 0.15);        /* transparent glass */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 28px 25px;
+  margin-top: 70px;
+  border-top: 1px solid rgba(255, 120, 50, 0.25);   /* orange robotics border */
+}
+
+/* Footer container */
+.footer-inner {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #ffd7c2;                         /* warm soft orange text */
+  font-size: 0.95rem;
+}
+
+/* Footer Links */
+.footer-links a {
+  color: #ff8a45;                         /* brighter orange */
+  margin-left: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #ffb07a;                         /* lighter orange glow */
+  text-shadow: 0 0 10px rgba(255, 140, 60, 0.7);
+  transform: translateY(-2px);
+}
