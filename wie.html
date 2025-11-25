@@ -294,6 +294,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealEls.forEach(el => observer.observe(el));
 });
+var links = document.querySelectorAll('a');
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].setAttribute('target', '_blank');
+    
+    if (links[i].getAttribute('rel') === null) {
+      links[i].setAttribute('rel', 'noopener');
+    } else {
+      // Append if rel already exists
+      links[i].setAttribute('rel', links[i].getAttribute('rel') + ' noopener');
+    }
+  }
 </script>
     
 </body>
