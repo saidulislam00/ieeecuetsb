@@ -1,0 +1,27 @@
+/* ================= PHOTONICS THEME ================= */
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 90, 180, 0.3);
+}
+
+.nav-links li a {
+    color: #ffd9f0;
+}
+
+.nav-links li a:hover {
+    color: #ff6fc3;
+}
+
+.portal-btn {
+    background: linear-gradient(135deg, #a6005a, #ff0f9e);
+}
+
+.portal-btn:hover {
+    box-shadow: 0 0 18px rgba(255, 70, 160, 0.45);
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        background: rgba(40, 0, 30, 0.8);
+    }
+}

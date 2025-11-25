@@ -1,0 +1,27 @@
+/* ================= SPS THEME ================= */
+
+.navbar {
+    border-bottom: 1px solid rgba(160, 120, 255, 0.25);
+}
+
+.nav-links li a {
+    color: #ede4ff;
+}
+
+.nav-links li a:hover {
+    color: #bca0ff;
+}
+
+.portal-btn {
+    background: linear-gradient(135deg, #3a007d, #8246ff);
+}
+
+.portal-btn:hover {
+    box-shadow: 0 0 20px rgba(160, 120, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        background: rgba(25, 0, 45, 0.85);
+    }
+}

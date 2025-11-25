@@ -1,0 +1,37 @@
+/* ================= WIE THEME ================= */
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 150, 255, 0.25);
+}
+
+.nav-links li a {
+    color: #ffd6ff;
+}
+
+.nav-links li a:hover {
+    color: #ff9aff;
+    text-shadow: 0 0 8px rgba(255, 120, 255, 0.6);
+}
+
+.portal-btn {
+    background: linear-gradient(135deg, #b300ff, #ff4bff);
+    color: white;
+}
+
+.portal-btn:hover {
+    box-shadow: 0 0 18px rgba(255, 130, 255, 0.55);
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        background: rgba(45, 0, 70, 0.75);
+        border: 1px solid rgba(255, 120, 255, 0.25);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+                    0 0 25px rgba(255, 120, 255, 0.25);
+    }
+
+    .dropdown-menu {
+        background: rgba(40, 0, 60, 0.95);
+        border: 1px solid rgba(255, 130, 255, 0.22);
+    }
+}

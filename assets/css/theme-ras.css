@@ -1,0 +1,33 @@
+/* ================= RAS THEME ================= */
+
+.navbar {
+    border-bottom: 1px solid rgba(120, 170, 255, 0.25);
+}
+
+.nav-links li a {
+    color: #d8e4ff;
+}
+
+.nav-links li a:hover {
+    color: #8db4ff;
+}
+
+.portal-btn {
+    background: linear-gradient(135deg, #1b2a52, #3960a8);
+    color: white;
+}
+
+.portal-btn:hover {
+    box-shadow: 0 0 20px rgba(140, 180, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        background: rgba(15, 25, 50, 0.85);
+        border: 1px solid rgba(120, 170, 255, 0.25);
+    }
+
+    .dropdown-menu {
+        background: rgba(20, 30, 55, 0.95);
+    }
+}

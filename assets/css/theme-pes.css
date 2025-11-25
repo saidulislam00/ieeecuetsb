@@ -1,0 +1,33 @@
+/* ================= PES THEME ================= */
+
+.navbar {
+    border-bottom: 1px solid rgba(120, 255, 160, 0.25);
+}
+
+.nav-links li a {
+    color: #d6ffe3;
+}
+
+.nav-links li a:hover {
+    color: #7cff9e;
+}
+
+.portal-btn {
+    background: linear-gradient(135deg, #106c39, #19aa57);
+    color: white;
+}
+
+.portal-btn:hover {
+    box-shadow: 0 0 15px rgba(120, 255, 160, 0.35);
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        background: rgba(0, 40, 20, 0.8);
+        border: 1px solid rgba(100, 255, 150, 0.25);
+    }
+
+    .dropdown-menu {
+        background: rgba(0, 35, 18, 0.95);
+    }
+}

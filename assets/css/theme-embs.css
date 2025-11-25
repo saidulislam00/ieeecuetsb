@@ -1,0 +1,28 @@
+/* ================= EMBS THEME ================= */
+
+.navbar {
+    border-bottom: 1px solid rgba(140, 220, 255, 0.3);
+}
+
+.nav-links li a {
+    color: #e0f6ff;
+}
+
+.nav-links li a:hover {
+    color: #8cdcff;
+}
+
+.portal-btn {
+    background: linear-gradient(135deg, #006f9b, #00a8dd);
+}
+
+.portal-btn:hover {
+    box-shadow: 0 0 20px rgba(110, 200, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        background: rgba(0, 35, 55, 0.8);
+        border: 1px solid rgba(140, 220, 255, 0.25);
+    }
+}
