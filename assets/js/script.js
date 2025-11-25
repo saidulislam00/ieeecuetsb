@@ -344,3 +344,21 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 observer.observe(document.querySelector("#promo-video"));
+
+document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            // Toggles the 'active' class on the nav-links/nav-menu
+            navMenu.classList.toggle('active');
+        });
+
+        // Optional: Close the menu when a link is clicked (useful for single-page sites)
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    });
