@@ -355,4 +355,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+document.querySelectorAll(".dropdown-link").forEach(drop => {
+    drop.addEventListener("click", function (e) {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            this.parentElement.classList.toggle("open");
+        }
+    });
+});
 
