@@ -49,198 +49,210 @@ section:not(#wie-hero) {
     margin-bottom: 50px;
 }
 
-/* =========================================================
-   WIE THEME NAVBAR
-   ========================================================= */
-
+/* ================= NAVBAR (WIE THEME) ================= */
 .navbar {
-  width: 100%;
-  padding: 15px 0;
-  position: absolute;
-  top: 0;
-  z-index: 1000;
-  background: transparent !important;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 160, 255, 0.28);
-  box-shadow: 0 0 18px rgba(255, 100, 255, 0.15);
+    width: 100%;
+    padding: 12px 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 150, 255, 0.25); /* WIE pink border */
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
-  position: relative;
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
 }
 
+/* LOGO */
 .logo-img {
-  width: 55px;
+    width: 55px;
 }
 
-/* ===================== DESKTOP NAV LINKS ===================== */
+/* DESKTOP MENU */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 26px;
-  align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 22px;
 }
 
 .nav-links li a {
-  color: #ffd9ff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: 0.25s;
+    color: #ffd6ff; /* WIE soft pink */
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.25s;
 }
 
 .nav-links li a:hover {
-  color: #ff9aff;
-  text-shadow: 0 0 8px rgba(255, 130, 255, 0.8);
+    color: #ff9aff; /* WIE neon pink */
+    text-shadow: 0 0 8px rgba(255, 120, 255, 0.6);
 }
 
-/* ===================== PORTAL BUTTON ===================== */
+/* PORTAL BUTTON (DESKTOP ONLY) */
 .portal-btn {
-  background: linear-gradient(135deg, #b300ff, #ff4bff);
-  padding: 10px 20px;
-  border-radius: 40px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: 0.3s;
+    background: linear-gradient(135deg, #b300ff, #ff4bff);
+    padding: 10px 18px;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .portal-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(255, 130, 255, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(255, 130, 255, 0.5);
 }
 
-/* ===================== DROPDOWN (DESKTOP) ===================== */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  background: rgba(30, 0, 55, 0.95);
-  backdrop-filter: blur(12px);
-
-  width: 260px;
-  padding: 12px 0;
-  list-style: none;
-
-  border: 1px solid rgba(255, 150, 255, 0.25);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-
-  display: none;
-  z-index: 2000;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 0.88rem;
-  color: #ffd9ff;
-}
-
-.dropdown-menu li a:hover {
-  background: rgba(255, 150, 255, 0.08);
-  color: #ff9aff;
-  text-shadow: 0 0 6px rgba(255, 150, 255, 0.8);
-}
-
-/* Show dropdown on hover (desktop only) */
-@media (min-width: 951px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    animation: fadeIn 0.2s ease-out;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===================== MOBILE MENU ===================== */
+/* BURGER BUTTON */
 .menu-toggle {
     display: none;
     font-size: 32px;
     background: none;
     border: none;
-    color: #ffbfff;
+    color: #ffbfff; /* WIE pale pink */
     cursor: pointer;
-    z-index: 1200;
+    z-index: 2000;
 }
 
-@media (max-width: 950px) {
+/* ================= MOBILE MENU (WIE THEME) ================= */
+@media (max-width: 900px) {
 
     .menu-toggle {
         display: block;
     }
 
-    .portal-btn {
+    .desktop-only {
         display: none;
     }
 
+    /* WIE glass panel */
     .nav-links {
+        position: absolute;
+        top: 75px;
+        right: 20px;
+
+        width: 240px;
+        padding: 22px;
+
         display: none;
         flex-direction: column;
+        gap: 16px;
+
+        background: rgba(45, 0, 70, 0.75); /* Purple glass */
+        backdrop-filter: blur(14px);
+
+        border: 1px solid rgba(255, 150, 255, 0.25);
+        border-radius: 14px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+                    0 0 25px rgba(255, 120, 255, 0.25);
+        animation: fadeSlide 0.25s ease forwards;
+        transform-origin: top right;
     }
 
     .nav-links.active {
         display: flex;
-        flex-direction: column;
-
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-
-        background: rgba(35, 0, 60, 0.92);
-        backdrop-filter: blur(14px);
-
-        padding: 20px 0;
-        border-top: 1px solid rgba(255, 150, 255, 0.25);
-        border-bottom: 1px solid rgba(255, 150, 255, 0.25);
-
-        animation: slideDown 0.25s ease-out;
     }
 
-    .nav-links.active li {
-        margin: 8px 0;
-        text-align: center;
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 8px 0;
+        color: #ffd6ff;
     }
+}
 
-    /* MOBILE DROPDOWN BEHAVIOUR */
+/* Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- DESKTOP DROPDOWN (WIE THEME) ---------- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-link {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: rgba(40, 0, 60, 0.95);
+    backdrop-filter: blur(12px);
+
+    width: 250px;
+    padding: 10px 0;
+    list-style: none;
+
+    border: 1px solid rgba(255, 130, 255, 0.22);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+    display: none;
+    z-index: 2000;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: #ffd6ff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: 0.25s;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff9aff;
+    background: rgba(255, 150, 255, 0.1);
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+
+/* ---------- MOBILE DROPDOWN (WIE THEME) ---------- */
+@media (max-width: 900px) {
+
     .dropdown-menu {
-        display: none;
         position: static;
+        width: 100%;
         background: none;
         border: none;
         box-shadow: none;
-        padding-left: 10px;
+        padding-left: 15px;
+        display: none;
     }
 
     .dropdown.open .dropdown-menu {
         display: flex;
         flex-direction: column;
+        gap: 10px;
     }
 
-    .dropdown-link::after {
-        content: "▾";
-        margin-left: 6px;
-        font-size: 0.85rem;
+    .dropdown-menu li a {
+        padding: 6px 0;
+        color: #ffd6ff;
     }
-}
 
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    .dropdown-menu li a:hover {
+        color: #ff9aff;
+    }
 }
 
 /* ======================= WIE HERO ======================= */
