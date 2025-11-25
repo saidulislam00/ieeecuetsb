@@ -59,7 +59,7 @@ section:not(#wie-hero) {
   position: absolute;
   top: 0;
   z-index: 1000;
-  background: rgba(20, 0, 35, 0.35);
+  background: transparent !important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 160, 255, 0.28);
   box-shadow: 0 0 18px rgba(255, 100, 255, 0.15);
