@@ -295,24 +295,5 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach(el => observer.observe(el));
 });
 </script>
-    <script>
-  // Get all anchor elements on the page
-  var links = document.querySelectorAll('a');
-
-  // Loop through all the links
-  for (var i = 0; i < links.length; i++) {
-    // Set the target attribute to '_blank'
-    links[i].setAttribute('target', '_blank');
-    
-    // Recommended for security with target="_blank"
-    // Modern browsers add rel="noopener" implicitly, but it's good practice
-    if (links[i].getAttribute('rel') === null) {
-      links[i].setAttribute('rel', 'noopener');
-    } else {
-      // Append if rel already exists
-      links[i].setAttribute('rel', links[i].getAttribute('rel') + ' noopener');
-    }
-  }
-</script>
 </body>
 </html>
