@@ -27,11 +27,10 @@ body {
 .navbar {
     width: 100%;
     padding: 12px 0;
-    position: absolute; /* was fixed */
+    position: absolute;
     top: 0;
     z-index: 1000;
     background: transparent;
-    backdrop-filter: none;
     border-bottom: 1px solid rgba(60, 242, 255, 0.15);
 }
 
@@ -44,18 +43,12 @@ body {
     padding: 0 25px;
 }
 
-/* --- Menu Toggle Button (Visible on Mobile) --- */
-.menu-toggle {
-    display: none; /* Hide by default */
-    background: none;
-    border: none;
-    color: #d7eaff; /* Link color */
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 5px;
+/* LOGO */
+.logo-img {
+    width: 55px;
 }
 
-/* --- Default Desktop Styles --- */
+/* DESKTOP MENU */
 .nav-links {
     list-style: none;
     display: flex;
@@ -73,56 +66,72 @@ body {
     color: var(--cyan-glow);
 }
 
-/* ... (Existing styles for .logo-img, .portal-btn, etc. go here) ... */
+/* PORTAL BUTTON (DESKTOP ONLY) */
+.portal-btn {
+    background: linear-gradient(135deg, #004e92, #0077c7);
+    padding: 10px 18px;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-/* ================= MEDIA QUERY FOR PHONES/TABLETS ================= */
-@media (max-width: 768px) {
-    /* 1. Show the hamburger icon */
+.portal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(60, 242, 255, 0.4);
+}
+
+/* ================= MOBILE MENU ================= */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 22px;
+}
+
+/* MOBILE BEHAVIOR */
+@media (max-width: 900px) {
+
     .menu-toggle {
         display: block;
     }
 
-    /* 2. Hide the Portal button on mobile (optional, but common) */
     .portal-btn.desktop-only {
         display: none;
     }
 
-    /* 3. Re-arrange and hide the menu links */
-    .nav-links {
-        /* Set up the full-width dropdown menu */
-        display: none; /* Hide the menu by default */
-        flex-direction: column;
+    .nav-menu {
         position: absolute;
-        top: 100%; /* Position right below the navbar */
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9); /* Dark background for visibility */
-        border-top: 1px solid rgba(60, 242, 255, 0.15);
-        padding: 10px 0;
-        text-align: center;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 15, 30, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        width: 230px;
+        padding: 20px 25px;
+        display: none; /* hidden by default */
+        border-left: 1px solid rgba(60, 242, 255, 0.2);
+        border-bottom: 1px solid rgba(60, 242, 255, 0.2);
+        border-radius: 0 0 0 12px;
     }
 
-    /* 4. Style the links inside the mobile menu */
-    .nav-links li {
-        margin: 10px 0;
-    }
-    
-    .nav-links li a {
-        font-size: 1rem; /* Make links bigger and easier to tap */
-        display: block;
-        padding: 8px 0;
-    }
-    
-    /* 5. State for when the menu is active/open (JS will add this class) */
-    .nav-links.active {
+    .nav-menu.show {
         display: flex;
     }
 
-    /* Adjust nav-container to ensure space-between works well with toggle */
-    .nav-container {
-        padding: 0 20px;
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 10px 0;
     }
 }
+
 /* ================= HERO SECTION ================= */
 #hero {
     width: 100%;
