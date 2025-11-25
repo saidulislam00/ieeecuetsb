@@ -103,24 +103,30 @@ body {
         display: none;
     }
 
-    /* Dropdown container */
+    /* Beautiful Glass Panel */
     .nav-links {
         position: absolute;
         top: 75px;
-        right: 0;
-        background: rgba(0, 15, 30, 0.95);
-        backdrop-filter: blur(12px);
-        width: 230px;
-        padding: 20px 25px;
+        right: 20px;
 
+        width: 240px;
+        padding: 22px;
+
+        display: none;
         flex-direction: column;
-        gap: 18px;
+        gap: 16px;
 
-        border-radius: 0 0 0 12px;
-        border-left: 1px solid rgba(60, 242, 255, 0.2);
-        border-bottom: 1px solid rgba(60, 242, 255, 0.2);
+        background: rgba(0, 20, 40, 0.75);
+        backdrop-filter: blur(14px);
 
-        display: none; /* hidden initially */
+        /* Premium look */
+        border: 1px solid rgba(60, 242, 255, 0.18);
+        border-radius: 14px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+                    0 0 25px rgba(60, 242, 255, 0.25);
+        animation: fadeSlide 0.25s ease forwards;
+        transform-origin: top right;
     }
 
     .nav-links.active {
@@ -129,7 +135,19 @@ body {
 
     .nav-links li a {
         font-size: 1rem;
-        padding: 10px 0;
+        padding: 8px 0;
+    }
+}
+
+/* Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
