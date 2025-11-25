@@ -49,84 +49,105 @@ section:not(#wie-hero) {
     margin-bottom: 50px;
 }
 
-/* ===================== NAVBAR (WIE THEME) ===================== */
+/* ===================== NAVBAR (Existing Base Styles) ===================== */
 .navbar {
-    width: 100%;
-    padding: 15px 0;
-    position: absolute;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    /* Subtle glow/border matching the hero overlay */
-    border-bottom: 1px solid rgba(255, 154, 255, 0.2); 
-  }
-  
-  .nav-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
-  }
-  
-  .logo-area a {
-      display: flex;
-      align-items: center;
-  }
-  
-  .logo-img {
-    width: 50px; /* Adjust size for the main IEEE logo */
-    filter: drop-shadow(0 0 6px rgba(255, 154, 255, 0.5)); /* Purple glow */
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 22px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li a {
-    color: #ffdaff; /* Light purple text */
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.25s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: var(--neon-soft); /* Neon Magenta */
-    text-shadow: 0 0 10px rgba(255, 154, 255, 0.8);
-  }
-  
-  /* PORTAL BUTTON */
-  .portal-btn {
-    background: linear-gradient(135deg, #d64fff, #af34ff);
-    padding: 10px 18px;
-    color: white;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 0 12px rgba(200, 0, 255, 0.4);
-  }
-  
-  .portal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 22px rgba(255, 100, 255, 0.7);
-    color: #fff;
-  }
-  /* Responsive adjustments for Navbar */
-  @media (max-width: 768px) {
-      .nav-links {
-          display: none;
-      }
-      .nav-container {
-          justify-content: space-around;
-      }
-  }
+  width: 100%;
+  padding: 15px 0;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 154, 255, 0.2); 
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  /* Added position relative for mobile menu positioning */
+  position: relative; 
+}
+
+/* Base styles for desktop links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Portal Button positioning on desktop */
+.portal-btn {
+  /* ... existing styles ... */
+  display: block; 
+}
+
+/* ===================== MOBILE TOGGLE BUTTON STYLES ===================== */
+
+/* Hide the toggle button by default (desktop view) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--neon-soft);
+    cursor: pointer;
+    z-index: 1001; /* Above other elements */
+}
+
+/* ===================== MEDIA QUERY FOR MOBILE (Max Width 950px) ===================== */
+
+@media (max-width: 950px) {
+    /* 1. HIDE the large links and the portal button */
+    .nav-links {
+        display: none; 
+    }
+    .portal-btn {
+        display: none; 
+    }
+
+    /* 2. SHOW the hamburger icon */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* 3. Re-organize the nav container for mobile */
+    .nav-container {
+        justify-content: space-between;
+        /* The logo, button, and links will be centered/justified by default */
+    }
+
+    /* 4. Mobile Menu Open State (using JS to add/remove 'active' class) */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        
+        /* Position the menu full screen below the nav */
+        position: absolute;
+        top: 100%; /* Starts right below the navbar */
+        left: 0;
+        width: 100%;
+        background: #1c002c; /* Dark background for visibility */
+        border-top: 1px solid rgba(255, 154, 255, 0.2);
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-links.active li {
+        margin: 10px 0;
+    }
+
+    .nav-links.active li a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        display: block;
+    }
+}
 /* ======================= WIE HERO ======================= */
 #wie-hero {
     height: 85vh;
