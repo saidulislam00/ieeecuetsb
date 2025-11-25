@@ -81,105 +81,55 @@ body {
     box-shadow: 0 0 18px rgba(60, 242, 255, 0.4);
 }
 
-/* ================= MOBILE MENU ================= */
+/* BURGER BUTTON */
 .menu-toggle {
     display: none;
-    font-size: 30px;
+    font-size: 32px;
+    background: none;
+    border: none;
     color: white;
-    background: none;
-    border: none;
     cursor: pointer;
+    z-index: 2000;
 }
 
-.nav-menu {
-    display: flex;
-    gap: 22px;
-}
-
-/* MOBILE BEHAVIOR */
+/* ================= MOBILE MENU ================= */
 @media (max-width: 900px) {
 
     .menu-toggle {
         display: block;
     }
 
-    .portal-btn.desktop-only {
-        display: none;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: rgba(0, 15, 30, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        width: 230px;
-        padding: 20px 25px;
-        display: none; /* hidden by default */
-        border-left: 1px solid rgba(60, 242, 255, 0.2);
-        border-bottom: 1px solid rgba(60, 242, 255, 0.2);
-        border-radius: 0 0 0 12px;
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
-    .nav-links li a {
-        font-size: 1rem;
-        padding: 10px 0;
-    }
-}
-/* Hide menu toggle on desktop */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* MOBILE NAVIGATION */
-@media (max-width: 900px) {
-
-    /* Show burger menu */
-    .menu-toggle {
-        display: block;
-        z-index: 2000;
-    }
-
-    /* Hide desktop portal button */
     .desktop-only {
         display: none;
     }
 
-    /* Turn menu into dropdown */
+    /* Dropdown container */
     .nav-links {
         position: absolute;
         top: 75px;
         right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        width: 220px;
-        padding: 20px;
+        background: rgba(0, 15, 30, 0.95);
+        backdrop-filter: blur(12px);
+        width: 230px;
+        padding: 20px 25px;
+
         flex-direction: column;
         gap: 18px;
-        border-radius: 12px 0 0 12px;
 
-        /* Hidden by default */
-        display: none;
+        border-radius: 0 0 0 12px;
+        border-left: 1px solid rgba(60, 242, 255, 0.2);
+        border-bottom: 1px solid rgba(60, 242, 255, 0.2);
+
+        display: none; /* hidden initially */
     }
 
-    /* When toggled */
     .nav-links.active {
         display: flex;
     }
 
     .nav-links li a {
         font-size: 1rem;
-        display: block;
+        padding: 10px 0;
     }
 }
 
