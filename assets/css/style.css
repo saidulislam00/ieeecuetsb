@@ -131,6 +131,57 @@ body {
         padding: 10px 0;
     }
 }
+/* Hide menu toggle on desktop */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 900px) {
+
+    /* Show burger menu */
+    .menu-toggle {
+        display: block;
+        z-index: 2000;
+    }
+
+    /* Hide desktop portal button */
+    .desktop-only {
+        display: none;
+    }
+
+    /* Turn menu into dropdown */
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        width: 220px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 18px;
+        border-radius: 12px 0 0 12px;
+
+        /* Hidden by default */
+        display: none;
+    }
+
+    /* When toggled */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        display: block;
+    }
+}
 
 /* ================= HERO SECTION ================= */
 #hero {
