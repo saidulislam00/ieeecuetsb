@@ -49,15 +49,17 @@ section:not(#wie-hero) {
     margin-bottom: 50px;
 }
 
-/* ===================== NAVBAR (Existing Base Styles) ===================== */
+/* ===================== NAVBAR (WIE THEME) ===================== */
 .navbar {
   width: 100%;
   padding: 15px 0;
   position: absolute;
   top: 0;
   z-index: 1000;
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 154, 255, 0.2); 
+  background: rgba(10, 0, 20, 0.25); /* Slight WIE purple tint */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 154, 255, 0.35);
+  box-shadow: 0 2px 18px rgba(255, 140, 255, 0.15);
 }
 
 .nav-container {
@@ -67,87 +69,122 @@ section:not(#wie-hero) {
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
-  /* Added position relative for mobile menu positioning */
-  position: relative; 
+  position: relative;
 }
 
-/* Base styles for desktop links */
+/* ================= DESKTOP NAV LINKS ================= */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 22px;
+  gap: 26px;
   margin: 0;
   padding: 0;
 }
 
-/* Portal Button positioning on desktop */
-.portal-btn {
-  /* ... existing styles ... */
-  display: block; 
+.nav-links li a {
+  color: #ffd6ff;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: 0.25s ease;
 }
 
-/* ===================== MOBILE TOGGLE BUTTON STYLES ===================== */
+/* Hover glow */
+.nav-links li a:hover {
+  color: #ff9aff;
+  text-shadow: 0 0 6px rgba(255, 150, 255, 0.6);
+}
 
-/* Hide the toggle button by default (desktop view) */
+/* ==================== PORTAL BUTTON ==================== */
+.portal-btn {
+  background: linear-gradient(135deg, #b300ff, #ff4bff);
+  padding: 10px 22px;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.portal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 150, 255, 0.45);
+}
+
+/* ===================== MOBILE TOGGLE ===================== */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 1.8rem;
-    color: var(--neon-soft);
+    font-size: 1.9rem;
+    color: #ffbfff;
     cursor: pointer;
-    z-index: 1001; /* Above other elements */
+    z-index: 1001;
 }
 
-/* ===================== MEDIA QUERY FOR MOBILE (Max Width 950px) ===================== */
-
+/* ===================== MOBILE MENU ===================== */
 @media (max-width: 950px) {
-    /* 1. HIDE the large links and the portal button */
+
+    /* Hide desktop items */
     .nav-links {
-        display: none; 
+        display: none;
     }
     .portal-btn {
-        display: none; 
+        display: none;
     }
 
-    /* 2. SHOW the hamburger icon */
+    /* Show hamburger */
     .menu-toggle {
-        display: block; 
+        display: block;
     }
 
-    /* 3. Re-organize the nav container for mobile */
-    .nav-container {
-        justify-content: space-between;
-        /* The logo, button, and links will be centered/justified by default */
-    }
-
-    /* 4. Mobile Menu Open State (using JS to add/remove 'active' class) */
+    /* Open State */
     .nav-links.active {
         display: flex;
         flex-direction: column;
-        
-        /* Position the menu full screen below the nav */
+
         position: absolute;
-        top: 100%; /* Starts right below the navbar */
+        top: 100%;
         left: 0;
         width: 100%;
-        background: #1c002c; /* Dark background for visibility */
-        border-top: 1px solid rgba(255, 154, 255, 0.2);
-        padding: 20px 0;
+
+        background: rgba(30, 0, 50, 0.92);
+        backdrop-filter: blur(16px);
+
+        border-top: 1px solid rgba(255, 154, 255, 0.3);
+        border-bottom: 1px solid rgba(255, 154, 255, 0.25);
+
+        padding: 25px 0;
         text-align: center;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        animation: slideDown 0.25s ease-out;
     }
-    
+
     .nav-links.active li {
-        margin: 10px 0;
+        margin: 12px 0;
     }
 
     .nav-links.active li a {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         padding: 10px 0;
+        color: #ffd6ff;
         display: block;
     }
+
+    .nav-links.active li a:hover {
+        color: #ff9aff;
+        text-shadow: 0 0 7px rgba(255, 140, 255, 0.7);
+    }
 }
+
+/* Smooth dropdown animation */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ======================= WIE HERO ======================= */
 #wie-hero {
     height: 85vh;

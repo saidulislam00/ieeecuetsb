@@ -298,20 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealEls.forEach(el => observer.observe(el));
 });
-document.addEventListener("DOMContentLoaded", () => {
-    // ... existing scroll reveal script goes here ...
-
-    // Mobile Menu Toggle Script
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            // Toggles the 'active' class which controls mobile visibility in CSS
-            navLinks.classList.toggle('active'); 
-        });
-    }
-});
 </script>
 </body>
 </html>
