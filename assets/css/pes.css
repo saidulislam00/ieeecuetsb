@@ -219,6 +219,90 @@ body {
   }
 }
 
+/* ===================== PES HERO SECTION ===================== */
+#pes-hero {
+  position: relative;
+  height: 90vh;
+  background: #000d17; /* PES dark navy base */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Fullscreen Canvas */
+#pesParticles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Hero Content */
+.pes-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+/* Main Title */
+.pes-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.pes-title span {
+  color: #00e676; /* PES bright green highlight */
+  text-shadow: 0 0 15px rgba(0, 230, 118, 0.35);
+}
+
+/* Subtitle */
+.pes-subtitle {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #ccffeb; /* Soft green tint */
+}
+
+/* Hero CTA Button */
+.visit-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #00b09b, #96c93d); /* PES green gradient */
+  color: #003323;
+  box-shadow: 0 0 18px rgba(0, 230, 118, 0.35);
+  transition: 0.3s ease;
+}
+
+.visit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(0, 230, 118, 0.75);
+  color: #ffffff;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .pes-title {
+      font-size: 2.1rem;
+  }
+  .pes-title span {
+      font-size: 1.9rem;
+  }
+  .pes-subtitle {
+      font-size: 1rem;
+  }
+}
+
   /* ===================== ABOUT SECTION ===================== */
   #pes-about {
     padding: 120px 0 80px;
