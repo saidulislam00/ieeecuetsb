@@ -357,7 +357,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =============== HAMBURGER MENU =============== */
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-links");
 
@@ -365,20 +364,13 @@ document.addEventListener("DOMContentLoaded", function () {
         navMenu.classList.toggle("active");
     });
 
-
-    /* =============== MOBILE DROPDOWN =============== */
     document.querySelectorAll(".dropdown-link").forEach(link => {
         link.addEventListener("click", function (e) {
-
-            // Only trigger on mobile
             if (window.innerWidth <= 900) {
                 e.preventDefault();
-
-                // Toggle dropdown
                 this.parentElement.classList.toggle("open");
             }
         });
     });
 
 });
-
