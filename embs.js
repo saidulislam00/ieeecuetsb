@@ -95,3 +95,22 @@ function animate() {
 window.addEventListener('resize', resize);
 init();
 animate();
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".dropdown-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                this.parentElement.classList.toggle("open");
+            }
+        });
+    });
+
+});
