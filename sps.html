@@ -8,21 +8,46 @@
 </head>
 <body>
 
+<!-- ===================== NAVBAR ===================== -->
 <nav class="navbar">
-    <div class="nav-container">
-        <div class="logo-area">
-            <a href="index.html"><img src="assets/images/ieee-logo.png" alt="IEEE SPS Logo" class="logo-img"></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Main Home</a></li>
-            <li><a href="#sps-about">About</a></li>
-            <li><a href="#sps-mv">Mission</a></li>
-            <li><a href="#sps-events">Events</a></li>
-            <li><a href="#sps-committee">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="https://signalprocessingsociety.org" target="_blank" class="portal-btn">SPS Global</a>
+  <div class="nav-container">
+
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="assets/images/ieee-logo.png" class="logo-img">
+      </a>
     </div>
+
+    <!-- Mobile menu toggle -->
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="dropdown">
+        <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
+
+            <ul class="dropdown-menu">
+                <li><a href="wie.html">WIE Affinity Group</a></li>
+                <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
+                <li><a href="pes.html">Power & Energy Society (PES)</a></li>
+                <li><a href="embs.html">IEEE EMBS Society</a></li>
+                <li><a href="photonics.html">Photonics Society</a></li>
+                <li><a href="sps.html">Signal Processing Society</a></li>
+            </ul>
+    </li>
+
+      <li><a href="#events">Events</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
+
+  </div>
 </nav>
 
 <section id="sps-hero">

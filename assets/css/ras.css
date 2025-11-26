@@ -19,13 +19,12 @@ section:not(#ras-hero) {
 .navbar {
   width: 100%;
   padding: 12px 0;
-  position: absolute; /* transparent over hero */
+  position: absolute;
   top: 0;
   z-index: 1000;
 
-  background: transparent;      /* no background initially */
-  backdrop-filter: none;
-  border-bottom: 1px solid rgba(255, 120, 60, 0.20); /* 🔶 RAS orange border */
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 120, 60, 0.20); /* 🔶 RAS Orange border */
 }
 
 .nav-container {
@@ -40,14 +39,14 @@ section:not(#ras-hero) {
 /* LOGO */
 .logo-img {
   width: 55px;
-  filter: drop-shadow(0 0 6px rgba(255, 120, 60, 0.35)); /* subtle orange glow */
+  filter: drop-shadow(0 0 6px rgba(255, 120, 60, 0.35)); /* Orange glow */
 }
 
 .logo-text {
   margin-left: 10px;
   font-weight: 600;
   font-size: 0.9rem;
-  color: #ff8f55;   /* soft orange */
+  color: #ff8f55; /* Soft Orange */
 }
 
 .logo-area {
@@ -55,7 +54,7 @@ section:not(#ras-hero) {
   align-items: center;
 }
 
-/* NAV LINKS */
+/* DESKTOP MENU */
 .nav-links {
   list-style: none;
   display: flex;
@@ -63,7 +62,7 @@ section:not(#ras-hero) {
 }
 
 .nav-links li a {
-  color: #ffdacc;                   /* warm light-orange white */
+  color: #ffdacc; /* Warm Light-Orange White */
   text-decoration: none;
   font-size: 0.85rem;
   transition: 0.25s ease;
@@ -74,9 +73,9 @@ section:not(#ras-hero) {
   text-shadow: 0 0 8px rgba(255, 120, 60, 0.65);
 }
 
-/* PORTAL BUTTON */
+/* PORTAL BUTTON (DESKTOP ONLY) */
 .portal-btn {
-  background: linear-gradient(135deg, #ff6b3d, #ff8a4d); /* orange gradient */
+  background: linear-gradient(135deg, #ff6b3d, #ff8a4d); /* Orange gradient */
   padding: 10px 18px;
   color: white;
   border-radius: 50px;
@@ -89,6 +88,148 @@ section:not(#ras-hero) {
   transform: translateY(-2px);
   box-shadow: 0 0 22px rgba(255, 140, 70, 0.75);
 }
+
+/* BURGER BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #ffdacc; /* warm pale orange */
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* ================= MOBILE MENU ================= */
+@media (max-width: 900px) {
+
+  .menu-toggle {
+      display: block;
+  }
+
+  .desktop-only {
+      display: none;
+  }
+
+  .nav-links {
+      position: absolute;
+      top: 75px;
+      right: 20px;
+
+      width: 240px;
+      padding: 22px;
+
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+
+      background: rgba(45, 15, 0, 0.75); /* Orange-tinted glass */
+      backdrop-filter: blur(14px);
+
+      border: 1px solid rgba(255, 120, 60, 0.25);
+      border-radius: 14px;
+
+      box-shadow:
+          0 8px 25px rgba(0, 0, 0, 0.35),
+          0 0 25px rgba(255, 120, 60, 0.25);
+
+      animation: fadeSlide 0.25s ease forwards;
+      transform-origin: top right;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li a {
+      font-size: 1rem;
+      color: #ffe8df;
+  }
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  from {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.97);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------- DESKTOP DROPDOWN ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-link {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: rgba(50, 20, 0, 0.95); /* Dark orange glass */
+  backdrop-filter: blur(12px);
+
+  width: 250px;
+  padding: 10px 0;
+
+  list-style: none;
+  border: 1px solid rgba(255, 120, 60, 0.25);
+  border-radius: 10px;
+
+  box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(255, 120, 60, 0.30);
+
+  display: none;
+  z-index: 2000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 18px;
+  color: #ffdacc;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: 0.25s;
+}
+
+.dropdown-menu li a:hover {
+  color: #ff7a3c;
+  background: rgba(255, 120, 60, 0.10);
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+/* ---------- MOBILE DROPDOWN ---------- */
+@media (max-width: 900px) {
+
+  .dropdown-menu {
+      position: static;
+      width: 100%;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding-left: 15px;
+      display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
 
 /* ===================== HERO ===================== */
 #ras-hero {

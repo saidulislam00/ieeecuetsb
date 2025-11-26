@@ -18,66 +18,210 @@ body {
     margin-bottom: 100px;
 }
   
-  /* ================= NAVBAR (PHO THEME) ================= */
-  .navbar {
-    width: 100%;
-    padding: 12px 0;
-    position: absolute;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    border-bottom: 1px solid rgba(212, 96, 255, 0.20); /* 🟣 PHO Violet border */
+/* ================= NAVBAR (PHO THEME) ================= */
+.navbar {
+  width: 100%;
+  padding: 12px 0;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid rgba(212, 96, 255, 0.20); /* 🟣 PHO Violet border */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+/* LOGO */
+.logo-img {
+  width: 55px;
+  filter: drop-shadow(0 0 6px rgba(212, 96, 255, 0.35)); /* Violet glow */
+}
+
+/* DESKTOP MENU */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links li a {
+  color: #ffdafd; /* Pale purple-white */
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.nav-links li a:hover {
+  color: #d460ff; /* Bright Violet */
+  text-shadow: 0 0 8px rgba(212, 96, 255, 0.65);
+}
+
+/* PORTAL BUTTON (DESKTOP ONLY) */
+.portal-btn {
+  background: linear-gradient(135deg, #a4508b, #d460ff); /* Violet/Magenta Gradient */
+  padding: 10px 18px;
+  color: #1a002c;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(212, 96, 255, 0.45);
+}
+
+.portal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(212, 96, 255, 0.75);
+  color: white;
+}
+
+/* BURGER BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #ffdafd; /* Pale lilac */
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* ================= MOBILE MENU ================= */
+@media (max-width: 900px) {
+
+  .menu-toggle {
+      display: block;
   }
-  
-  .nav-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
+
+  .desktop-only {
+      display: none;
   }
-  
-  .logo-img {
-    width: 55px;
-    filter: drop-shadow(0 0 6px rgba(212, 96, 255, 0.35)); /* Violet glow */
-  }
-  
+
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 22px;
+      position: absolute;
+      top: 75px;
+      right: 20px;
+
+      width: 240px;
+      padding: 22px;
+
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+
+      background: rgba(40, 0, 50, 0.75); /* Violet-tinted glass */
+      backdrop-filter: blur(14px);
+
+      border: 1px solid rgba(212, 96, 255, 0.25);
+      border-radius: 14px;
+
+      box-shadow: 
+          0 8px 25px rgba(0, 0, 0, 0.35),
+          0 0 25px rgba(212, 96, 255, 0.25);
+
+      animation: fadeSlide 0.25s ease forwards;
+      transform-origin: top right;
   }
-  
+
+  .nav-links.active {
+      display: flex;
+  }
+
   .nav-links li a {
-    color: #ffdafd; /* Pale purple-white */
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: 0.25s ease;
+      font-size: 1rem;
+      color: #ffe6ff;
   }
-  
-  .nav-links li a:hover {
-    color: #d460ff; /* Bright Violet */
-    text-shadow: 0 0 8px rgba(212, 96, 255, 0.65);
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  from {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.97);
   }
-  
-  /* PORTAL BUTTON */
-  .portal-btn {
-    background: linear-gradient(135deg, #a4508b, #d460ff); /* Violet/Magenta Gradient */
-    padding: 10px 18px;
-    color: #1a002c;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 0 12px rgba(212, 96, 255, 0.45);
+  to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
   }
-  
-  .portal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 22px rgba(212, 96, 255, 0.75);
-    color: white;
+}
+
+/* ---------- DESKTOP DROPDOWN ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-link {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: rgba(35, 0, 45, 0.95); /* Deep violet glass */
+  backdrop-filter: blur(12px);
+
+  width: 250px;
+  padding: 10px 0;
+  list-style: none;
+
+  border: 1px solid rgba(212, 96, 255, 0.25);
+  border-radius: 10px;
+
+  box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(212, 96, 255, 0.3);
+
+  display: none;
+  z-index: 2000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 18px;
+  color: #ffdafd;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: 0.25s;
+}
+
+.dropdown-menu li a:hover {
+  color: #d460ff;
+  background: rgba(212, 96, 255, 0.10);
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+/* ---------- MOBILE DROPDOWN ---------- */
+@media (max-width: 900px) {
+
+  .dropdown-menu {
+      position: static;
+      width: 100%;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding-left: 15px;
+      display: none;
   }
+
+  .dropdown.open .dropdown-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
   
   /* ===================== HERO ===================== */
   #pho-hero {
