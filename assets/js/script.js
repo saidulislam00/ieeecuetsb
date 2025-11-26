@@ -357,15 +357,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =============== HAMBURGER MENU =============== */
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-links");
 
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-    });
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
 
+    /* =============== MOBILE DROPDOWN =============== */
     document.querySelectorAll(".dropdown-link").forEach(link => {
         link.addEventListener("click", function (e) {
+
+            // Only trigger on mobile
             if (window.innerWidth <= 900) {
                 e.preventDefault();
                 this.parentElement.classList.toggle("open");
