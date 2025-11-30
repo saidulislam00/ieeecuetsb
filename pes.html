@@ -1,184 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IEEE PES CUET SBC</title>
-<link rel="stylesheet" href="assets/css/pes.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IEEE PES CUET SBC</title>
+  <link rel="stylesheet" href="assets/css/pes.css" />
 </head>
+
 <body>
 
-<!-- ===================== NAVBAR ===================== -->
-<nav class="navbar">
-  <div class="nav-container">
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="nav-container">
 
-    <div class="logo-area">
-      <a href="index.html">
-        <img src="assets/images/ieee-logo.png" class="logo-img">
-      </a>
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/images/ieee-logo.png" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
+
+          <ul class="dropdown-menu">
+            <li><a href="wie.html">WIE Affinity Group</a></li>
+            <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
+            <li><a href="pes.html">Power & Energy Society (PES)</a></li>
+            <li><a href="embs.html">IEEE EMBS Society</a></li>
+            <li><a href="photonics.html">Photonics Society</a></li>
+            <li><a href="sps.html">Signal Processing Society</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#events">Events</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
+
     </div>
+  </nav>
 
-    <!-- Mobile menu toggle -->
-    <button class="menu-toggle" aria-label="Toggle navigation">
-      &#9776;
-    </button>
-
-    <!-- Navigation Menu -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li class="dropdown">
-        <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
-
-            <ul class="dropdown-menu">
-                <li><a href="wie.html">WIE Affinity Group</a></li>
-                <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
-                <li><a href="pes.html">Power & Energy Society (PES)</a></li>
-                <li><a href="embs.html">IEEE EMBS Society</a></li>
-                <li><a href="photonics.html">Photonics Society</a></li>
-                <li><a href="sps.html">Signal Processing Society</a></li>
-            </ul>
-    </li>
-
-      <li><a href="#events">Events</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
-
-  </div>
-</nav>
-
-<section id="pes-hero">
+  <section id="pes-hero">
     <canvas id="pesParticles"></canvas>
 
     <div class="pes-hero-content">
-        <h1 class="pes-title">
-            IEEE Power & Energy Society<br>
-            <span>CUET Student Branch Chapter</span>
-        </h1>
-        <p class="pes-subtitle">
-            Powering the future through renewable energy, smart grids, and sustainable innovation.
-        </p>
-        <a href="#pes-about" class="visit-btn">Explore Society</a>
+      <h1 class="pes-title">
+        IEEE Power & Energy Society<br>
+        <span>CUET Student Branch Chapter</span>
+      </h1>
+      <p class="pes-subtitle">
+        Powering the future through renewable energy, smart grids, and sustainable innovation.
+      </p>
+      <a href="#pes-about" class="visit-btn">Explore Society</a>
     </div>
-</section>
+  </section>
 
 
-<section id="pes-about" class="reveal">
-  <div class="container">
-    <h2 class="section-title">About IEEE PES CUET SBC</h2>
-    <p class="section-subtitle">
-      The IEEE Power & Energy Society (PES) is the world's largest forum for sharing the latest in technological developments in the electric power industry, focusing on sustainable energy, grid modernization, and power electronics.
-    </p>
-  </div>
-</section>
-
-<section id="pes-mv" class="reveal">
-  <div class="container">
-
-    <h2 class="mv-title">Mission & Vision</h2>
-
-    <div class="mv-row">
-      <div class="mv-card">
-        <h3>Our Mission</h3>
-        <p>
-          To be the leading provider of scientific and engineering information on electric power and energy for the betterment of society, and the preferred professional development source for CUET students.
-        </p>
-      </div>
-      <div class="mv-img">
-        <img src="assets/pes/mission_energy.jpg" alt="PES Mission">
-      </div>
+  <section id="pes-about" class="reveal">
+    <div class="container">
+      <h2 class="section-title">About IEEE PES CUET SBC</h2>
+      <p class="section-subtitle">
+        The IEEE Power & Energy Society (PES) is the world's largest forum for sharing the latest in technological
+        developments in the electric power industry, focusing on sustainable energy, grid modernization, and power
+        electronics.
+      </p>
     </div>
+  </section>
 
-    <div class="mv-row reverse">
-      <div class="mv-card">
-        <h3>Our Vision</h3>
-        <p>
-          To enable a sustainable future powered by clean, efficient, and reliable energy, fostering a community of engineers capable of solving the global energy crisis.
-        </p>
-      </div>
-      <div class="mv-img">
-        <img src="assets/pes/vision_future.jpg" alt="PES Vision">
-      </div>
-    </div>
+  <section id="pes-mv" class="reveal">
+    <div class="container">
 
-  </div>
-</section>
-  
+      <h2 class="mv-title">Mission & Vision</h2>
 
-<section id="pes-events" class="reveal">
-  <h2 class="event-section-title">Recent Activities</h2>
-  <div class="events-grid">
-
-    <div class="event-card">
-      <img src="assets/events/pes1.jpg" class="event-img" alt="Solar Workshop" />
-      <h3 class="event-title">Solar PV Workshop</h3>
-      <p class="event-desc">Design and simulation of photovoltaic systems using PVSyst and MATLAB.</p>
-      <a href="#" class="event-btn">View Report →</a>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/events/pes2.jpg" class="event-img" alt="Substation Visit" />
-      <h3 class="event-title">Industrial Tour: Grid Substation</h3>
-      <p class="event-desc">A practical visit to the 132/33kV Grid Substation to understand power transmission.</p>
-      <a href="#" class="event-btn">View Report →</a>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/events/pes3.jpg" class="event-img" alt="Smart Grid Talk" />
-      <h3 class="event-title">Seminar on Smart Grids</h3>
-      <p class="event-desc">Expert talk on the integration of IoT and AI in modern power distribution systems.</p>
-      <a href="#" class="event-btn">View Report →</a>
-    </div>
-
-  </div>
-</section>
-
-<section id="pes-committee" class="reveal">
-  <h2 class="section-title">Executive Committee</h2>
-
-  <div class="committee-grid">
-    <div class="committee-card">
-      <img src="assets/pes/chair.jpg" class="committee-img" />
-      <h3 class="committee-name">Alex Green</h3>
-      <p class="committee-role">Chairperson</p>
-    </div>
-
-    <div class="committee-card">
-      <img src="assets/pes/vice.jpg" class="committee-img" />
-      <h3 class="committee-name">Sarah Watts</h3>
-      <p class="committee-role">Vice Chairperson</p>
-    </div>
-
-    <div class="committee-card">
-      <img src="assets/pes/gs.jpg" class="committee-img" />
-      <h3 class="committee-name">David Current</h3>
-      <p class="committee-role">General Secretary</p>
-    </div>
-
-    <div class="committee-card">
-      <img src="assets/pes/treasurer.jpg" class="committee-img" />
-      <h3 class="committee-name">Emily Volt</h3>
-      <p class="committee-role">Treasurer</p>
-    </div>
-
-  </div>
-</section>
-
-<footer id="contact">
-    <div class="footer-inner">
-        <p>© 2025 IEEE CUET Student Branch | Power & Energy Society</p>
-
-        <div class="footer-links">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">Email Us</a>
+      <div class="mv-row">
+        <div class="mv-card">
+          <h3>Our Mission</h3>
+          <p>
+            To be the leading provider of scientific and engineering information on electric power and energy for the
+            betterment of society, and the preferred professional development source for CUET students.
+          </p>
         </div>
-    </div>
-</footer>
+        <div class="mv-img">
+          <img src="assets/pes/mission_energy.jpg" alt="PES Mission">
+        </div>
+      </div>
 
-<script src="pes.js"></script>
+      <div class="mv-row reverse">
+        <div class="mv-card">
+          <h3>Our Vision</h3>
+          <p>
+            To enable a sustainable future powered by clean, efficient, and reliable energy, fostering a community of
+            engineers capable of solving the global energy crisis.
+          </p>
+        </div>
+        <div class="mv-img">
+          <img src="assets/pes/vision_future.jpg" alt="PES Vision">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="pes-events" class="reveal">
+    <h2 class="event-section-title">Recent Activities</h2>
+    <div class="events-grid">
+
+      <div class="event-card">
+        <img src="assets/events/pes1.jpg" class="event-img" alt="Solar Workshop" />
+        <h3 class="event-title">Solar PV Workshop</h3>
+        <p class="event-desc">Design and simulation of photovoltaic systems using PVSyst and MATLAB.</p>
+        <a href="#" class="event-btn">View Report →</a>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/events/pes2.jpg" class="event-img" alt="Substation Visit" />
+        <h3 class="event-title">Industrial Tour: Grid Substation</h3>
+        <p class="event-desc">A practical visit to the 132/33kV Grid Substation to understand power transmission.</p>
+        <a href="#" class="event-btn">View Report →</a>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/events/pes3.jpg" class="event-img" alt="Smart Grid Talk" />
+        <h3 class="event-title">Seminar on Smart Grids</h3>
+        <p class="event-desc">Expert talk on the integration of IoT and AI in modern power distribution systems.</p>
+        <a href="#" class="event-btn">View Report →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pes-committee" class="reveal">
+    <h2 class="section-title">Executive Committee</h2>
+
+    <div class="teachers">
+      <!-- Advisor Card -->
+      <div class="committee-card senior reveal top-counselor">
+        <img src="https://app.cuet.ac.bd/assets/images/avatar/male-avatar.png" class="committee-img">
+        <h3 class="committee-role">Advisor</h3>
+        <h3 class="committee-name">Dr. Nipu Kumar Das</h3>
+        <p class="name">Head, Department of Biomedical Engineering</p>
+      </div>
+    </div>
+
+    <div class="committee-grid">
+
+      <!-- Chair -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/16ye7rvSJKFje_BHZAfRuppltzGr3HW2u=s2048" class="committee-img" />
+        <h3 class="committee-name">Mohammad Salman Asif</h3>
+        <p class="committee-role">Chair</p>
+      </div>
+
+      <!-- Vice Chair -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/152xkk7G8LdPLt-MRuFsezV7NGqBVzdP4=s2048" class="committee-img" />
+        <h3 class="committee-name">Al Hasnat Piyas</h3>
+        <p class="committee-role">Vice Chair</p>
+      </div>
+
+      <!-- General Secretary -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1wHsjF4RYXQbdxxA3kZf9z8WnYpkl3C0Z=s2048" class="committee-img" />
+        <h3 class="committee-name">Efaz Afnan Feroz</h3>
+        <p class="committee-role">General Secretary</p>
+      </div>
+
+      <!-- Webmaster -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1uFd_0nhFo2tIEqZuioOSi7vJalQL1yPo=s2048" class="committee-img" />
+        <h3 class="committee-name">Tasnia Afrin</h3>
+        <p class="committee-role">Webmaster</p>
+      </div>
+
+      <!-- Program Coordinator -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1PeO1zWxcfMVHurKW6Fh4unGJWC5xuwO0=s2048" class="committee-img" />
+        <h3 class="committee-name">Md. Mahmud Siddiq Fahim</h3>
+        <p class="committee-role">Program Coordinator</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <p>© 2025 IEEE CUET Student Branch | Power & Energy Society</p>
+
+      <div class="footer-links">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Email Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="pes.js"></script>
 </body>
+
 </html>

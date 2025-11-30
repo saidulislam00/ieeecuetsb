@@ -1,200 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IEEE RAS CUET SBC</title>
-<link rel="stylesheet" href="assets/css/ras.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IEEE RAS CUET SBC</title>
+  <link rel="stylesheet" href="assets/css/ras.css" />
 </head>
+
 <body>
 
-<!-- ===================== NAVBAR ===================== -->
-<nav class="navbar">
-  <div class="nav-container">
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="nav-container">
 
-    <div class="logo-area">
-      <a href="index.html">
-        <img src="assets/images/ieee-logo.png" class="logo-img">
-      </a>
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/images/ieee-logo.png" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
+
+          <ul class="dropdown-menu">
+            <li><a href="wie.html">WIE Affinity Group</a></li>
+            <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
+            <li><a href="pes.html">Power & Energy Society (PES)</a></li>
+            <li><a href="embs.html">IEEE EMBS Society</a></li>
+            <li><a href="photonics.html">Photonics Society</a></li>
+            <li><a href="sps.html">Signal Processing Society</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#events">Events</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
+
     </div>
+  </nav>
 
-    <!-- Mobile menu toggle -->
-    <button class="menu-toggle" aria-label="Toggle navigation">
-      &#9776;
-    </button>
-
-    <!-- Navigation Menu -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li class="dropdown">
-        <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
-
-            <ul class="dropdown-menu">
-                <li><a href="wie.html">WIE Affinity Group</a></li>
-                <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
-                <li><a href="pes.html">Power & Energy Society (PES)</a></li>
-                <li><a href="embs.html">IEEE EMBS Society</a></li>
-                <li><a href="photonics.html">Photonics Society</a></li>
-                <li><a href="sps.html">Signal Processing Society</a></li>
-            </ul>
-    </li>
-
-      <li><a href="#events">Events</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
-
-  </div>
-</nav>
-
-<!-- ===================== HERO ===================== -->
-<section id="ras-hero">
+  <!-- ===================== HERO ===================== -->
+  <section id="ras-hero">
     <canvas id="rasParticles"></canvas>
 
     <div class="ras-hero-content">
-        <h1 class="ras-title">
-            IEEE Robotics & Automation Society<br>
-            <span>CUET Student Branch Chapter</span>
-        </h1>
-        <p class="ras-subtitle">
-            Advancing robotics, automation, and intelligent systems research.
-        </p>
-        <a href="ras.html" class="visit-btn">Visit Page</a>
+      <h1 class="ras-title">
+        IEEE Robotics & Automation Society<br>
+        <span>CUET Student Branch Chapter</span>
+      </h1>
+      <p class="ras-subtitle">
+        Advancing robotics, automation, and intelligent systems research.
+      </p>
+      <a href="ras.html" class="visit-btn">Visit Page</a>
     </div>
-</section>
+  </section>
 
 
-<!-- ===================== ABOUT ===================== -->
-<section id="ras-about" class="reveal">
-  <div class="container">
-    <h2 class="section-title">About IEEE RAS CUET SBC</h2>
-    <p class="section-subtitle">
-      The IEEE Robotics and Automation Society focuses on state‑of‑the‑art robotics research,
-      automation technologies, and hands‑on engineering practices.
-    </p>
-  </div>
-</section>
-
-<!-- ===================== MISSION & VISION ===================== -->
-<section id="ras-mv" class="reveal">
-  <div class="container">
-
-    <h2 class="mv-title">Mission & Vision</h2>
-
-    <div class="mv-row">
-      <div class="mv-card">
-        <h3>Our Mission</h3>
-        <p>
-          To empower students in robotics, automation, AI systems, and multidisciplinary
-          innovation through workshops, competitions, and collaborative engineering projects.
-        </p>
-      </div>
-      <div class="mv-img">
-        <img src="assets/ras/mission.jpg" alt="RAS Mission Image">
-      </div>
+  <!-- ===================== ABOUT ===================== -->
+  <section id="ras-about" class="reveal">
+    <div class="container">
+      <h2 class="section-title">About IEEE RAS CUET SBC</h2>
+      <p class="section-subtitle">
+        The IEEE Robotics and Automation Society focuses on state‑of‑the‑art robotics research,
+        automation technologies, and hands‑on engineering practices.
+      </p>
     </div>
+  </section>
 
-    <div class="mv-row reverse">
-      <div class="mv-card">
-        <h3>Our Vision</h3>
-        <p>
-          To develop globally competitive engineers and researchers capable of shaping the future
-          of intelligent machines and autonomous systems.
-        </p>
-      </div>
-      <div class="mv-img">
-        <img src="assets/ras/vision.jpg" alt="RAS Vision Image">
-      </div>
-    </div>
+  <!-- ===================== MISSION & VISION ===================== -->
+  <section id="ras-mv" class="reveal">
+    <div class="container">
 
-  </div>
-</section>
-  
+      <h2 class="mv-title">Mission & Vision</h2>
 
-<!-- ===================== RECENT EVENTS ===================== -->
-<section id="ras-events" class="reveal">
-  <h2 class="event-section-title">Recent Events</h2>
-  <div class="events-grid">
-
-    <div class="event-card">
-      <img src="assets/events/ras1.jpg" class="event-img" />
-      <h3 class="event-title">Robotics Bootcamp</h3>
-      <p class="event-desc">Hands‑on robotics sessions with embedded systems, control, and sensors.</p>
-      <a href="#" class="event-btn">Learn More →</a>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/events/ras2.jpg" class="event-img" />
-      <h3 class="event-title">Automation Workshop</h3>
-      <p class="event-desc">PLC, industrial automation, and real‑time system demonstrations.</p>
-      <a href="#" class="event-btn">Learn More →</a>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/events/ras3.jpg" class="event-img" />
-      <h3 class="event-title">AI for Robotics</h3>
-      <p class="event-desc">Theory + practice focused on AI‑based perception and navigation.</p>
-      <a href="#" class="event-btn">Learn More →</a>
-    </div>
-
-    <div class="event-card">
-      <img src="assets/events/ras3.jpg" class="event-img" />
-      <h3 class="event-title">AI for Robotics</h3>
-      <p class="event-desc">Theory + practice focused on AI‑based perception and navigation.</p>
-      <a href="#" class="event-btn">Learn More →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== EXECUTIVE COMMITTEE ===================== -->
-<section id="ras-committee" class="reveal">
-  <h2 class="section-title">Executive Committee</h2>
-
-  <div class="committee-grid">
-
-    <div class="committee-card">
-      <img src="assets/ras/exe1.jpg" class="committee-img" />
-      <h3 class="committee-name">John Doe</h3>
-      <p class="committee-role">Chairperson</p>
-    </div>
-
-    <div class="committee-card">
-      <img src="assets/ras/exe2.jpg" class="committee-img" />
-      <h3 class="committee-name">Jane Smith</h3>
-      <p class="committee-role">Vice Chairperson</p>
-    </div>
-
-    <div class="committee-card">
-      <img src="assets/ras/exe3.jpg" class="committee-img" />
-      <h3 class="committee-name">Michael Lee</h3>
-      <p class="committee-role">General Secretary</p>
-    </div>
-    <div class="committee-card">
-      <img src="assets/ras/exe3.jpg" class="committee-img" />
-      <h3 class="committee-name">Michael Lee</h3>
-      <p class="committee-role">Webmaster</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer id="contact">
-    <div class="footer-inner">
-        <p>© 2025 IEEE CUET Student Branch</p>
-
-        <div class="footer-links">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">LinkedIn</a>
+      <div class="mv-row">
+        <div class="mv-card">
+          <h3>Our Mission</h3>
+          <p>
+            To empower students in robotics, automation, AI systems, and multidisciplinary
+            innovation through workshops, competitions, and collaborative engineering projects.
+          </p>
         </div>
-    </div>
-</footer>
+        <div class="mv-img">
+          <img src="assets/ras/mission.jpg" alt="RAS Mission Image">
+        </div>
+      </div>
 
-<script src="ras.js"></script>
+      <div class="mv-row reverse">
+        <div class="mv-card">
+          <h3>Our Vision</h3>
+          <p>
+            To develop globally competitive engineers and researchers capable of shaping the future
+            of intelligent machines and autonomous systems.
+          </p>
+        </div>
+        <div class="mv-img">
+          <img src="assets/ras/vision.jpg" alt="RAS Vision Image">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================== RECENT EVENTS ===================== -->
+  <section id="ras-events" class="reveal">
+    <h2 class="event-section-title">Recent Events</h2>
+    <div class="events-grid">
+
+      <div class="event-card">
+        <img src="assets/events/ras1.jpg" class="event-img" />
+        <h3 class="event-title">Robotics Bootcamp</h3>
+        <p class="event-desc">Hands‑on robotics sessions with embedded systems, control, and sensors.</p>
+        <a href="#" class="event-btn">Learn More →</a>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/events/ras2.jpg" class="event-img" />
+        <h3 class="event-title">Automation Workshop</h3>
+        <p class="event-desc">PLC, industrial automation, and real‑time system demonstrations.</p>
+        <a href="#" class="event-btn">Learn More →</a>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/events/ras3.jpg" class="event-img" />
+        <h3 class="event-title">AI for Robotics</h3>
+        <p class="event-desc">Theory + practice focused on AI‑based perception and navigation.</p>
+        <a href="#" class="event-btn">Learn More →</a>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/events/ras3.jpg" class="event-img" />
+        <h3 class="event-title">AI for Robotics</h3>
+        <p class="event-desc">Theory + practice focused on AI‑based perception and navigation.</p>
+        <a href="#" class="event-btn">Learn More →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== EXECUTIVE COMMITTEE ===================== -->
+  <section id="ras-committee" class="reveal">
+    <h2 class="section-title">Executive Committee</h2>
+
+    <div class="teachers">
+      <!-- Advisor Card -->
+      <div class="committee-card senior reveal top-counselor">
+        <img src="https://app.cuet.ac.bd/storage/Admins/67c405777a04c.jpg" class="committee-img">
+        <h3 class="committee-role">Advisor</h3>
+        <h3 class="committee-name">Dr. Md. Mamunur Roshid</h3>
+        <p class="name">Professor, Department of Mechanical Engineering</p>
+      </div>
+      <!-- Moderator Card -->
+      <div class="committee-card senior reveal top-counselor">
+        <img src="https://app.cuet.ac.bd/storage/Admins/6795d66c25d8d.png" class="committee-img">
+        <h3 class="committee-role">Moderator</h3>
+        <h3 class="committee-name">Ashim Dey</h3>
+        <p class="name">Assistant Professor, Department of Computer Science and Engineering</p>
+      </div>
+    </div>
+
+    <div class="committee-grid">
+
+      <!-- Chair -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1NXeDRCL3sDCHlcc_shAKp-KyBYQ6BBb7=s2048" class="committee-img" />
+        <h3 class="committee-name">Zaber Ahsan Bhuiyan</h3>
+        <p class="committee-role">Chair</p>
+      </div>
+
+      <!-- Vice Chair -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1MIYceqD-0o6-hhlFFN11Gvk92Nw-Rmzx=s2048" class="committee-img" />
+        <h3 class="committee-name">Md. Isfaq Ahmed Jim</h3>
+        <p class="committee-role">Vice Chair</p>
+      </div>
+
+      <!-- General Secretary -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/13kaOssAqyMSVfl-un1tJ7_T-9bOvpNz1=s2048" class="committee-img" />
+        <h3 class="committee-name">Md. Khaled Arafat</h3>
+        <p class="committee-role">General Secretary</p>
+      </div>
+
+      <!-- Webmaster -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1fX9EdSVxd1CcNIfP5ORpy-nJNGDKz-4J=s2048" class="committee-img" />
+        <h3 class="committee-name">Robin Barua</h3>
+        <p class="committee-role">Webmaster</p>
+      </div>
+
+      <!-- Program Coordinator -->
+      <div class="committee-card">
+        <img src="https://lh3.googleusercontent.com/d/1OiwPoIiZDS7ZakiNX85HZrr_19GvMDv7=s2048" class="committee-img" />
+        <h3 class="committee-name">Torikul Hakim Sajid</h3>
+        <p class="committee-role">Program Coordinator</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <p>© 2025 IEEE CUET Student Branch</p>
+
+      <div class="footer-links">
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="ras.js"></script>
 </body>
+
 </html>

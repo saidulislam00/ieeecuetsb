@@ -476,6 +476,18 @@ body {
       font-size: 2rem;
   }
   
+  .teachers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .teachers .committee-card{
+    width: 100%;
+    max-width: 240px;
+  }
   .committee-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
