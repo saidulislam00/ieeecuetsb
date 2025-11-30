@@ -718,6 +718,8 @@ section:not(#wie-hero) {
 .committee-card.senior {
     border-color: rgba(255, 80, 255, 0.55);
     box-shadow: 0 0 18px rgba(255, 80, 255, 0.35);
+    width: 220px;
+    margin: 40px auto;
 }
 
 /* Hover effect */
