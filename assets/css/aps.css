@@ -1,0 +1,588 @@
+/* ================= GLOBAL BACKGROUND ================= */
+body {
+    background: #00091a;           /* deep blue */
+    color: #dfe7ff;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Main container */
+  section:not(#aps-hero) .container,
+  section:not(#aps-hero) {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 25px;
+  }
+  
+/* ================= NAVBAR (APS THEME) ================= */
+.navbar {
+    width: 100%;
+    padding: 12px 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+  
+    background: transparent;
+    border-bottom: 1px solid rgba(140, 85, 255, 0.25); /* 🟣 APS Purple Border */
+  }
+  
+  .nav-container {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+  }
+  
+  /* LOGO */
+  .logo-img {
+    width: 55px;
+    filter: drop-shadow(0 0 6px rgba(150, 110, 255, 0.45)); /* APS Purple Glow */
+  }
+  
+  .logo-text {
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #b892ff; /* Soft Purple */
+  }
+  
+  .logo-area {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* DESKTOP MENU */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+  }
+  
+  .nav-links li a {
+    color: #e9dbff; /* Light lavender white */
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.25s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #b892ff;
+    text-shadow: 0 0 8px rgba(160, 120, 255, 0.65);
+  }
+  
+  /* PORTAL BUTTON (DESKTOP ONLY) */
+  .portal-btn {
+    background: linear-gradient(135deg, #6f4aff, #9d7bff); /* APS Blue-Purple Gradient */
+    padding: 10px 18px;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 12px rgba(150, 110, 255, 0.45);
+  }
+  
+  .portal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(175, 140, 255, 0.75);
+  }
+  
+  /* BURGER BUTTON */
+  .menu-toggle {
+    display: none;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: #e9dbff; /* light lavender */
+    cursor: pointer;
+    z-index: 2000;
+  }
+  
+  /* ================= MOBILE MENU ================= */
+  @media (max-width: 900px) {
+  
+    .menu-toggle {
+        display: block;
+    }
+  
+    .desktop-only {
+        display: none;
+    }
+  
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        right: 20px;
+  
+        width: 240px;
+        padding: 22px;
+  
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+  
+        background: rgba(30, 0, 60, 0.65); /* APS purple-tinted glass */
+        backdrop-filter: blur(14px);
+  
+        border: 1px solid rgba(160, 120, 255, 0.25);
+        border-radius: 14px;
+  
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.35),
+            0 0 25px rgba(150, 110, 255, 0.25);
+  
+        animation: fadeSlide 0.25s ease forwards;
+        transform-origin: top right;
+    }
+  
+    .nav-links.active {
+        display: flex;
+    }
+  
+    .nav-links li a {
+        font-size: 1rem;
+        color: #f3e8ff;
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* ---------- DESKTOP DROPDOWN ---------- */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-link {
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  
+    background: rgba(50, 0, 80, 0.95); /* Deep APS purple glass */
+    backdrop-filter: blur(12px);
+  
+    width: 250px;
+    padding: 10px 0;
+  
+    list-style: none;
+    border: 1px solid rgba(160, 120, 255, 0.3);
+    border-radius: 10px;
+  
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(160, 120, 255, 0.35);
+  
+    display: none;
+    z-index: 2000;
+  }
+  
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: #e9dbff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: 0.25s;
+  }
+  
+  .dropdown-menu li a:hover {
+    color: #c4a8ff;
+    background: rgba(160, 120, 255, 0.12);
+  }
+  
+  /* SHOW DROPDOWN ON HOVER */
+  .dropdown:hover .dropdown-menu {
+    display: block !important;
+  }
+  
+  /* ---------- MOBILE DROPDOWN ---------- */
+  @media (max-width: 900px) {
+  
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding-left: 15px;
+        display: none;
+    }
+  
+    .dropdown.open .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+  }  
+
+  /* ===================== HERO ===================== */
+  #aps-hero {
+    position: relative;
+    height: 90vh;
+    background: #00091a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #apsWave {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+
+  }
+  
+  .aps-hero-content {
+    position:relative;
+    z-index:10;
+    text-align:center;
+    max-width:900px;
+  }
+  
+  .aps-title {
+    font-size: 2.6rem;
+    font-weight:700;
+    color:white;
+  }
+  .aps-title span {
+    color:#b38bff;
+  }
+  
+  .aps-subtitle {
+    color:#bcd2ff;
+    margin-top:10px;
+    font-size:1.1rem;
+  }
+  
+  .visit-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #6f4aff, #9d7bff);
+  
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 0 18px rgba(150, 110, 255, 0.45);
+  
+    transition: 0.3s ease;
+  }
+  
+  /* HOVER EFFECT */
+  .visit-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px rgba(180, 140, 255, 0.75);
+  }
+  
+  
+  
+  /* ===================== ABOUT ===================== */
+  #aps-about {
+    padding:120px 0 80px;
+  }
+  
+  .section-title {
+    font-size:2.3rem;
+    color:#b38bff;
+  }
+  
+  .section-subtitle {
+    font-size:1.15rem;
+    color:#a7c0ff;
+    max-width:850px;
+    line-height:1.7;
+    text-align: justify;
+  }
+  
+  
+/* ===================== MISSION / VISION (APS THEME) ===================== */
+#aps-mv {
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #aps-mv .container {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Section title */
+  .mv-title {
+    font-size: 2rem;
+    color: #b38bff; /* APS Purple */
+    margin-bottom: 40px;
+  }
+  
+  /* Layout rows */
+  .mv-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+  
+  /* Reverse second row */
+  .mv-row.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Mission / Vision Card */
+  .mv-card {
+    flex: 1;
+    background: #101830; /* APS deep navy-blue */
+    padding: 35px;
+    border-radius: 16px;
+  
+    border: 1px solid rgba(160, 120, 255, 0.35); /* APS purple border */
+    box-shadow: 0 0 18px rgba(160, 120, 255, 0.15); /* APS glow */
+  
+    transition: 0.3s;
+    text-align: justify;
+  }
+  
+  .mv-card h3 {
+    font-size: 1.5rem;
+    color: #b38bff; /* APS Purple */
+    margin-bottom: 12px;
+  }
+  
+  .mv-card p {
+    color: #d7c9ff; /* Soft lavender text */
+    line-height: 1.7;
+  }
+  
+  /* Hover effect */
+  .mv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 28px rgba(160, 120, 255, 0.45); /* Stronger APS glow */
+  }
+  
+  /* Image Wrapper */
+  .mv-img {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .mv-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: 0.3s ease;
+  }
+  
+  .mv-img:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* ===================== EVENTS ===================== */
+  #aps-events {
+    padding:100px 50px;
+  }
+  
+  .event-section-title {
+    font-size:2rem;
+    color:#b38bff;
+    margin-bottom:40px;
+  }
+  
+  .events-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+  }
+  
+  .event-card {
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:16px;
+    border:1px solid rgba(140,85,255,0.35);
+    transition:0.3s;
+  }
+  .event-card:hover {
+    transform:translateY(-6px);
+    box-shadow:0 0 20px rgba(140,85,255,0.5);
+  }
+  
+  .event-img {
+    width:100%;
+    height:180px;
+    border-radius:12px;
+    object-fit:cover;
+  }
+  /* ================= Event Card Button (APS Theme) ================= */
+.event-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 18px;
+  
+    font-size: 0.9rem;
+    color: #c9b2ff; /* lavender purple */
+    text-decoration: none;
+  
+    border: 1px solid rgba(160, 120, 255, 0.5);
+    border-radius: 12px;
+  
+    transition: 0.3s ease;
+  }
+  
+  .event-btn:hover {
+    background: rgba(160, 120, 255, 0.15);
+    box-shadow: 0 0 12px rgba(160, 120, 255, 0.5);
+    transform: translateY(-3px);
+    color: #e4d4ff; /* lighter lavender */
+  }  
+  
+/* ===================== COMMITTEE (APS THEME) ===================== */
+#aps-committee {
+    padding: 70px 20px;
+  }
+  
+  /* Section Title */
+  #aps-committee .section-title {
+    text-align: center;
+    color: #b38bff; /* APS Purple */
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  
+  /* Advisor / Senior Members */
+  .teachers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .teachers .committee-card {
+    width: 100%;
+    max-width: 260px;   /* slightly bigger for advisor */
+    text-align: center;
+  }
+  
+  /* Main Committee Grid */
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* Committee Card */
+  .committee-card {
+    background: rgba(255, 255, 255, 0.04); /* APS glass */
+    padding: 22px;
+    border-radius: 16px;
+  
+    border: 1px solid rgba(160, 120, 255, 0.35); /* APS border */
+    transition: 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .committee-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 22px rgba(160, 120, 255, 0.45); /* APS glow */
+  }
+  
+  /* Profile Image */
+  .committee-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  
+    border: 2px solid #b38bff; /* APS Purple Ring */
+  }
+  
+  /* Role (e.g., Chair, Advisor) */
+  .committee-role {
+    color: #c6aaff; /* Light lavender-purple */
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  /* Name (e.g., Dr. Md. Azad Hossain) */
+  .committee-name {
+    color: #e8ddff; /* soft lavender white */
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  /* Paragraph under Advisor card */
+  p.name {
+    color: #d7caff; /* Light lavender */
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-top: 4px;
+  }  
+  
+/* ================= FOOTER (APS THEME) ================= */
+footer {
+    background: rgba(0, 0, 0, 0.18);        /* transparent glass */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  
+    padding: 28px 25px;
+    margin-top: 70px;
+  
+    /* APS purple border */
+    border-top: 1px solid rgba(160, 120, 255, 0.30);
+  }
+  
+  /* Footer container */
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    color: #e6dbff;       /* soft lavender text */
+    font-size: 0.95rem;
+  }
+  
+  /* Footer Links */
+  .footer-links a {
+    color: #c3a2ff;       /* soft purple */
+    margin-left: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .footer-links a:hover {
+    color: #d9c3ff;       /* lighter lavender glow */
+    text-shadow: 0 0 10px rgba(190, 150, 255, 0.7);
+    transform: translateY(-2px);
+  }
+  
