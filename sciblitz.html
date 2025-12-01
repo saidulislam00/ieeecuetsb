@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SCIBLITZ 1.0 | National Student-Led 3 Minute Thesis & Poster Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon (replace with your own) -->
+    <link rel="icon" type="image/png" href="assets/sciblitz-logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/sciblitz-logo.png">
+
+    <!-- Primary SEO -->
+    <meta name="title" content="SCIBLITZ 1.0 | National Student-Led 3 Minute Thesis & Poster Competition">
+    <meta name="description"
+        content="SCIBLITZ 1.0 – A student-led model conference featuring 3 Minute Thesis and Poster Presentation tracks across 6 STEM fields, hosted by IEEE CUET Student Branch with IEEE Bangladesh Section as technical co-sponsor.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="SCIBLITZ, IEEE CUET, IEEE Bangladesh Section, 3 Minute Thesis, 3MT, Poster Presentation, STEM, research, student conference, Bangladesh, engineering, science, innovation">
+    <meta name="author" content="IEEE CUET Student Branch">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL (update to your domain) -->
+    <link rel="canonical" href="https://sciblitz.org">
+
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:title" content="SCIBLITZ 1.0 | National Student-Led 3 Minute Thesis & Poster Competition">
+    <meta property="og:description"
+        content="A student-led model conference on advancing research, engineering and science, featuring 3 Minute Thesis and Poster tracks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sciblitz.org">
+    <meta property="og:image" content="https://sciblitz.org/assets/sciblitz-banner.jpg">
+    <meta property="og:site_name" content="SCIBLITZ 1.0">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SCIBLITZ 1.0 | National Student-Led 3 Minute Thesis & Poster Competition">
+    <meta name="twitter:description"
+        content="Student-led 3 Minute Thesis & Poster Conference powered by IEEE CUET SB and IEEE Bangladesh Section.">
+    <meta name="twitter:image" content="https://sciblitz.org/assets/sciblitz-banner.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --midnight-blue: #003A70;
+            --deep-navy: #001F36;
+            --darker-navy: #001226;
+            --electric-cyan: #00AEEF;
+            --bolt-yellow: #FFC93C;
+            --soft-beige: #F7F4E6;
+            --soft-white: #FDFDFE;
+            --text-main: #EAF3FF;
+            --text-soft: #C3D4F5;
+            --text-muted: #8BA0C5;
+            --card-bg: rgba(0, 24, 50, 0.96);
+            --border-soft: rgba(0, 174, 239, 0.28);
+            --glow-blue: 0 0 32px rgba(0, 174, 239, 0.6);
+            --glow-yellow: 0 0 30px rgba(255, 201, 60, 0.55);
+            --radius-xl: 26px;
+            --radius-lg: 18px;
+            --radius-pill: 999px;
+            --max-width: 1120px;
+            --transition-fast: 0.22s ease-out;
+            --transition-med: 0.4s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #00477E 0, #001226 45%, #00040A 100%);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+        }
+
+        section {
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        @media (min-width: 900px) {
+            section {
+                padding: 100px 24px;
+            }
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Space Grotesk", system-ui, sans-serif;
+            letter-spacing: 0.04em;
+        }
+
+        h2.section-title {
+            font-size: clamp(1.9rem, 3vw, 2.3rem);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2.section-title::after {
+            content: "";
+            display: inline-block;
+            width: 72px;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--bolt-yellow), var(--electric-cyan));
+            opacity: 0.9;
+        }
+
+        p.section-subtitle {
+            max-width: 670px;
+            color: var(--text-soft);
+            font-size: 0.96rem;
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        .muted {
+            color: var(--text-muted);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(0, 174, 239, 0.4);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-soft);
+            background: radial-gradient(circle at top left, rgba(0, 174, 239, 0.16), transparent 55%);
+        }
+
+        .pill span.dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--bolt-yellow);
+            box-shadow: var(--glow-yellow);
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .btn {
+            border-radius: var(--radius-pill);
+            padding: 12px 26px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 174, 239, 0.55);
+            color: #ffffff;
+            background: linear-gradient(135deg, #FFC93C, #FF9F1C);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition:
+                background var(--transition-fast),
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.3), transparent 60%);
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: var(--glow-yellow);
+            border-color: var(--bolt-yellow);
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--electric-cyan);
+            border-color: rgba(0, 174, 239, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 48, 96, 0.75);
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Scroll Reveal */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition:
+                opacity var(--transition-med),
+                transform var(--transition-med);
+        }
+
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NAVBAR */
+
+        .top-nav {
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: var(--max-width);
+            padding: 0 4px;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .top-nav-inner {
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 8px 14px;
+            border-radius: var(--radius-pill);
+            background: linear-gradient(90deg, rgba(0, 18, 38, 0.98), rgba(0, 28, 60, 0.96));
+            border: 1px solid rgba(0, 174, 239, 0.35);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+        }
+
+        .nav-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.83rem;
+            color: var(--text-soft);
+        }
+
+        .nav-dot {
+            width: 26px;
+            height: 26px;
+            border-radius: 35%;
+            background:
+                radial-gradient(circle at 30% 10%, var(--bolt-yellow), rgba(0, 174, 239, 0.6));
+            border: 1px solid rgba(255, 201, 60, 0.75);
+            box-shadow: var(--glow-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 11px;
+            border-radius: var(--radius-pill);
+            transition: background var(--transition-fast), color var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            background: rgba(0, 174, 239, 0.18);
+            color: var(--soft-white);
+        }
+
+        @media (max-width: 720px) {
+            .top-nav-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 14px;
+                padding-bottom: 3px;
+            }
+
+            .nav-link {
+                white-space: nowrap;
+            }
+
+            #hero {
+                padding-top: 190px !important;
+            }
+        }
+
+        /* HERO SECTION */
+
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            padding: 20px 20px 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top, #00477E 0, #001226 40%, #000307 100%);
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 70px 70px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        #hero canvas#hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 0;
+            opacity: 0.25;
+        }
+
+        .hero-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            gap: 32px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+            line-height: 1.1;
+            margin: 16px 0 12px;
+            text-transform: uppercase;
+        }
+
+        .hero-title span.accent {
+            background: linear-gradient(128deg, var(--bolt-yellow), #FFE07A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 16px rgba(255, 201, 60, 0.55);
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--text-soft);
+            max-width: 480px;
+            line-height: 1.75;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 20px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .hero-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(0, 16, 34, 0.86);
+            border: 1px solid rgba(0, 174, 239, 0.25);
+        }
+
+        .hero-meta-item span.icon {
+            font-size: 1rem;
+        }
+
+        .hero-right {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-core {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 30% 10%, rgba(255, 201, 60, 0.38), transparent 60%),
+                radial-gradient(circle at bottom, rgba(0, 174, 239, 0.7), #000612);
+            border: 1px solid rgba(0, 174, 239, 0.38);
+            box-shadow:
+                0 0 40px rgba(0, 0, 0, 0.9),
+                0 0 48px rgba(0, 174, 239, 0.35);
+            overflow: hidden;
+        }
+
+        .hero-core-ring {
+            position: absolute;
+            inset: 10%;
+            border-radius: 50%;
+            border: 1px dashed rgba(234, 243, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-core-ring h3 {
+            font-size: 0.95rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-soft);
+        }
+
+        .hero-core-ring span.big {
+            display: block;
+            font-size: 1.6rem;
+            margin-top: 5px;
+            font-weight: 600;
+            color: var(--bolt-yellow);
+        }
+
+        .hero-core-ring p {
+            font-size: 0.76rem;
+            margin-top: 6px;
+            color: var(--text-soft);
+        }
+
+        .hero-badge-pill {
+            position: absolute;
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(0, 14, 30, 0.96);
+            border: 1px solid rgba(0, 174, 239, 0.55);
+            font-size: 0.72rem;
+            color: var(--text-soft);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(8px);
+            white-space: nowrap;
+        }
+
+        .hero-badge-pill span.dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--electric-cyan);
+            box-shadow: var(--glow-blue);
+        }
+
+        .hero-badge-pill.p1 {
+            top: 12%;
+            left: 15%;
+        }
+
+        .hero-badge-pill.p2 {
+            top: 18%;
+            right: 12%;
+        }
+
+        .hero-badge-pill.p3 {
+            bottom: 20%;
+            left: 18%;
+        }
+
+        .hero-badge-pill.p4 {
+            bottom: 10%;
+            right: 18%;
+        }
+
+        /* ================= TECH GRID HERO BACKGROUND ==================== */
+
+        #hero-grid {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 0;
+            opacity: 0.25;
+            /* adjust transparency */
+        }
+
+
+        /* COUNTDOWN SECTION */
+
+        #countdown {
+            background: radial-gradient(circle at top, rgba(0, 174, 239, 0.14), transparent 70%);
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .countdown-box {
+            margin-top: 26px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .count-num {
+            background: rgba(0, 22, 48, 0.95);
+            border: 1px solid rgba(0, 174, 239, 0.45);
+            border-radius: 18px;
+            padding: 18px 26px;
+            min-width: 88px;
+            box-shadow: 0 0 18px rgba(0, 174, 239, 0.22);
+        }
+
+        .count-num span {
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: var(--bolt-yellow);
+            display: block;
+        }
+
+        .count-num small {
+            color: var(--text-soft);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* HIGHLIGHTS SECTION */
+
+        #highlights {
+            background: radial-gradient(circle at top right, rgba(255, 201, 60, 0.14), transparent 65%);
+        }
+
+        .highlights-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        @media (min-width: 780px) {
+            .highlights-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .highlight-card {
+            border-radius: var(--radius-xl);
+            padding: 18px 16px 20px;
+            background: radial-gradient(circle at top left, rgba(255, 201, 60, 0.14), rgba(0, 24, 52, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.32);
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform var(--transition-med),
+                box-shadow var(--transition-med),
+                border-color var(--transition-med),
+                background var(--transition-med);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glow-blue);
+            border-color: var(--bolt-yellow);
+        }
+
+        .highlight-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            margin-bottom: 4px;
+        }
+
+        .highlight-main {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--bolt-yellow);
+            margin-bottom: 6px;
+        }
+
+        .highlight-sub {
+            font-size: 0.9rem;
+            color: var(--text-soft);
+        }
+
+        /* ABOUT SECTION */
+
+        #about {
+            background: radial-gradient(circle at top left, rgba(0, 174, 239, 0.08), transparent 60%);
+        }
+
+        .about-grid {
+            display: grid;
+            gap: 28px;
+        }
+
+        @media (min-width: 880px) {
+            .about-grid {
+                grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+                gap: 36px;
+                align-items: center;
+            }
+        }
+
+        .about-highlight {
+            margin-top: 16px;
+            padding: 16px 16px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(0, 174, 239, 0.28);
+            background: linear-gradient(135deg, rgba(0, 23, 49, 0.95), rgba(0, 34, 72, 0.95));
+            font-size: 0.88rem;
+            color: var(--text-soft);
+        }
+
+        .about-highlight strong {
+            color: var(--bolt-yellow);
+        }
+
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(234, 243, 255, 0.18);
+            background: rgba(0, 12, 32, 0.95);
+            color: var(--text-soft);
+        }
+
+        .about-card {
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle at top, rgba(0, 174, 239, 0.19), transparent 55%),
+                linear-gradient(145deg, rgba(0, 18, 38, 0.98), rgba(0, 27, 59, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.4);
+            padding: 20px 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: "";
+            position: absolute;
+            top: -90px;
+            right: -80px;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 201, 60, 0.45), transparent 70%);
+            opacity: 0.8;
+        }
+
+        .about-card h3 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            margin-bottom: 10px;
+            color: var(--text-soft);
+        }
+
+        .about-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-soft);
+        }
+
+        .about-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .about-list span.bullet {
+            margin-top: 4px;
+            font-size: 0.9rem;
+            color: var(--bolt-yellow);
+        }
+
+        /* TRACKS SECTION */
+
+        #tracks {
+            background: radial-gradient(circle at center, rgba(0, 174, 239, 0.23), rgba(0, 8, 20, 1));
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        @media (min-width: 860px) {
+            .tracks-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .track-card {
+            border-radius: var(--radius-xl);
+            padding: 18px 16px 20px;
+            background: radial-gradient(circle at top left, rgba(255, 201, 60, 0.14), rgba(0, 16, 38, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.35);
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform var(--transition-med),
+                box-shadow var(--transition-med),
+                border-color var(--transition-med);
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--glow-blue);
+            border-color: var(--bolt-yellow);
+        }
+
+        .track-label {
+            font-size: 0.78rem;
+            color: var(--electric-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            margin-bottom: 4px;
+        }
+
+        .track-title {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .track-body {
+            font-size: 0.88rem;
+            color: var(--text-soft);
+            line-height: 1.7;
+        }
+
+        .track-list {
+            margin-top: 10px;
+            font-size: 0.84rem;
+            color: var(--text-soft);
+            padding-left: 18px;
+        }
+
+        .track-list li {
+            margin-bottom: 6px;
+        }
+
+        .track-badge-row {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .track-badge {
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(0, 174, 239, 0.5);
+            background: rgba(0, 8, 20, 0.95);
+            color: var(--text-soft);
+        }
+
+        /* FIELDS SECTION */
+
+        #fields {
+            background: radial-gradient(circle at top right, rgba(255, 201, 60, 0.12), transparent 60%);
+        }
+
+        .fields-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        @media (min-width: 860px) {
+            .fields-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .field-card {
+            border-radius: var(--radius-lg);
+            padding: 14px 13px 15px;
+            background: linear-gradient(135deg, rgba(0, 20, 44, 0.97), rgba(0, 32, 70, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.32);
+            font-size: 0.85rem;
+            color: var(--text-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .field-title {
+            font-weight: 500;
+            color: var(--bolt-yellow);
+            margin-bottom: 4px;
+        }
+
+        /* TIMELINE SECTION */
+
+        #timeline {
+            background: radial-gradient(circle at top left, rgba(0, 174, 239, 0.09), transparent 60%);
+        }
+
+        .timeline-grid {
+            display: grid;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        @media (min-width: 780px) {
+            .timeline-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .timeline-card {
+            border-radius: var(--radius-lg);
+            padding: 13px 13px 15px;
+            background: linear-gradient(135deg, rgba(0, 18, 40, 0.97), rgba(0, 27, 61, 0.97));
+            border: 1px solid rgba(0, 174, 239, 0.3);
+            font-size: 0.84rem;
+            color: var(--text-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-card::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            right: -25px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 174, 239, 0.35);
+            opacity: 0.35;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .timeline-label {
+            font-size: 0.96rem;
+            font-weight: 500;
+            color: var(--soft-white);
+        }
+
+        /* REGISTRATION SECTION */
+
+        #registration {
+            background: radial-gradient(circle at center,
+                    rgba(255, 201, 60, 0.18),
+                    rgba(0, 48, 96, 0.4),
+                    rgba(0, 22, 44, 0.6));
+                    padding-top: 150px !important;
+        }
+
+
+        .registration-card {
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(0, 18, 40, 0.98), rgba(0, 27, 59, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.6);
+            padding: 20px 18px 22px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.82);
+            display: grid;
+            gap: 20px;
+        }
+
+        @media (min-width: 900px) {
+            .registration-card {
+                grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            }
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86rem;
+            margin-top: 10px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 174, 239, 0.55);
+        }
+
+        .fee-table thead {
+            background: linear-gradient(90deg, #003A70, #005999);
+        }
+
+        .fee-table th,
+        .fee-table td {
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .fee-table th {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+        }
+
+        .fee-table td {
+            font-size: 0.84rem;
+            color: var(--text-soft);
+        }
+
+        .fee-table tbody tr:nth-child(even) {
+            background: rgba(0, 19, 44, 0.98);
+        }
+
+        .fee-table tbody tr:nth-child(odd) {
+            background: rgba(0, 26, 56, 0.98);
+        }
+
+        .fee-tagline {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .reg-highlight-box {
+            border-radius: var(--radius-lg);
+            padding: 14px 13px;
+            background: radial-gradient(circle at top left, rgba(255, 201, 60, 0.18), transparent 60%);
+            border: 1px solid rgba(255, 201, 60, 0.6);
+            font-size: 0.83rem;
+            color: var(--text-soft);
+        }
+
+        .reg-highlight-box strong {
+            color: var(--bolt-yellow);
+        }
+
+        .registration-note {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            margin-top: 10px;
+        }
+
+        /* WHO CAN PARTICIPATE */
+
+        #participation {
+            background: radial-gradient(circle at top right, rgba(0, 174, 239, 0.09), transparent 60%);
+            padding-top: 150px !important;
+        }
+
+        .participation-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        @media (min-width: 780px) {
+            .participation-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .part-card {
+            border-radius: var(--radius-lg);
+            padding: 14px 13px 16px;
+            background: linear-gradient(135deg, rgba(0, 18, 40, 0.98), rgba(0, 28, 60, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.35);
+            font-size: 0.84rem;
+            color: var(--text-soft);
+            position: relative;
+        }
+
+        .part-title {
+            font-weight: 500;
+            color: var(--bolt-yellow);
+            margin-bottom: 4px;
+        }
+
+        .part-list {
+            margin-top: 6px;
+            padding-left: 16px;
+            line-height: 1.7;
+        }
+
+        .part-list li {
+            margin-bottom: 4px;
+        }
+
+        /* ORGANIZERS & PARTNERS */
+
+        #organizers {
+            background: radial-gradient(circle at top, rgba(255, 201, 60, 0.14), transparent 60%);
+        }
+
+        .org-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        @media (min-width: 860px) {
+            .org-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        .org-card {
+            border-radius: var(--radius-lg);
+            padding: 13px 13px 14px;
+            background: linear-gradient(145deg, rgba(0, 18, 38, 0.98), rgba(0, 29, 60, 0.98));
+            border: 1px solid rgba(0, 174, 239, 0.36);
+            position: relative;
+            overflow: hidden;
+            font-size: 0.82rem;
+            color: var(--text-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .org-card::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 201, 60, 0.4);
+            opacity: 0.35;
+        }
+
+        .org-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-muted);
+        }
+
+        .org-name {
+            font-weight: 500;
+            color: var(--soft-white);
+        }
+
+        .org-tag {
+            font-size: 0.72rem;
+            color: var(--electric-cyan);
+        }
+
+        .partner-row {
+            margin-top: 24px;
+            border-radius: var(--radius-xl);
+            padding: 16px 14px;
+            border: 1px dashed rgba(0, 174, 239, 0.5);
+            background: rgba(0, 14, 32, 0.9);
+            font-size: 0.84rem;
+            color: var(--text-soft);
+        }
+
+        .partner-row strong {
+            color: var(--bolt-yellow);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 26px 20px 26px;
+            background: linear-gradient(180deg, #00040A, #000207);
+            border-top: 1px solid rgba(0, 174, 239, 0.4);
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (min-width: 720px) {
+            .footer-inner {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: var(--text-soft);
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .footer-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--bolt-yellow), var(--electric-cyan));
+            transition: width var(--transition-fast);
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        .footer-credit span {
+            color: var(--bolt-yellow);
+        }
+    </style>
+
+    <!-- Structured Data (update dates if needed) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "SCIBLITZ 1.0",
+    "startDate": "2025-07-25",
+    "endDate": "2025-07-25",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "description": "SCIBLITZ 1.0 is a national student-led model conference featuring 3 Minute Thesis and Poster Presentation tracks across multiple STEM fields.",
+    "image": "https://sciblitz.org/assets/sciblitz-banner.jpg",
+    "location": {
+      "@type": "Place",
+      "name": "Chittagong University of Engineering & Technology",
+      "address": "CUET, Chattogram, Bangladesh"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "IEEE CUET Student Branch",
+      "url": "https://sciblitz.org"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- NAVBAR -->
+        <div class="top-nav">
+            <div class="top-nav-inner">
+                <div class="nav-brand">
+                    <div class="nav-dot"></div>
+                    <div>
+                        <div style="font-size:0.8rem; font-weight:500;">SCIBLITZ 1.0</div>
+                        <div style="font-size:0.7rem;" class="muted">IEEE CUET Student Branch • IEEE Bangladesh Section
+                        </div>
+                    </div>
+                </div>
+                <nav class="nav-links">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#highlights" class="nav-link">Highlights</a>
+                    <a href="#tracks" class="nav-link">Tracks</a>
+                    <a href="#fields" class="nav-link">Fields</a>
+                    <a href="#timeline" class="nav-link">Timeline</a>
+                    <a href="#registration" class="nav-link">Registration</a>
+                    <a href="#organizers" class="nav-link">Organizers</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section id="hero">
+            <canvas id="hero-grid"></canvas>
+
+            <div class="hero-inner">
+                <div class="hero-left" data-parallax>
+                    <div class="pill">
+                        <span class="dot"></span>
+                        STUDENT-LED MODEL CONFERENCE • 3 MINUTE THESIS & POSTER PRESENTATION
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="accent">SCIBLITZ 1.0</span><br />
+                        Rapid Research, Clear Impact
+                    </h1>
+
+                    <p class="hero-tagline">
+                        A national 3 Minute Thesis and Poster Competition uniting young researchers to present
+                        bold ideas in engineering, technology and science — fast, sharp and audience-ready.
+                    </p>
+
+                    <div class="hero-meta">
+                        <div class="hero-meta-item">
+                            <span class="icon">📍</span>
+                            <span>Chittagong University of Engineering &amp; Technology (CUET)</span>
+                        </div>
+                        <div class="hero-meta-item">
+                            <span class="icon">🤝</span>
+                            <span>Organized by IEEE CUET Student Branch • Technical Co-sponsor: IEEE Bangladesh
+                                Section</span>
+                        </div>
+                    </div>
+
+                    <div class="btn-row">
+                        <!-- Replace href with actual forms -->
+                        <a href="https://example.com/sciblitz-3mt-registration" class="btn" target="_blank"
+                            rel="noopener">
+                            Register for 3MT
+                            <span>⚡</span>
+                        </a>
+                        <a href="https://example.com/sciblitz-poster-registration" class="btn btn-secondary"
+                            target="_blank" rel="noopener">
+                            Register for Poster
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right" data-parallax>
+                    <div class="hero-core">
+                        <div class="hero-core-ring">
+                            <div>
+                                <h3>3 MINUTES • 1 SLIDE</h3>
+                                <span class="big">MAX IMPACT</span>
+                                <p class="muted">
+                                    Distil months of work into a crisp story that
+                                    inspires experts, judges and peers.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="hero-badge-pill p1">
+                            <span class="dot"></span>
+                            <span>145k+ Prize Pool</span>
+                        </div>
+                        <div class="hero-badge-pill p2">
+                            <span class="dot"></span>
+                            <span>6 STEM Fields</span>
+                        </div>
+                        <div class="hero-badge-pill p3">
+                            <span class="dot"></span>
+                            <span>2 Tracks • 2 Phases</span>
+                        </div>
+                        <div class="hero-badge-pill p4">
+                            <span class="dot"></span>
+                            <span>National-Level Exposure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN -->
+        <section id="countdown">
+            <div class="container">
+                <h2 class="section-title">Countdown to Conference Day</h2>
+                <p class="section-subtitle">
+                    Get your slides ready, rehearse your pitch, and polish your poster.
+                    The clock is ticking towards SCIBLITZ 1.0.
+                </p>
+
+                <div class="countdown-box">
+                    <div class="count-num">
+                        <span id="days">00</span>
+                        <small>Days</small>
+                    </div>
+                    <div class="count-num">
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+                    <div class="count-num">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="count-num">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section id="highlights">
+            <div class="container reveal">
+                <h2 class="section-title">Event Highlights</h2>
+                <p class="section-subtitle">
+                    SCIBLITZ is designed for fast-paced communication, serious research and memorable competition —
+                    structured like a model conference, tuned for young innovators.
+                </p>
+
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-label">Research Spectrum</div>
+                        <div class="highlight-main">6 STEM Fields</div>
+                        <div class="highlight-sub">
+                            From power systems to AI, robotics to healthcare —
+                            pitch your work in a domain that matters.
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-label">Competitive Format</div>
+                        <div class="highlight-main">2 Tracks</div>
+                        <div class="highlight-sub">
+                            <strong>3 Minute Thesis</strong> and <strong>Poster Presentation</strong> tracks,
+                            both evaluated by expert judges.
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-label">Prize & Recognition</div>
+                        <div class="highlight-main">145k+ BDT</div>
+                        <div class="highlight-sub">
+                            Exciting cash prizes, certificates and recognition across tracks and categories.
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-label">Structured Journey</div>
+                        <div class="highlight-main">2 Phases</div>
+                        <div class="highlight-sub">
+                            Online screening followed by on-site final round, ensuring quality and fairness.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container reveal">
+                <h2 class="section-title">About SCIBLITZ</h2>
+                <p class="section-subtitle">
+                    SCIBLITZ 1.0 is a student-led model conference crafted by IEEE CUET Student Branch. It blends
+                    academic
+                    rigour with engaging communication, empowering undergraduates and young researchers to present
+                    high-impact ideas within a concise and professional format.
+                </p>
+
+                <div class="about-grid">
+                    <div>
+                        <div class="about-highlight">
+                            Designed as a <strong>3 Minute Thesis–style competition</strong>, SCIBLITZ 1.0 focuses on
+                            how clearly and confidently
+                            participants can communicate their research. The event echoes real conference experiences —
+                            abstract submission, review, presentation and panel evaluation — but in a friendly,
+                            student-driven environment.
+                        </div>
+
+                        <div class="about-badges">
+                            <span class="badge">Student-Led Conference</span>
+                            <span class="badge">IEEE Professional Standard</span>
+                            <span class="badge">Fast-Paced Presentations</span>
+                            <span class="badge">National Visibility</span>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Powered by IEEE CUET SB</h3>
+                        <ul class="about-list">
+                            <li>
+                                <span class="bullet">◆</span>
+                                <span>Organized by <strong>IEEE CUET Student Branch</strong> with technical
+                                    co-sponsorship from
+                                    <strong>IEEE Bangladesh Section</strong>, ensuring academic quality and professional
+                                    standards.</span>
+                            </li>
+                            <li>
+                                <span class="bullet">◆</span>
+                                <span>Brings together <strong>undergraduate researchers, thesis students, and
+                                        innovators</strong>
+                                    from diverse universities across Bangladesh.</span>
+                            </li>
+                            <li>
+                                <span class="bullet">◆</span>
+                                <span>Promotes <strong>clear research communication</strong>, visual storytelling, and
+                                    constructive feedback from
+                                    experienced faculty and industry experts.</span>
+                            </li>
+                            <li>
+                                <span class="bullet">◆</span>
+                                <span>Acts as a launchpad for future publications, theses, and conference-level work by
+                                    motivating students to refine their ideas and slides.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRACKS -->
+        <section id="tracks">
+            <div class="container reveal">
+                <h2 class="section-title">Competition Tracks</h2>
+                <p class="section-subtitle">
+                    Choose the track that fits your work — or challenge yourself and participate in both.
+                    Each track has its own judging criteria, formats and prize categories.
+                </p>
+
+                <div class="tracks-grid">
+                    <!-- 3MT -->
+                    <article class="track-card">
+                        <p class="track-label">Track 01</p>
+                        <h3 class="track-title">3 Minute Thesis (3MT)</h3>
+                        <div class="track-body">
+                            Summarise your entire research project in a <strong>3-minute, single-slide
+                                presentation</strong>.
+                            Convince the judges that your problem matters, your method is solid, and your results are
+                            impactful —
+                            without drowning the audience in equations.
+                        </div>
+                        <ul class="track-list">
+                            <li>Team of up to <strong>6 members</strong>.</li>
+                            <li><strong>Phase 1:</strong> Abstract submission &amp; online screening.</li>
+                            <li><strong>Phase 2:</strong> On-site 3 minute presentations with Q&amp;A.</li>
+                            <li>Judged on clarity, structure, visuals, innovation &amp; delivery.</li>
+                        </ul>
+                        <div class="track-badge-row">
+                            <span class="track-badge">Elevator Pitch Skill</span>
+                            <span class="track-badge">Conference Simulation</span>
+                            <span class="track-badge">Judge &amp; Audience Score</span>
+                        </div>
+                    </article>
+
+                    <!-- Poster -->
+                    <article class="track-card">
+                        <p class="track-label">Track 02</p>
+                        <h3 class="track-title">Poster Presentation</h3>
+                        <div class="track-body">
+                            Translate your research into a visually appealing <strong>scientific poster</strong>.
+                            Tell the story of your objectives, methodology, findings and applications using graphics,
+                            diagrams and compelling design.
+                        </div>
+                        <ul class="track-list">
+                            <li>Team of up to <strong>3 members</strong>.</li>
+                            <li><strong>Phase 1:</strong> Draft poster submission for screening.</li>
+                            <li><strong>Phase 2:</strong> On-site poster display &amp; evaluation.</li>
+                            <li>Judged on content depth, design, originality &amp; explanation.</li>
+                        </ul>
+                        <div class="track-badge-row">
+                            <span class="track-badge">Technical Posters</span>
+                            <span class="track-badge">Graphical Storytelling</span>
+                            <span class="track-badge">Interactive Discussion</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIELDS -->
+        <section id="fields">
+            <div class="container reveal">
+                <h2 class="section-title">Fields of Research</h2>
+                <p class="section-subtitle">
+                    SCIBLITZ 1.0 is open to a wide range of engineering and science domains. You may submit work based
+                    on
+                    coursework projects, thesis work, independent research or competition entries.
+                </p>
+
+                <div class="fields-grid">
+                    <div class="field-card">
+                        <div class="field-title">Intelligent Connectivity &amp; Secure Networks</div>
+                        <div>Computer science, communication systems, cybersecurity, IoT and next-generation networking.
+                        </div>
+                    </div>
+                    <div class="field-card">
+                        <div class="field-title">Sustainable Power, Renewable Energy &amp; Smart Grids</div>
+                        <div>Power systems, solar PV, wind, grid integration, microgrids, storage and future energy
+                            systems.</div>
+                    </div>
+                    <div class="field-card">
+                        <div class="field-title">Robotics, Automation &amp; Intelligent Systems</div>
+                        <div>Autonomous systems, robotics, control, embedded systems and industrial automation.</div>
+                    </div>
+                    <div class="field-card">
+                        <div class="field-title">Microelectronics, VLSI &amp; Next-Gen Computing</div>
+                        <div>VLSI design, nanoelectronics, hardware accelerators, computing architectures and chip-level
+                            systems.</div>
+                    </div>
+                    <div class="field-card">
+                        <div class="field-title">Biomedical, EMBS &amp; Human-Centric Innovation</div>
+                        <div>Biomedical devices, health informatics, assistive technologies and signal processing for
+                            healthcare.</div>
+                    </div>
+                    <div class="field-card">
+                        <div class="field-title">Sustainable Cities, Data &amp; Emerging Fields</div>
+                        <div>Smart cities, climate-resilient planning, data-driven decision making and interdisciplinary
+                            STEM research.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section id="timeline">
+            <div class="container reveal">
+                <h2 class="section-title">Important Dates</h2>
+                <p class="section-subtitle">
+                    Follow the timeline closely to make sure your team doesn’t miss submissions, announcements or the
+                    final showcase.
+                    Exact times and updates will be shared through official SCIBLITZ channels.
+                </p>
+
+                <div class="timeline-grid">
+                    <div class="timeline-card">
+                        <div class="timeline-date">20 June</div>
+                        <div class="timeline-label">Registration &amp; Abstract Submission Opens</div>
+                        <p class="muted" style="margin-top:4px;">Teams submit abstracts for 3MT and draft concepts for
+                            poster track.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">30 June</div>
+                        <div class="timeline-label">Abstract &amp; Draft Poster Deadline</div>
+                        <p class="muted" style="margin-top:4px;">Screening committee evaluates submissions for the final
+                            round.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">3 July</div>
+                        <div class="timeline-label">Shortlist Announcement</div>
+                        <p class="muted" style="margin-top:4px;">Top teams are announced and invited to CUET for the
+                            on-site round.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">10 July</div>
+                        <div class="timeline-label">Final Topic &amp; Slot Confirmation</div>
+                        <p class="muted" style="margin-top:4px;">Teams refine slides and posters according to detailed
+                            guidelines.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">23 July</div>
+                        <div class="timeline-label">Top Presenters Announced (Pre-Finals)</div>
+                        <p class="muted" style="margin-top:4px;">Operational updates, stage order and logistics shared
+                            with teams.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">25 July</div>
+                        <div class="timeline-label">SCIBLITZ 1.0 Conference Day</div>
+                        <p class="muted" style="margin-top:4px;">On-campus 3MT sessions, poster gallery and award
+                            ceremony.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTRATION -->
+        <section id="registration">
+            <div class="container reveal">
+                <h2 class="section-title">Registration &amp; Fees</h2>
+                <p class="section-subtitle">
+                    IEEE and non-IEEE students are encouraged to participate. Fee structures are designed to remain
+                    accessible,
+                    while ensuring a well-organized conference experience for every team.
+                </p>
+
+                <div class="registration-card">
+                    <div>
+                        <div class="pill">
+                            <span class="dot"></span>
+                            TEAM-BASED ENTRY • LIMITED SLOTS PER TRACK
+                        </div>
+                        <h3 style="margin-top:14px; font-size:1.1rem;">3MT &amp; Poster Fee Structure</h3>
+
+                        <table class="fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>IEEE Members</th>
+                                    <th>Non-IEEE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3 Minute Thesis (per team)</td>
+                                    <td>BDT 600</td>
+                                    <td>BDT 700</td>
+                                </tr>
+                                <tr>
+                                    <td>Poster Presentation (per team)</td>
+                                    <td>BDT 400</td>
+                                    <td>BDT 500</td>
+                                </tr>
+                                <tr>
+                                    <td>Combined Registration (Both Tracks)</td>
+                                    <td>BDT 900</td>
+                                    <td>BDT 1100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="fee-tagline">
+                            *IEEE members receive discounted entry upon showing valid membership ID.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="reg-highlight-box">
+                            <strong>Payment Instructions:</strong><br>
+                            Fees must be paid through bKash/Nagad to the official SCIBLITZ account.
+                            Transaction details and confirmation form will be sent upon registration.
+                        </div>
+
+                        <p class="registration-note">
+                            ✔ One team may participate in both tracks.<br>
+                            ✔ Registration is non-refundable.<br>
+                            ✔ Ensure correct spelling of team member names for certificates.
+                        </p>
+
+                        <div class="btn-row" style="margin-top:18px;">
+                            <a href="https://example.com/3mt-form" target="_blank" class="btn">Register for 3MT</a>
+                            <a href="https://example.com/poster-form" target="_blank" class="btn btn-secondary">Register
+                                for Poster</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTICIPATION -->
+        <section id="participation">
+            <div class="container reveal">
+                <h2 class="section-title">Who Can Participate?</h2>
+                <p class="section-subtitle">
+                    SCIBLITZ is open to students from all engineering & science backgrounds.
+                    Teams can submit research works, thesis projects, competition entries or self-initiated innovations.
+                </p>
+
+                <div class="participation-grid">
+                    <div class="part-card">
+                        <div class="part-title">Undergraduate Students</div>
+                        <ul class="part-list">
+                            <li>Students from any engineering or science department.</li>
+                            <li>Solo or team-based participation allowed.</li>
+                            <li>Thesis or course project works are eligible.</li>
+                        </ul>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-title">Independent Researchers</div>
+                        <ul class="part-list">
+                            <li>Students working on personal or competition projects.</li>
+                            <li>Early-stage ideas or partial results accepted.</li>
+                            <li>Encouraged to submit posters or early abstracts.</li>
+                        </ul>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-title">Research-Oriented Clubs</div>
+                        <ul class="part-list">
+                            <li>University clubs may submit group research works.</li>
+                            <li>Mixed-year teams allowed.</li>
+                            <li>Cross-university collaboration permitted.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORGANIZERS -->
+        <section id="organizers">
+            <div class="container reveal">
+                <h2 class="section-title">Organizers & Partners</h2>
+                <p class="section-subtitle">
+                    Powered by IEEE CUET Student Branch with technical co-sponsorship from IEEE Bangladesh Section
+                    alongside contributions from all IEEE CUET technical societies.
+                </p>
+
+                <div class="org-grid">
+                    <div class="org-card">
+                        <div class="org-label">Organizer</div>
+                        <div class="org-name">IEEE CUET Student Branch</div>
+                        <div class="org-tag">Primary Host</div>
+                    </div>
+                    <div class="org-card">
+                        <div class="org-label">Technical Co-Sponsor</div>
+                        <div class="org-name">IEEE Bangladesh Section</div>
+                        <div class="org-tag">Academic Standard Support</div>
+                    </div>
+                    <div class="org-card">
+                        <div class="org-label">Support</div>
+                        <div class="org-name">IEEE CUET WIE AG</div>
+                        <div class="org-tag">Women in Engineering</div>
+                    </div>
+                    <div class="org-card">
+                        <div class="org-label">Support</div>
+                        <div class="org-name">IEEE CUET RAS / SPS / EMBS / PES / Photonics</div>
+                        <div class="org-tag">Technical Societies</div>
+                    </div>
+                </div>
+
+                <div class="partner-row">
+                    <strong>Media & Outreach Partners:</strong><br>
+                    University clubs, campus communities, and research societies collaborating to promote SCIBLITZ.
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-credit">
+                    © 2025 <span>SCIBLITZ 1.0</span> • IEEE CUET Student Branch
+                </div>
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#registration" class="footer-link">Register</a>
+                    <a href="#organizers" class="footer-link">Organizers</a>
+                    <a href="mailto:ieeecuet@ieee.org" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // SCROLL REVEAL
+        const revealElements = document.querySelectorAll('.reveal');
+        function handleReveal() {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) {
+                    el.classList.add('in-view');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleReveal);
+        handleReveal();
+
+        // COUNTDOWN TIMER (Conference Day: July 25, 2025)
+        const countdownDate = new Date("July 25, 2025 00:00:00").getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = countdownDate - now;
+
+            if (diff < 0) return;
+
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+            document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+        }
+        setInterval(updateCountdown, 1000);
+
+        // LIGHTNING BURST HERO BACKGROUND
+        const canvas = document.getElementById("hero-grid");
+        const ctx = canvas.getContext("2d");
+
+        let w, h;
+        let grid = [];
+        let spacing = 70; // distance between grid points
+        let speed = 0.25; // slow elegant drift
+
+        // Resize canvas
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = document.querySelector("#hero").offsetHeight;
+            initGrid();
+        }
+
+        window.addEventListener("resize", resize);
+
+        // Create grid points
+        function initGrid() {
+            grid = [];
+            for (let x = 0; x < w; x += spacing) {
+                for (let y = 0; y < h; y += spacing) {
+                    grid.push({
+                        x,
+                        y,
+                        ox: x,
+                        oy: y,
+                        driftX: (Math.random() - 0.5) * 2,
+                        driftY: (Math.random() - 0.5) * 2
+                    });
+                }
+            }
+        }
+
+        // Animation loop
+        function draw() {
+            ctx.clearRect(0, 0, w, h);
+
+            ctx.strokeStyle = "rgba(0, 174, 239, 0.2)";
+            ctx.lineWidth = 1;
+
+            // Draw grid lines
+            ctx.beginPath();
+            grid.forEach(p => {
+                let nx = p.x + p.driftX;
+                let ny = p.y + p.driftY;
+
+                // horizontal
+                ctx.moveTo(nx, ny);
+                ctx.lineTo(nx + spacing, ny);
+
+                // vertical
+                ctx.moveTo(nx, ny);
+                ctx.lineTo(nx, ny + spacing);
+            });
+            ctx.stroke();
+
+            // Draw glowing nodes
+            grid.forEach(p => {
+                let nx = p.x + p.driftX;
+                let ny = p.y + p.driftY;
+
+                ctx.beginPath();
+                ctx.arc(nx, ny, 2, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(255, 201, 60, 0.45)";
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = "rgba(255, 201, 60, 0.7)";
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                // drift movement
+                p.driftX += (Math.random() - 0.5) * 0.15;
+                p.driftY += (Math.random() - 0.5) * 0.15;
+
+                // limit drift to avoid chaos
+                p.driftX = Math.max(-3, Math.min(3, p.driftX));
+                p.driftY = Math.max(-3, Math.min(3, p.driftY));
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        resize();
+        draw();
+    </script>
+</body>
+
+</html>
