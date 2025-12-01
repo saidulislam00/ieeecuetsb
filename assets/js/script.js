@@ -211,20 +211,20 @@ window.addEventListener("scroll", () => {
 /* ===================== ADVANCED SMOOTH AUTO-SCROLL CAROUSEL ===================== */
 
 const events = [
-    { title:"IEEE SciBlitz 1.0", date:"January 2025", desc:"A national innovation competition featuring robotics, AI, and problem-solving challenges.", img:"assets/events/sciblitz.jpg", link:"#"},
-    { title:"TRISCEND 2025", date:"February 2025", desc:"A grand technology festival featuring robotics, coding, circuits, and creative challenges.", img:"assets/events/triscend.jpg", link:"#"},
-    { title:"Photonics Workshop", date:"March 2025", desc:"Hands-on learning with lasers, optical fiber, & photonic integrated systems.", img:"assets/events/photonics.jpg", link:"#"},
-    { title:"Machine Learning Bootcamp", date:"April 2025", desc:"A practical bootcamp covering ML algorithms, Python, and model deployment.", img:"assets/events/ml.jpg", link:"#"},
-    { title:"Robotics Hackathon", date:"May 2025", desc:"24-hour robotics challenge for building autonomous bots.", img:"assets/events/robotics.jpg", link:"#"},
-    { title:"AI in Healthcare", date:"June 2025", desc:"Explore real AI use-cases in diagnostics and prediction.", img:"assets/events/aihealth.jpg", link:"#"},
-    { title:"Cybersecurity Summit", date:"July 2025", desc:"Network security, penetration testing, and ethical hacking.", img:"assets/events/cyber.jpg", link:"#"}
+    { title:"Fireside Chat Inspiring Role Model Talks For The Future Leaders in STEM", date:"December 2025", desc:"A full-day learning experience designed to inspire, empower, and prepare aspiring female engineers for both professional and technical excellence.", img:"assets/images/FiresideChat.jpg", link:"https://www.facebook.com/share/1BuCd4p2tB/"},
+    { title:"LightMesh 1.0", date:"November 2025", desc:"a five-episode talk series by the IEEE Photonics Society CUET Chapter, crafted to take you on an immersive journey through the evolving world of light-based technologies.", img:"assets/images/Lightmesh.jpg", link:"https://www.facebook.com/events/1860927531486038/"},
+    { title:"Unlocking Opportunities: IEEE Membership Awareness & Growth", date:"November 2025", desc:"Guidance to the participants with valuable perspectives on unlocking growth through IEEE membership.", img:"assets/images/event3.jpg", link:"https://www.facebook.com/share/p/1DsQHi8yKq/"},
+    { title:"Digital Logic Design Contest", date:"October 2025", desc:"Digital Logic Design lies at the core of every modern technology; from microprocessors and embedded systems to robotics and VLSI design. Strengthening your foundation in DLD enhances your technical insight and prepares you for advanced domains of engineering innovation.", img:"assets/images/dld.jpg", link:"https://www.facebook.com/share/p/1BwNdsCPmv/"},
+    { title:"Celebrating IEEE Day", date:"October 2025", desc:"Explore endless opportunities for innovation, learning, and global connection with IEEE", img:"assets/images/event5.jpg", link:"https://www.facebook.com/share/p/1ALGgD4pKi/"},
+    { title:"TechTalk 1.0", date:"September 2025", desc:"A impromptu Speech competition.", img:"assets/images/techtalk.jpg", link:"https://www.facebook.com/events/1495432661582696/"},
+    { title:"Fresher's Frequency: Beyond Resonance", date:"October 2025", desc:"Reception of 23 Series", img:"assets/images/reception23.jpg", link:"https://www.facebook.com/events/1752805038760999"}
 ];
 
 const track = document.getElementById("carousel-track");
 const dots = document.getElementById("carousel-dots");
 
 let slideWidth = 0;
-let autoScrollSpeed = 0.5; // px per frame
+let autoScrollSpeed = 0.8; // px per frame
 let pos = 0;
 
 /* ---------- Render Slides ---------- */
