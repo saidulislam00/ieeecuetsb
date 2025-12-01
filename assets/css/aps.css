@@ -396,7 +396,53 @@ body {
   .mv-img:hover img {
     transform: scale(1.05);
   }
-  
+  /* ===================== RESPONSIVE (APS THEME) ===================== */
+@media (max-width: 900px) {
+
+  .mv-row,
+  .mv-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mv-img,
+  .mv-card {
+    width: 100%;
+  }
+
+  /* APS: keep texts centered for small screens */
+  .mv-card {
+    text-align: center;
+    padding: 28px;
+  }
+
+  .mv-card h3 {
+    text-align: center;
+    color: #b38bff; /* APS Purple */
+  }
+
+  .mv-card p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .mv-title {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #b38bff; /* APS Purple */
+  }
+
+  .mv-card {
+    padding: 24px;
+  }
+
+  .mv-img img {
+    border-radius: 14px;
+  }
+}
+
   /* ===================== EVENTS ===================== */
   #aps-events {
     padding:100px 50px;
