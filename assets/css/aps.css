@@ -396,9 +396,8 @@ body {
   .mv-img:hover img {
     transform: scale(1.05);
   }
-  /* ===================== RESPONSIVE (APS THEME) ===================== */
+/* ===================== RESPONSIVE (APS THEME) ===================== */
 @media (max-width: 900px) {
-
   .mv-row,
   .mv-row.reverse {
     flex-direction: column;
@@ -410,7 +409,6 @@ body {
     width: 100%;
   }
 
-  /* APS: keep texts centered for small screens */
   .mv-card {
     text-align: center;
     padding: 28px;
