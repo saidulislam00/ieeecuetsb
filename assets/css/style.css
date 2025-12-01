@@ -570,6 +570,9 @@ section {
 .society-card[href*="photonics"] p {
     color: #19ffff !important;
 }
+.society-card[href*="aps"] p {
+    color: #19ffff !important;
+}
 
 /* ================= FOOTER ================= */
 footer {
