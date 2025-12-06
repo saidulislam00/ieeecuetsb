@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Bangladesh Section - IEEE CUET Student Branch</title>
+    <link rel="icon" href="assets/images/ieee cuet sb logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Override hero background to remove image and show gradient -->
+    <style>
+        #hero {
+            background-image: none !important;
+            background: linear-gradient(135deg, #001a36 0%, #003060 50%, #004e92 100%) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .hero-overlay {
+            opacity: 0 !important;
+        }
+
+        .hero-content {
+            text-align: center !important;
+            width: 100%;
+        }
+
+        .hero-title {
+            text-align: center !important;
+        }
+
+        .hero-subtitle {
+            text-align: center !important;
+        }
+
+        /* Override stat card colors for IEEE page */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 48, 96, 0.8), rgba(0, 78, 146, 0.8)) !important;
+            border: 2px solid rgba(60, 242, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(60, 242, 255, 0.15) !important;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(60, 242, 255, 0.3) !important;
+            border-color: rgba(60, 242, 255, 0.6);
+        }
+
+        .stat-number {
+            color: var(--cyan-glow) !important;
+        }
+
+        .stat-label {
+            color: #d7eaff !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="assets/images/ieee-logo.png" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="dropdown-link">About ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ieee.html">IEEE</a></li>
+                        <li><a href="ieeebd.html">IEEE Bangladesh Section</a></li>
+                        <li><a href="ieeecuetsb.html">IEEE CUET Student Branch</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="wie.html">WIE Affinity Group</a></li>
+                        <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
+                        <li><a href="pes.html">Power & Energy Society (PES)</a></li>
+                        <li><a href="embs.html">IEEE EMBS Society</a></li>
+                        <li><a href="photonics.html">Photonics Society</a></li>
+                        <li><a href="sps.html">Signal Processing Society</a></li>
+                        <li><a href="aps.html">Antenna & Propagation Society (APS)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
+
+        </div>
+    </nav>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <header style="background: linear-gradient(135deg, #001a36 0%, #003060 50%, #004e92 100%); padding: 120px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 400px;">
+                <!-- Text Content -->
+                <div>
+                    <h1 style="font-size: 3rem; margin-bottom: 20px;">
+                        About <span style="color: #3cf2ff;">IEEE Bangladesh Section</span>
+                    </h1>
+                    <p style="font-size: 1.1rem; color: #d7eaff; line-height: 1.8; margin-bottom: 30px;">
+                        The world's leading professional association for the advancement of technology
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="https://www.ieeebd.com/" target="_blank" class="hero-btn">
+                            Learn More
+                        </a>
+                        <a href="https://www.ieeebd.com/conference/" target="_blank" class="hero-btn" style="background: transparent; border: 2px solid rgba(0, 136, 255, 0.6); box-shadow: 0 0 10px rgba(0, 136, 255, 0.3);">
+                            Recent Conferences
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <img src="https://lh3.googleusercontent.com/d/1eVUB-N1Lz0hntFph6mhpGb9ummfbAM1h=s2048" alt="IEEE-BD-SEC" style="max-width: 100%; height: 300px; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 40px rgba(60, 242, 255, 0.2);">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== SOCIETIES & CHAPTERS ===================== -->
+    <section id="ieeebd-societies" class="reveal" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Societies & Chapters</h2>
+            <p class="section-subtitle">
+                Technical communities driving innovation across Bangladesh
+            </p>
+
+            <!-- Societies Grid -->
+            <div class="core-values-grid" style="margin-top: 50px;">
+                
+                <!-- Society 1: Signal Processing -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-wave-square"></i>Signal Processing Society
+                    </h4>
+                    <p>
+                        <strong>CH10830:</strong> Signal Processing Society (SP01)
+                    </p>
+                </div>
+
+                <!-- Society 2: Computer -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-microchip"></i>Computer Society
+                    </h4>
+                    <p>
+                        <strong>CH10813:</strong> Computer Society (C16)
+                    </p>
+                </div>
+
+                <!-- Society 3: RAS -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-robot"></i>Robotics and Automation Society
+                    </h4>
+                    <p>
+                        <strong>CH10829:</strong> Robotics and Automation Society (RA24)
+                    </p>
+                </div>
+
+                <!-- Society 4: Photonics -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-lightbulb"></i>Photonics Society
+                    </h4>
+                    <p>
+                        <strong>CH10969:</strong> Photonics Society (PHO36)
+                    </p>
+                </div>
+
+                <!-- Society 5: EMBS -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-heartbeat"></i>Engineering in Medicine and Biology Society
+                    </h4>
+                    <p>
+                        <strong>CH10749:</strong> Engineering in Medicine and Biology Society (EMB18)
+                    </p>
+                </div>
+
+                <!-- Society 6: APS -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-satellite-dish"></i>Antennas & Propagation and Microwave Theory
+                    </h4>
+                    <p>
+                        <strong>CH11087:</strong> Antennas and Propagation Society (AP03) and Microwave Theory and Technology (MTT17)
+                    </p>
+                </div>
+
+                <!-- Society 7: PES -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-bolt"></i>Power and Energy Society
+                    </h4>
+                    <p>
+                        <strong>CH10197:</strong> Power and Energy Society (PE31)
+                    </p>
+                </div>
+
+                <!-- Society 8: Communications -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-broadcast-tower"></i>Communications Society
+                    </h4>
+                    <p>
+                        <strong>CH10557:</strong> Communications Society (COM19)
+                    </p>
+                </div>
+
+                <!-- Society 9: Electron Device -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-memory"></i>Electron Device & Solid State Circuit
+                    </h4>
+                    <p>
+                        <strong>CH10374:</strong> Electron Device Society (ED15) and Solid State Circuit (SSC37)
+                    </p>
+                </div>
+
+                <!-- Society 10: Industry Applications -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-industry"></i>Industry Applications Society
+                    </h4>
+                    <p>
+                        <strong>CH10843:</strong> Industry Applications Society (IA34)
+                    </p>
+                </div>
+
+                <!-- Society 11: Social Implications -->
+                <div class="value-card">
+                    <h4>
+                        <i class="fas fa-users"></i>Society on Social Implications of Technology
+                    </h4>
+                    <p>
+                        <strong>CH10844:</strong> Society on Social Implications of Technology (SIT30)
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXECUTIVE COMMITTEE ===================== -->
+    <section id="ieeebd-excom" class="reveal" style="background: linear-gradient(135deg, #000d1a 0%, #001428 100%); padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Executive Committee 2025</h2>
+            <p class="section-subtitle">
+                IEEE Bangladesh Section Executive Body
+            </p>
+
+            <!-- Executive Members List -->
+            <div class="exec-list">
+                
+                <div class="exec-row">
+                    <div class="exec-position">Chair</div>
+                    <div class="exec-details">
+                        Dr. M. Imamul Hassan Bhuiyan<br>
+                        <span>Professor, Department of EEE, BUET</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Vice Chair (Technical)</div>
+                    <div class="exec-details">
+                        Dr. Shahriar Khan<br>
+                        <span>Professor, Dept of EEE, IUB</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Vice Chair (Activity)</div>
+                    <div class="exec-details">
+                        Dr. Md. Maniruzzaman<br>
+                        <span>Professor, ECE Discipline, Khulna University</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Treasurer</div>
+                    <div class="exec-details">
+                        Md. Shohel Rana<br>
+                        <span>Executive Engineer, R&D, Cybernetics Hi-Tech Solutions (Pvt) Ltd.</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Secretary</div>
+                    <div class="exec-details">
+                        Dr. M Tanseer Ali<br>
+                        <span>Associate Professor, AIUB</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Nominations and Appointments Chair</div>
+                    <div class="exec-details">
+                        Dr. Celia Shahnaz<br>
+                        <span>Professor, Dept of EEE, BUET</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Past Chair</div>
+                    <div class="exec-details">
+                        Dr. Mohammed Moshiul Hoque<br>
+                        <span>Professor, Dept of CSE, CUET</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Student Activity Coordinator</div>
+                    <div class="exec-details">
+                        Dr Md Aminul Islam<br>
+                        <span>Assoc Professor, Dept of EECE, MIST</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Industrial Activity Coordinator</div>
+                    <div class="exec-details">
+                        Raihan Ur Rashid<br>
+                        <span>Director & Lead Engineer, Cybernetics Hi-Tech Solutions (Pvt) Ltd</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Awards Coordinator</div>
+                    <div class="exec-details">
+                        Dr. Mahmudul Hasan<br>
+                        <span>Associate Professor, Dept. of CSE, Comilla University</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Publicity Coordinator</div>
+                    <div class="exec-details">
+                        Dr. Md Ali Hossain<br>
+                        <span>Professor, Dept of CSE, RUET</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Humanitarian Activity Coordinator</div>
+                    <div class="exec-details">
+                        Dr. Md. Azad Hossain<br>
+                        <span>Professor, Dept of ETE, CUET</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Professional Activity Coordinator</div>
+                    <div class="exec-details">
+                        Dr. Nafees Mansoor<br>
+                        <span>Associate Professor, Dept. of CSE, ULAB</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Educational Activity Coordinator</div>
+                    <div class="exec-details">
+                        Dr. Sheikh Md. Rabiul Islam<br>
+                        <span>Professor, Dept. of ECE, KUET</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Membership Development Coordinator</div>
+                    <div class="exec-details">
+                        Dr. Kamruddin Nur<br>
+                        <span>Professor, Computer Science, AIUB</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">Conference Coordinator</div>
+                    <div class="exec-details">
+                        Muhammad Sajjadur Rahim<br>
+                        <span>Professor, Dept of ICE, Univ. of Rajshahi</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">YP Chair</div>
+                    <div class="exec-details">
+                        Md. Shohel Rana<br>
+                        <span>Executive Engineer, R&D, Cybernetics Hi-Tech Solutions (Pvt) Ltd.</span>
+                    </div>
+                </div>
+
+                <div class="exec-row">
+                    <div class="exec-position">WIE Chair</div>
+                    <div class="exec-details">
+                        Ms. Shoilie Chakma<br>
+                        <span>Lecturer, Dept of EEE, BUET</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="contact">
+        <div class="footer-inner">
+            <p>© 2025 IEEE CUET Student Branch</p>
+
+            <div class="footer-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Gmail</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include the main JS file for navbar functionality -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

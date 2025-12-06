@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE CUET Student Branch - About Us</title>
+    <link rel="icon" href="assets/images/ieee cuet sb logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Disable default hero slider backgrounds for this page */
+        #hero {
+            background-image: none !important;
+            position: relative;
+        }
+
+        /* Custom hero background slider for CUET SB page */
+        #hero::before,
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        #hero::before {
+            background-image: url('https://lh3.googleusercontent.com/d/1a-ZetY_03vpu69ctT-pDlHju48cl7hzv=s2048');
+            animation: fade1 15s infinite;
+        }
+
+        #hero::after {
+            background-image: url('https://lh3.googleusercontent.com/d/1NyStaII4TO7k6UP3Aapc4DO-SjWLttlg=s2048');
+            animation: fade2 15s infinite;
+        }
+
+        @keyframes fade1 {
+            0%, 30% { opacity: 1; }
+            33%, 97% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fade2 {
+            0%, 30% { opacity: 0; }
+            33%, 63% { opacity: 1; }
+            66%, 100% { opacity: 0; }
+        }
+
+        /* Third image using body pseudo-element to avoid loading duplicates */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://lh3.googleusercontent.com/d/1Lfw9KEw6PuMYLwMhD_8sLabgvAtclh_K=s2048');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            animation: fade3 15s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fade3 {
+            0%, 63% { opacity: 0; }
+            66%, 97% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="assets/images/ieee-logo.png" class="logo-img">
+                </a>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="dropdown-link">About ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ieee.html">IEEE</a></li>
+                        <li><a href="ieeebd.html">IEEE Bangladesh Section</a></li>
+                        <li><a href="ieeecuetsb.html">IEEE CUET Student Branch</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="wie.html">WIE Affinity Group</a></li>
+                        <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
+                        <li><a href="pes.html">Power & Energy Society (PES)</a></li>
+                        <li><a href="embs.html">IEEE EMBS Society</a></li>
+                        <li><a href="photonics.html">Photonics Society</a></li>
+                        <li><a href="sps.html">Signal Processing Society</a></li>
+                        <li><a href="aps.html">Antenna & Propagation Society (APS)</a></li>
+                    </ul>
+                </li>
+                <li><a href="./index.html">Events</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
+
+        </div>
+    </nav>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <header id="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">
+                <span>Accelerating</span> Knowledge and Innovation
+            </h1>
+
+            <p class="hero-subtitle" id="hero-subtitle">
+                Advancing the academic and professional growth of CUET students through collaborative research, innovation and technical proficiency.
+            </p>
+
+            <a href="#societies" class="hero-btn" id="hero-btn">Explore Our Societies</a>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="hero-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </header>
+
+    <!-- ===================== SOCIETIES & AFFINITY GROUPS ===================== -->
+    <section id="societies" class="reveal" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Societies & Affinity Groups</h2>
+            <p class="section-subtitle">
+                Explore our technical communities driving innovation at CUET
+            </p>
+
+            <!-- Societies Grid with Images -->
+            <div class="society-grid">
+
+                <!-- WIE Affinity Group -->
+                <a href="wie.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1XPfVnp0h9JWGSKu5MuuHQIQe_r5O-iyP=s2048" alt="IEEE WIE Affinity Group CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE WIE Affinity Group</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- RAS -->
+                <a href="ras.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1xj_erDGbSabPqPJOhsrvOnAXvkRVEUJU=s2048" alt="IEEE RAS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE RAS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SPS -->
+                <a href="sps.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/196laknzmTE-LNCg38SPj5oWbetJepJ8P=s2048" alt="IEEE SPS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE SPS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Photonics -->
+                <a href="photonics.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1wt4N7SN1ho6V9cu-yf6SiKZozuVoGwq4=s2048" alt="IEEE Photonics Society CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE Photonics</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Computer Society -->
+                <a href="#" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1fI4Y98ZqvM1fN0wG9psi55ICUS-kCnok=s2048" alt="IEEE Computer Society CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE Computer Society</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PES -->
+                <a href="pes.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1XeFRzOMxXLpfaBnX9LvrnE0zDUTZ65qf=s2048" alt="IEEE PES CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE PES</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EMBS -->
+                <a href="embs.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1Tt8lGzKeYLxwQvKT4WnHN5FhNrAryYT1=s2048" alt="IEEE EMBS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE EMBS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- APS -->
+                <a href="aps.html" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1OnTZYdAQv7J7r2zeHUpTlaTlqDo25H5w=s2048" alt="IEEE APS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE APS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXECUTIVE COMMITTEE ===================== -->
+    <section id="cuetsb-excom" class="reveal" style="background: linear-gradient(135deg, #000d1a 0%, #001428 100%); padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Executive Committee</h2>
+            <p class="section-subtitle">
+                Leadership driving innovation at IEEE CUET Student Branch
+            </p>
+
+            <!-- Advisory Panel -->
+            <div class="teachers">
+                <!-- Advisor 1 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1owOBlTwT4uD5n7TmAv24YiL6P7OXHxx8=s2048" alt="Dr. Mohammad Shamsul Arefin" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Mohammad Shamsul Arefin</h3>
+                    <p class="committee-dept">Professor, Department of Computer Science & Engineering</p>
+                </div>
+
+                <!-- Advisor 2 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1wEtzP77hc4P-4b_fxaKc3liQgyRvNKed=s2048" alt="Dr. Jamal Uddin Ahmed" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Jamal Uddin Ahmed</h3>
+                    <p class="committee-dept">Professor, Department of Mechanical Engineering</p>
+                </div>
+
+                <!-- Advisor 3 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1nq_8KHez0M35aBl_UQYE1YOJteON87U4=s2048" alt="Dr. Muhammad Ahsanullah" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Muhammad Ahsanullah</h3>
+                    <p class="committee-dept">Professor, Department of Electrical and Electronic Engineering</p>
+                </div>
+
+                <!-- Advisor 4 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1-VEdKtkFVEK1qTAoOXgSB2_1ggg1BPpH=s2048" alt="Dr. Nur Mohammad" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Nur Mohammad</h3>
+                    <p class="committee-dept">Professor, Department of Electrical and Electronic Engineering</p>
+                </div>
+            </div>
+
+            <!-- Counselor -->
+            <div class="teachers single">
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1BthWEjYp1wttXhLnvzXqbkYry6vu5TSm=s2048" alt="Dr. Mehdi Hasan Chowdhury" class="committee-img">
+                    <h3 class="committee-role">Counselor</h3>
+                    <h3 class="committee-name">Dr. Mehdi Hasan Chowdhury</h3>
+                    <p class="committee-dept">Professor, Department of Electrical and Electronic Engineering</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="contact">
+        <div class="footer-inner">
+            <p>© 2025 IEEE CUET Student Branch</p>
+
+            <div class="footer-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Disable hero slider for this page - BEFORE loading script.js
+        const disableHeroSlider = true;
+        
+        // Override the DOMContentLoaded to prevent slider initialization
+        const originalAddEventListener = document.addEventListener;
+        document.addEventListener = function(type, listener, options) {
+            if (type === 'DOMContentLoaded' && disableHeroSlider) {
+                // Skip the hero slider initialization
+                return;
+            }
+            return originalAddEventListener.call(this, type, listener, options);
+        };
+    </script>
+
+    <!-- Include the main JS file -->
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        // Restore addEventListener and disable dots
+        document.addEventListener = originalAddEventListener;
+        
+        // Disable dot interactions
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.style.pointerEvents = 'none';
+                dot.onclick = null;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

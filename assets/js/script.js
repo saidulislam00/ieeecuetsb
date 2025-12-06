@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial load
     updateSlide(0);
 });
-// ===================== STATS COUNT-UP =====================
+// ===================== STATS COUNT-UP at About IEEE Page =====================
 const counters = document.querySelectorAll(".stat-number");
 let statsAnimated = false;
 
