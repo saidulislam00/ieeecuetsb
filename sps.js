@@ -106,3 +106,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =============== EVENT CARD SLIDESHOW =============== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const slideImages = [
+        "https://lh3.googleusercontent.com/d/1UmvwLsGM3h3NUrXdv_nzR_F5z1qqR6nX",
+        "https://lh3.googleusercontent.com/d/1jT8q_UavDzBlK5trwTJcWuLlhLCYLh3Z",
+        "https://lh3.googleusercontent.com/d/1QioGER7b-vuOxOxb9ywYlaqPWPBFqRDb"
+    ];
+
+    let index = 0;
+    const slideImg = document.getElementById("slide-img");
+
+    if (!slideImg) return; // Prevent error if slide doesn't exist on some pages
+
+    function changeSlide() {
+        slideImg.style.opacity = 0;
+
+        setTimeout(() => {
+            slideImg.src = slideImages[index];
+            slideImg.style.opacity = 1;
+
+            index = (index + 1) % slideImages.length;
+        }, 400);
+    }
+
+    // Set the first image
+    slideImg.src = slideImages[0];
+
+    // Change every 2 seconds
+    setInterval(changeSlide, 2000);
+});

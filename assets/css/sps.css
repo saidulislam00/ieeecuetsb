@@ -386,8 +386,8 @@ body {
   }
   
   .mv-img img {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
     object-fit: cover;
     transition: 0.3s ease;
   }
@@ -436,6 +436,19 @@ body {
     object-fit: cover;
     border-radius: 12px;
   }
+
+ 
+.slideshow {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.drive-img {
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
   
   .event-title {
       margin: 15px 0 10px;
