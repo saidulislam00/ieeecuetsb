@@ -910,3 +910,194 @@ footer {
     opacity: 1;
     background: #00e0ff;
 }
+/* ===================== CORE VALUES SECTION ===================== */
+.core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    background: rgba(0, 48, 96, 0.6);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--cyan-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(60, 242, 255, 0.2);
+}
+
+.value-card h4 {
+    color: var(--cyan-glow);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.value-card h4 i {
+    margin-right: 10px;
+}
+
+.value-card p {
+    color: #d7eaff;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ===================== EXECUTIVE COMMITTEE / LIST SECTION ===================== */
+.exec-list {
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+.exec-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(60, 242, 255, 0.2);
+    align-items: start;
+}
+
+.exec-position {
+    color: var(--cyan-glow);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.exec-details {
+    color: #d7eaff;
+    line-height: 1.6;
+}
+
+.exec-details span {
+    color: rgba(212, 234, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* ===================== SOCIETY CARDS WITH IMAGE OVERLAY ===================== */
+.society-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.society-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.society-card-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgba(60, 242, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.society-card-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(60, 242, 255, 0.3);
+}
+
+.society-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.society-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 13, 26, 0.95), transparent);
+    padding: 30px 20px 20px;
+}
+
+.society-card-title {
+    color: var(--cyan-glow);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.society-card-subtitle {
+    color: rgba(212, 234, 255, 0.8);
+    font-size: 0.85rem;
+    margin: 5px 0 0;
+}
+
+/* ===================== EXECUTIVE COMMITTEE CARDS ===================== */
+.teachers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 600px;
+    margin: 50px auto 30px;
+}
+
+.teachers.single {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+}
+
+.teachers .committee-card {
+    width: 100%;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.committee-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(60, 242, 255, 0.3);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.committee-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(60, 242, 255, 0.3);
+}
+
+.committee-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid var(--cyan-glow);
+    background: rgba(60, 242, 255, 0.1);
+}
+
+.committee-name {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.committee-role {
+    color: var(--cyan-glow);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.committee-dept {
+    color: rgba(212, 234, 255, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
