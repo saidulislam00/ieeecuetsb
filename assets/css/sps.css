@@ -502,6 +502,7 @@ body {
   .teachers .committee-card{
     width: 100%;
     max-width: 240px;
+    text-align: center;
   }
   .committee-grid {
     display: grid;
