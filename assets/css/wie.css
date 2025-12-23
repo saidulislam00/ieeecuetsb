@@ -471,105 +471,320 @@ section:not(#wie-hero) {
 
 /* Title */
 .mv-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--neon-soft);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
-    /* Removed individual reveal styles here, using the common .reveal class */
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 154, 255, 0.3);
 }
 
 .mv-title::after {
     content: "";
-    width: 120px;
-    height: 4px;
-    background: var(--neon-soft);
+    width: 150px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--neon-soft), var(--purple-primary));
     position: absolute;
-    bottom: -6px;
-    left: 0;
-    border-radius: 2px;
-    opacity: 0.6;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(255, 154, 255, 0.5);
 }
 
-/* Row wrapper */
-.mv-row {
-    display: flex;
+/* Intro Card */
+.mv-intro-card {
+    background: linear-gradient(135deg, rgba(100, 30, 140, 0.5), rgba(70, 20, 100, 0.5));
+    border: 2px solid rgba(255, 154, 255, 0.4);
+    border-radius: 18px;
+    padding: 40px;
+    margin-bottom: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(175, 52, 255, 0.2), inset 0 0 20px rgba(255, 154, 255, 0.1);
+    transition: 0.35s ease;
+}
+
+.mv-intro-card:hover {
+    border-color: var(--neon-soft);
+    box-shadow: 0 15px 40px rgba(255, 154, 255, 0.3), inset 0 0 20px rgba(255, 154, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.mv-intro-card h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.mv-intro-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e7d9ff;
+    margin: 0;
+}
+
+/* Content Wrapper for Vision & Mission */
+.mv-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 50px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.mv-cards-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
-    margin-bottom: 60px;
-    align-items: stretch;
+    order: 2;
 }
 
-.mv-row.reverse {
-    flex-direction: row-reverse;
-}
-
-/* ===================== MISSION / VISION CARD ===================== */
-.mv-card {
-    flex: 1;
-    background: #4c1d72; /* WIE purple theme */
-    padding: 35px;
-    border-radius: 16px;
-    color: white;
+/* ZIGZAG LAYOUT */
+.mv-zigzag-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-    box-shadow: 0 0 0 rgba(255, 60, 255, 0.0);
+    gap: 60px;
+    margin-top: 20px;
 }
 
-/* ⭐ NEW: Glow hover effect on card */
-.mv-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 28px rgba(255, 60, 255, 0.45);
+.mv-zigzag-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-/* Headings + text */
-.mv-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    color: var(--neon-soft);
+.mv-zigzag-row.reverse-row {
+    direction: rtl;
 }
 
-.mv-card p {
-    line-height: 1.7;
-    font-size: 1rem;
+.mv-zigzag-row.reverse-row > * {
+    direction: ltr;
 }
 
-/* ===================== IMAGE AREA ===================== */
-.mv-img {
-    flex: 1;
-    border-radius: 16px;
+/* Image Wrapper - Now on the left with more prominence */
+.mv-img-wrapper {
+    border-radius: 20px;
     overflow: hidden;
     transition: 0.4s ease;
+    order: 1;
+    position: relative;
+    box-shadow: 0 0 0 rgba(175, 52, 255, 0.3);
+    height: 550px;
 }
 
-/* Image base */
-.mv-img img {
+.mv-img-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 154, 255, 0.08), rgba(175, 52, 255, 0.08));
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.mv-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    transition: 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    border: 3px solid rgba(255, 154, 255, 0.4);
+    display: block;
+}
+
+.mv-img-wrapper:hover img {
+    transform: scale(1.08);
+    border-color: var(--neon-soft);
+    box-shadow: 0 20px 60px rgba(255, 154, 255, 0.4), 0 0 40px rgba(255, 154, 255, 0.3), inset 0 0 30px rgba(255, 154, 255, 0.1);
+}
+
+/* Vision & Mission Cards */
+.mv-card {
+    background: linear-gradient(135deg, rgba(70, 20, 100, 0.7), rgba(50, 10, 80, 0.7));
+    border: 2px solid rgba(255, 154, 255, 0.3);
     border-radius: 16px;
-    transition: 0.4s ease;
+    padding: 50px;
+    transition: 0.35s ease;
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
 }
 
-/* ⭐ WIE magenta image glow */
-.mv-img:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(255, 60, 255, 0.55);
+/* Gradient background effect */
+.mv-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 154, 255, 0.1) 0%, transparent 70%);
+    animation: moveGradient 8s ease-in-out infinite;
+    pointer-events: none;
 }
 
-/* Removed repeated animation keyframes from card/image hover for simplicity, 
-   the transform and shadow should be enough */
+@keyframes moveGradient {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+}
 
+.mv-card h3 {
+    font-size: 1.8rem;
+    color: var(--neon-soft);
+    margin: 0 0 25px 0;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.mv-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.mv-list li {
+    font-size: 1rem;
+    line-height: 2;
+    color: #f0e6ff;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.mv-list li:last-child {
+    margin-bottom: 0;
+}
+
+.mv-bullet {
+    color: var(--neon-soft);
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Vision Card Specific */
+.vision-card {
+    border-top: 3px solid rgba(255, 154, 255, 0.6);
+    box-shadow: 0 0 20px rgba(255, 154, 255, 0.15), inset 0 0 30px rgba(255, 154, 255, 0.05);
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-soft);
+    box-shadow: 0 15px 40px rgba(255, 154, 255, 0.35), inset 0 0 30px rgba(255, 154, 255, 0.1);
+}
+
+/* Mission Card Specific */
+.mission-card {
+    border-top: 3px solid rgba(200, 104, 255, 0.6);
+    box-shadow: 0 0 20px rgba(200, 104, 255, 0.15), inset 0 0 30px rgba(200, 104, 255, 0.05);
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(200, 104, 255, 0.9);
+    box-shadow: 0 15px 40px rgba(200, 104, 255, 0.35), inset 0 0 30px rgba(200, 104, 255, 0.1);
+}
 
 @media (max-width: 860px) {
-    .mv-row,
-    .mv-row.reverse {
-        flex-direction: column;
+    .mv-content-wrapper {
+        grid-template-columns: 1fr;
     }
 
-    .mv-card,
-    .mv-img img {
-        transform: none !important;
+    .mv-cards-column {
+        order: 2;
+    }
+
+    .mv-img-wrapper {
+        order: 1;
+    }
+
+    .mv-img-wrapper img {
+        min-height: 300px;
+    }
+
+    .mv-zigzag-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .mv-zigzag-row.reverse-row {
+        direction: ltr;
+    }
+
+    .mv-title {
+        font-size: 2rem;
+    }
+
+    .mv-intro-card {
+        padding: 30px;
+    }
+
+    .mv-card {
+        padding: 30px;
+    }
+}
+
+/* ===================== WHY JOIN SECTION ===================== */
+#why-join-section {
+    padding: 80px 20px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-join-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.why-join-card {
+    background: linear-gradient(135deg, rgba(70, 20, 100, 0.6), rgba(100, 30, 140, 0.6));
+    border: 1px solid rgba(255, 154, 255, 0.3);
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+    transition: 0.35s ease;
+    backdrop-filter: blur(10px);
+}
+
+.why-join-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-soft);
+    box-shadow: 0 0 28px rgba(255, 154, 255, 0.45), 0 0 15px rgba(175, 52, 255, 0.3);
+    background: linear-gradient(135deg, rgba(100, 30, 140, 0.8), rgba(130, 40, 170, 0.8));
+}
+
+.why-join-icon {
+    font-size: 2.5rem;
+    color: var(--neon-soft);
+    margin-bottom: 15px;
+}
+
+.why-join-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.why-join-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e7d9ff;
+}
+
+@media (max-width: 768px) {
+    .why-join-grid {
+        grid-template-columns: 1fr;
     }
 }
 /* ===================== WIE EVENTS ===================== */
@@ -725,11 +940,11 @@ section:not(#wie-hero) {
 
 .top-counselors {
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 15px;
+    grid-template-columns: auto auto;
+    gap: 80px 60px;
     justify-content: center;
     align-items: start;
-    margin: 0 auto 28px;
+    margin: 60px auto 28px;
 }
 
 .top-counselors .committee-card.senior {
@@ -739,22 +954,25 @@ section:not(#wie-hero) {
     padding: 20px;
 }
 
-/* Moderator centered on first row, spanning middle column */
+/* First Advisor on first row, left side */
 .top-counselors .committee-card:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+/* Second Advisor on first row, right side */
+.top-counselors .committee-card:nth-child(2) {
     grid-column: 2 / 3;
     grid-row: 1;
-    margin-bottom: 12px;
 }
 
-/* Advisors on second row with proper spacing */
-.top-counselors .committee-card:nth-child(2) {
-    grid-column: 1 / 2;
-    grid-row: 2;
-}
-
+/* Moderator on second row, centered */
 .top-counselors .committee-card:nth-child(3) {
-    grid-column: 3 / 4;
+    grid-column: 1 / -1;
     grid-row: 2;
+    justify-self: center;
+    width: 240px;
+    margin-top: 12px;
 }
 
 @media (max-width: 600px) {
@@ -767,9 +985,9 @@ section:not(#wie-hero) {
         width: 100%;
         max-width: 420px;
     }
-    .top-counselors .committee-card:nth-child(2),
     .top-counselors .committee-card:nth-child(3) {
         grid-column: 1;
+        justify-self: center;
     }
 }
 
