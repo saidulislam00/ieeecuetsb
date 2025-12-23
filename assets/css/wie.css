@@ -714,12 +714,63 @@ section:not(#wie-hero) {
     transition: 0.35s ease;
 }
 
-/* Counselor highlight */
+/* Counselor highlight - used only in .top-counselors */
 .committee-card.senior {
     border-color: rgba(255, 80, 255, 0.55);
     box-shadow: 0 0 18px rgba(255, 80, 255, 0.35);
-    width: 220px;
-    margin: 40px auto;
+}
+
+
+
+
+.top-counselors {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    justify-content: center;
+    align-items: start;
+    margin: 0 auto 28px;
+}
+
+.top-counselors .committee-card.senior {
+    margin: 0;
+    width: auto;
+    min-width: 240px;
+    padding: 20px;
+}
+
+/* Moderator centered on first row, spanning middle column */
+.top-counselors .committee-card:nth-child(1) {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    margin-bottom: 12px;
+}
+
+/* Advisors on second row with proper spacing */
+.top-counselors .committee-card:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.top-counselors .committee-card:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 2;
+}
+
+@media (max-width: 600px) {
+    .top-counselors {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .top-counselors .committee-card.senior {
+        grid-column: 1;
+        width: 100%;
+        max-width: 420px;
+    }
+    .top-counselors .committee-card:nth-child(2),
+    .top-counselors .committee-card:nth-child(3) {
+        grid-column: 1;
+    }
 }
 
 /* Hover effect */
@@ -727,6 +778,13 @@ section:not(#wie-hero) {
     transform: translateY(-8px);
     border-color: var(--neon-soft);
     box-shadow: 0 0 25px rgba(255, 154, 255, 0.45);
+}
+
+/* Hover effect for senior cards (moderators & advisors) */
+.top-counselors .committee-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-soft);
+    box-shadow: 0 0 30px rgba(255, 80, 255, 0.55);
 }
 
 /* Member images */
