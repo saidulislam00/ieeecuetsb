@@ -1013,55 +1013,9 @@ section:not(#wie-hero) {
 
 .top-counselors {
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 80px 60px;
-    justify-content: center;
-    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
     margin: 60px auto 28px;
-}
-
-.top-counselors .committee-card.senior {
-    margin: 0;
-    width: auto;
-    min-width: 240px;
-    padding: 20px;
-}
-
-/* First Advisor on first row, left side */
-.top-counselors .committee-card:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1;
-}
-
-/* Second Advisor on first row, right side */
-.top-counselors .committee-card:nth-child(2) {
-    grid-column: 2 / 3;
-    grid-row: 1;
-}
-
-/* Moderator on second row, centered */
-.top-counselors .committee-card:nth-child(3) {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-self: center;
-    width: 240px;
-    margin-top: 12px;
-}
-
-@media (max-width: 600px) {
-    .top-counselors {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-    .top-counselors .committee-card.senior {
-        grid-column: 1;
-        width: 100%;
-        max-width: 420px;
-    }
-    .top-counselors .committee-card:nth-child(3) {
-        grid-column: 1;
-        justify-self: center;
-    }
 }
 
 /* Hover effect */
