@@ -662,10 +662,25 @@ section:not(#wie-hero) {
 }
 
 .mv-bullet {
+    display: inline-flex;
+    align-items: center;
     color: var(--neon-soft);
     font-weight: 700;
-    margin-right: 10px;
+    margin-right: 12px;
     font-size: 1.1rem;
+    position: relative;
+}
+
+.mv-bullet::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--neon-soft);
+    border-radius: 50%; /* or 0% for a sharp diamond/square */
+    display: inline-block;
+    margin-right: 12px;
+    box-shadow: 0 0 8px var(--neon-soft); /* Soft glow */
+    vertical-align: middle;
 }
 
 /* Vision Card Specific */
