@@ -67,19 +67,33 @@ document.addEventListener("DOMContentLoaded", function () {
         // Enable smooth scrolling behavior for manual clicks
         eventsGrid.style.scrollBehavior = "smooth";
 
+        // Determine scroll distance based on viewport
+        const getScrollDistance = () => {
+            const isMobile = window.innerWidth <= 600;
+            if (isMobile) {
+                // On mobile, scroll by the full width of the grid container
+                return eventsContainer.offsetWidth - 40; // Account for padding
+            } else {
+                // On desktop, scroll by card width + gap
+                return 288; // 260px card + 28px gap
+            }
+        };
+
         // Manual button clicks
         scrollLeftBtn.addEventListener("click", () => {
-            console.log("Left button clicked, current scroll:", eventsGrid.scrollLeft);
+            const distance = getScrollDistance();
+            console.log("Left button clicked, scroll distance:", distance);
             eventsGrid.scrollBy({
-                left: -280,
+                left: -distance,
                 behavior: "smooth"
             });
         });
 
         scrollRightBtn.addEventListener("click", () => {
-            console.log("Right button clicked, current scroll:", eventsGrid.scrollLeft);
+            const distance = getScrollDistance();
+            console.log("Right button clicked, scroll distance:", distance);
             eventsGrid.scrollBy({
-                left: 280,
+                left: distance,
                 behavior: "smooth"
             });
         });
