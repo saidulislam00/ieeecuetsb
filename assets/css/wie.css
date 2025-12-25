@@ -851,6 +851,20 @@ section:not(#wie-hero) {
     flex: 1;
 }
 
+/* Mobile: One card visible at a time */
+@media (max-width: 600px) {
+    .events-grid {
+        grid-auto-columns: 100%;
+        gap: 0;
+        padding: 0;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .event-card {
+        scroll-snap-align: center;
+    }
+}
+
 /* Remove scrollbar styling for cleaner look */
 .events-grid::-webkit-scrollbar {
     height: 6px;
@@ -1027,10 +1041,39 @@ section:not(#wie-hero) {
 
 
 .top-counselors {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
     margin: 60px auto 28px;
+}
+
+.top-advisors {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.top-advisors .committee-card,
+.top-counselors > .committee-card {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+}
+
+/* Desktop: Ensure advisors stay side-by-side */
+@media (min-width: 601px) {
+    .top-advisors {
+        flex-wrap: nowrap;
+        width: auto;
+    }
+    
+    .top-counselors > .committee-card {
+        align-self: center;
+    }
 }
 
 /* Hover effect */
