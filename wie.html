@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IEEE WIE Affinity Group | CUET SB</title>
-
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/wie.css">
 </head>
 
@@ -29,7 +30,14 @@
             <!-- Navigation Menu -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#about" class="dropdown-link">About ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ieee.html">IEEE</a></li>
+                        <li><a href="ieeebd.html">IEEE Bangladesh Section</a></li>
+                        <li><a href="ieeecuetsb.html">IEEE CUET Student Branch</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
 
@@ -44,7 +52,7 @@
                     </ul>
                 </li>
 
-                <li><a href="#wie-events">Events</a></li>
+                <li><a href="#events">Events</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -138,38 +146,110 @@
 
 
     <section id="mv-section" class="reveal">
-        <h2 class="mv-title">Mission & Vision</h2>
+        <h2 class="mv-title">What is IEEE WIE?</h2>
 
-        <div class="mv-row">
-            <div class="mv-card">
-                <h3>Mission</h3>
-                <p>
-                    Our mission is to inspire, support, and mentor women pursuing careers in
-                    engineering and technology. We aim to create a global network that encourages
-                    professional growth and contributes to the realization of gender parity in STEM
-                    fields through innovative programs and dedicated advocacy.
-                </p>
-            </div>
-
-            <div class="mv-img">
-                <img src="assets/images/wieMission.jpg" alt="WIE Mission Image">
-            </div>
+        <div class="mv-intro-card reveal">
+            <h3>What is IEEE CUET WIE Affinity Group Student Branch?</h3>
+            <p>
+                It is a student branch within the IEEE (Institute of Electrical and Electronics Engineers) at Chittagong University of Engineering & Technology (CUET). It specifically focuses on the Women in Engineering (WIE) affinity group, aiming to support and advance women in technical fields. Being established in October 2018, it serves as a platform for female students to engage in technical activities, leadership development, and career advancement.
+            </p>
         </div>
 
-        <div class="mv-row reverse">
-            <div class="mv-img">
-                <img src="assets/images/wieVision.jpg" alt="WIE Vision Image">
+        <div class="mv-zigzag-wrapper">
+            <!-- Vision Row -->
+            <div class="mv-zigzag-row">
+                <div class="mv-card vision-card reveal">
+                    <h3>Vision</h3>
+                    <ul class="mv-list">
+                        <li><span class="mv-bullet">•</span> To increase the involvement of young females in technical fields.</li>
+                        <li><span class="mv-bullet">•</span> To empower women engineers and support their success in their careers.</li>
+                        <li><span class="mv-bullet">•</span> To advance technology for the beneficial activities of humanity.</li>
+                    </ul>
+                </div>
+
+                <div class="mv-img-wrapper reveal">
+                    <img src="assets/images/WIE MV 1.jpg" alt="WIE Vision">
+                </div>
             </div>
 
-            <div class="mv-card">
-                <h3>Vision</h3>
-                <p>
-                    To be the leading voice and platform for women in technological fields,
-                    cultivating a positive and inclusive environment where women engineers are
-                    recognized for their contributions, empowered to lead, and equipped to solve
-                    the world's most critical challenges. We envision a future where all genders
-                    are equally represented in technical leadership roles.
-                </p>
+            <!-- Mission Row (Reversed) -->
+            <div class="mv-zigzag-row reverse-row">
+                <div class="mv-img-wrapper reveal">
+                    <img src="assets/images/WIE MV 2.jpg" alt="WIE Mission">
+                </div>
+
+                <div class="mv-card mission-card reveal">
+                    <h3>Mission</h3>
+                    <ul class="mv-list">
+                        <li><span class="mv-bullet">•</span> To provide motivation and learning opportunities for female students in engineering.</li>
+                        <li><span class="mv-bullet">•</span> To create a supportive platform for young enthusiasts with diverse talents to innovate.</li>
+                        <li><span class="mv-bullet">•</span> To organize workshops and seminars focusing on engaging women in technological fields.</li>
+                        <li><span class="mv-bullet">•</span> To organize large national technical events such as techspark.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join WIE Section -->
+    <section id="why-join-section" class="reveal">
+        <h2 class="section-title">Why Join IEEE CUET WIE Affinity Group Student Branch?</h2>
+        
+        <div class="why-join-grid">
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Career Development</h3>
+                <p>Gain valuable skills and knowledge to enhance your career prospects in engineering and technology.</p>
+            </div>
+
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Networking</h3>
+                <p>Connect with fellow female students, professionals, and industry experts.</p>
+            </div>
+
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Leadership Opportunities</h3>
+                <p>Develop leadership skills through organizing events and taking on leadership roles within the branch.</p>
+            </div>
+
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Technical Advancement</h3>
+                <p>Participate in workshops, seminars, and technical events like Techspark to expand your technical knowledge.</p>
+            </div>
+
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Community Support</h3>
+                <p>Be part of a supportive community that encourages and empowers women in engineering.</p>
+            </div>
+
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>Contribute to innovative projects and initiatives that advance technology for the benefit of humanity.</p>
+            </div>
+
+            <div class="why-join-card reveal">
+                <div class="why-join-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Personal Growth</h3>
+                <p>Gain confidence and develop your personal and professional skills.</p>
             </div>
         </div>
     </section>
@@ -180,59 +260,103 @@
     <section id="wie-events" class="reveal">
         <h2 class="events-title">Featured Events</h2>
 
-        <div class="events-grid">
+        <div class="events-carousel-container">
+            <button class="carousel-btn carousel-btn-left" id="scrollLeft" aria-label="Scroll left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-            <div class="event-card reveal">
-                <img src="assets/images/techtalk.jpg" class="event-img">
+            <div class="events-grid" id="eventsGrid">
 
-                <div class="event-meta">
-                    <span class="meta-item">
-                        <i class="fa-regular fa-calendar"></i> 2023-09-19
-                    </span>
-                    <span class="meta-item tag">Non Technical</span>
+                <div class="event-card reveal">
+                    <img src="assets/images/techtalk.jpg" class="event-img">
+
+                    <div class="event-meta">
+                        <span class="meta-item">
+                            <i class="fa-regular fa-calendar"></i> 2023-09-19
+                        </span>
+                        <span class="meta-item tag">Non Technical</span>
+                    </div>
+
+                    <h3 class="event-title">Techtalk</h3>
+                    <p class="event-desc">
+                        Inter-university impromptu speech competition.
+                    </p>
+                    <a href="https://www.facebook.com/share/p/1A1JgkWeFV/" class="wie-event-btn">Learn More →</a>
                 </div>
 
-                <h3 class="event-title">Techtalk</h3>
-                <p class="event-desc">
-                    Inter-university impromptu speech competition.
-                </p>
-                <a href="https://www.facebook.com/share/p/1A1JgkWeFV/" class="wie-event-btn">Learn More →</a>
-            </div>
+                <div class="event-card reveal">
+                    <img src="https://lh3.googleusercontent.com/d/1dp_ceU2dIo3_UeA8Z_m7ObYqKeGAGdmM=s2048" class="event-img">
 
-            <div class="event-card reveal">
-                <img src="https://lh3.googleusercontent.com/d/1dp_ceU2dIo3_UeA8Z_m7ObYqKeGAGdmM=s2048" class="event-img">
+                    <div class="event-meta">
+                        <span class="meta-item">
+                            <i class="fa-regular fa-calendar"></i> 2023-07-25
+                        </span>
+                        <span class="meta-item tag">Technical</span>
+                    </div>
 
-                <div class="event-meta">
-                    <span class="meta-item">
-                        <i class="fa-regular fa-calendar"></i> 2023-07-25
-                    </span>
-                    <span class="meta-item tag">Technical</span>
+                    <h3 class="event-title">WIE Verse: From algorithm to compile</h3>
+                    <p class="event-desc">
+                        Tribiute to woman empowerment in STEM.
+                    </p>
+                    <a href="https://www.facebook.com/events/1748745239054789/" class="wie-event-btn">Learn More →</a>
                 </div>
 
-                <h3 class="event-title">WIE Verse: From algorithm to compile</h3>
-                <p class="event-desc">
-                    Tribiute to woman empowerment in STEM.
-                </p>
-                <a href="https://www.facebook.com/events/1748745239054789/" class="wie-event-btn">Learn More →</a>
-            </div>
+                <div class="event-card reveal">
+                    <img src="https://lh3.googleusercontent.com/d/1rAy-uCYpJOP4uiTHehL9B55ChgaOH51t=s2048" class="event-img">
 
-            <div class="event-card reveal">
-                <img src="https://lh3.googleusercontent.com/d/1rAy-uCYpJOP4uiTHehL9B55ChgaOH51t=s2048" class="event-img">
+                    <div class="event-meta">
+                        <span class="meta-item">
+                            <i class="fa-regular fa-calendar"></i> 20254-01-12
+                        </span>
+                        <span class="meta-item tag">Technical</span>
+                    </div>
 
-                <div class="event-meta">
-                    <span class="meta-item">
-                        <i class="fa-regular fa-calendar"></i> 20254-01-12
-                    </span>
-                    <span class="meta-item tag">Technical</span>
+                    <h3 class="event-title">Bridging Academia with industry</h3>
+                    <p class="event-desc">
+                        Mastering VLSI and Semi-Conductor Techniques.
+                    </p>
+                    <a href="https://www.facebook.com/share/p/17T8CYJ5x6/" class="wie-event-btn">Learn More →</a>
                 </div>
 
-                <h3 class="event-title">Bridging Academia with industry</h3>
-                <p class="event-desc">
-                    Mastering VLSI and Semi-Conductor Techniques.
-                </p>
-                <a href="https://www.facebook.com/share/p/17T8CYJ5x6/" class="wie-event-btn">Learn More →</a>
+                <div class="event-card reveal">
+                    <img src="https://lh3.googleusercontent.com/d/1YasOyvqZ33B0Pg-9y8sqnuVaUQD6Ug0g=s2048" class="event-img">
+
+                    <div class="event-meta">
+                        <span class="meta-item">
+                            <i class="fa-regular fa-calendar"></i> 2025-03-08
+                        </span>
+                        <span class="meta-item tag">Technical</span>
+                    </div>
+
+                    <h3 class="event-title">Voice of Change: Women in Engineering</h3>
+                    <p class="event-desc">
+                        Navigating Careers, Challenges & Opportunities. A webinar celebrating International Women's Day 2025 featuring esteemed speakers discussing their journeys in engineering.
+                    </p>
+                    <a href="https://www.facebook.com/share/p/17a2R5yHA4/" target="_blank" class="wie-event-btn">Learn More →</a>
+                </div>
+
+                <div class="event-card reveal">
+                    <img src="https://lh3.googleusercontent.com/d/1REPyjvDIEZvUaD9CiKafco46eOCK__N-=s2048" class="event-img">
+
+                    <div class="event-meta">
+                        <span class="meta-item">
+                            <i class="fa-regular fa-calendar"></i> 2024-10-25
+                        </span>
+                        <span class="meta-item tag">Technical</span>
+                    </div>
+
+                    <h3 class="event-title">Tech Spark 2.0</h3>
+                    <p class="event-desc">
+                        A national competition featuring three segments: Technical Article Writing, Project Showcasing, and Poster Presentation. Ignite your passion for technology and innovation.
+                    </p>
+                    <a href="https://web.facebook.com/events/345137127981399?active_tab=about" target="_blank" class="wie-event-btn">Learn More →</a>
+                </div>
+
             </div>
 
+            <button class="carousel-btn carousel-btn-right" id="scrollRight" aria-label="Scroll right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </section>
 
@@ -241,13 +365,33 @@
     <section id="wie-committee" class="reveal">
         <h2 class="committee-title">EXECUTIVE COMMITTEE</h2>
 
-            <!-- Counselor Top Card -->
-            <div class="committee-card senior reveal top-counselor">
-                <img src="https://ui-avatars.com/api/?name=Nusrat+Ikra&background=61006e&color=ffffff&rounded=true" class="committee-img">
-                <h3 class="role">Advisor</h3>
-                <p class="name">Nusrat Jahan Ikra</p>
-                <p class="name">Lecturer, Department of EEE</p>
-                <p class="name">CUET</p>
+            <div class="top-counselors">
+                <!-- Advisor Top Card -->
+                <div class="committee-card senior reveal top-counselor">
+                    <img src="https://lh3.googleusercontent.com/d/1Kon64LKpIXtxIqqNOW2BDu7fUm3jvm2A=s2048" class="committee-img" alt="Annesha Das">
+                    <h3 class="role">Advisor</h3>
+                    <p class="name">Annesha Das</p>
+                    <p class="name">Assistant Professor, Department of CSE</p>
+                    <p class="name">CUET</p>
+                </div>
+
+                <!-- Advisor Top Card -->
+                <div class="committee-card senior reveal top-counselor">
+                    <img src="https://app.cuet.ac.bd/assets/images/avatar/female-avatar.png" class="committee-img" alt="Priyanti Paul Tumpa">
+                    <h3 class="role">Advisor</h3>
+                    <p class="name">Priyanti Paul Tumpa</p>
+                    <p class="name">Assistant Professor, Department of ETE</p>
+                    <p class="name">CUET</p>
+                </div>
+
+                <!-- Moderator Top Card -->
+                <div class="committee-card senior reveal top-counselor">
+                    <img src="https://app.cuet.ac.bd/assets/images/avatar/female-avatar.png" class="committee-img" alt="Nusrat Jahan Iqra">
+                    <h3 class="role">Moderator</h3>
+                    <p class="name">Nusrat Jahan Iqra</p>
+                    <p class="name">Lecturer, Department of EEE</p>
+                    <p class="name">CUET</p>
+                </div>
             </div>
 
         <div class="committee-grid">
@@ -325,7 +469,7 @@
 
             <!-- Webmaster -->
             <div class="committee-card reveal">
-                <img src="https://lh3.googleusercontent.com/d/16h1LsjSmgCH-XQQWhyK_sV9NOxqMW4ke=s2048"
+                <img src= "https://lh3.googleusercontent.com/d/16h1LsjSmgCH-XQQWhyK_sV9NOxqMW4ke=s2048"
                     class="committee-img">
                 <h3 class="role">Webmaster</h3>
                 <p class="name">Samala Shoulin</p>
@@ -406,69 +550,93 @@
         </div>
     </section>
 
+    <!-- ===================== FOOTER ===================== -->
     <footer id="contact">
-        <div class="footer-inner">
-            <p>© 2025 IEEE CUET Student Branch</p>
+        <div class="footer-container">
+            <!-- Footer Top Section -->
+            <div class="footer-top">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/ieee-logo.png" alt="IEEE CUET SB Logo" style="height: 80px; margin-bottom: 15px;">
+                    </div>
+                    <h3 class="footer-title">IEEE CUET Student Branch</h3>
+                    <p class="footer-desc">
+                        Advancing Technology for Humanity through innovation, collaboration, and technical excellence at Chittagong University of Engineering & Technology.
+                    </p>
+                </div>
 
-            <div class="footer-links">
-                <a href="#" target="_blank">Facebook</a>
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">LinkedIn</a>
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="ieee.html"><i class="fas fa-chevron-right"></i> About IEEE</a></li>
+                        <li><a href="ieeebd.html"><i class="fas fa-chevron-right"></i> IEEE Bangladesh Section</a></li>
+                        <li><a href="ieeecuetsb.html"><i class="fas fa-chevron-right"></i> IEEE CUET SB</a></li>
+                        <li><a href="https://www.ieeer10.org/" target="_blank"><i class="fas fa-chevron-right"></i> IEEE R10</a></li>
+                    </ul>
+                </div>
+
+                <!-- Societies -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">Societies & Chapters</h4>
+                    <ul class="footer-list">
+                        <li><a href="wie.html"><i class="fas fa-chevron-right"></i> WIE Affinity Group</a></li>
+                        <li><a href="ras.html"><i class="fas fa-chevron-right"></i> RAS</a></li>
+                        <li><a href="sps.html"><i class="fas fa-chevron-right"></i> SPS</a></li>
+                        <li><a href="pes.html"><i class="fas fa-chevron-right"></i> PES</a></li>
+                        <li><a href="embs.html"><i class="fas fa-chevron-right"></i> EMBS</a></li>
+                        <li><a href="photonics.html"><i class="fas fa-chevron-right"></i> Photonics</a></li>
+                        <li><a href="aps.html"><i class="fas fa-chevron-right"></i> APS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">Get In Touch</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Chittagong University of Engineering & Technology<br>Chattogram 4349, Bangladesh</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ieeecuetsbofficial@cuet.ac.bd">ieeecuetsbofficial@cuet.ac.bd</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <a href="https://www.ieee.org" target="_blank">www.ieee.org</a>
+                        </li>
+                    </ul>
+                    <!-- Social Media -->
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/ieeecuetsb" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ieeesbcuet/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/ieee-cuet-student-branch/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@ieeecuetsb" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 IEEE CUET Student Branch. All Rights Reserved.</p>
+                <p class="footer-credit">Designed & Developed by IEEE CUET SB Web Management Team</p>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script>
-        /* WIE SCROLL REVEAL ANIMATION */
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const revealEls = document.querySelectorAll(
-                '#competitions, #wie-about-wrapper, #mv-section, #wie-events, #wie-committee, .competition-card, .event-card, .committee-card, .mv-row'
-            );
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('reveal');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                // Start revealing when 15% of the element is visible
-                threshold: 0.15
-            });
-
-            revealEls.forEach(el => observer.observe(el));
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-
-            /* =============== HAMBURGER MENU =============== */
-            const menuToggle = document.querySelector(".menu-toggle");
-            const navMenu = document.querySelector(".nav-links");
-
-            menuToggle.addEventListener("click", () => {
-                navMenu.classList.toggle("active");
-            });
-
-
-            /* =============== MOBILE DROPDOWN =============== */
-            document.querySelectorAll(".dropdown-link").forEach(link => {
-                link.addEventListener("click", function (e) {
-
-                    // Only trigger on mobile
-                    if (window.innerWidth <= 900) {
-                        e.preventDefault();
-
-                        // Toggle dropdown
-                        this.parentElement.classList.toggle("open");
-                    }
-                });
-            });
-
-        });
-
-    </script>
+    <script src="wie.js"></script>
 </body>
 
 </html>

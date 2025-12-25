@@ -487,6 +487,7 @@ body {
   .teachers .committee-card{
     width: 100%;
     max-width: 240px;
+    text-align: center;
   }
   .committee-grid {
     display: grid;
@@ -571,3 +572,170 @@ body {
     .mv-img, .mv-card { width: 100%; }
     .mv-card { text-align: left; }
   }
+/* ===================== PROFESSIONAL FOOTER - EMBS THEME ===================== */
+#contact {
+    background: linear-gradient(135deg, #0d0000 0%, #1a0000 100%);
+    padding: 60px 0 0;
+    border-top: 2px solid rgba(255, 70, 70, 0.3);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 70, 70, 0.2);
+}
+
+.footer-section {
+    color: #fff0f0;
+}
+
+.footer-logo img {
+    filter: brightness(0) invert(1);
+}
+
+.footer-title {
+    color: #ff4646;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-desc {
+    line-height: 1.7;
+    color: rgba(255, 240, 240, 0.8);
+    font-size: 0.9rem;
+}
+
+.footer-heading {
+    color: #ff4646;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 12px;
+}
+
+.footer-list li a {
+    color: rgba(255, 240, 240, 0.8);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-list li a:hover {
+    color: #ff4646;
+    padding-left: 5px;
+}
+
+.footer-list li a i {
+    font-size: 0.7rem;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: rgba(255, 240, 240, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-contact li i {
+    color: #ff4646;
+    font-size: 1rem;
+    margin-top: 3px;
+    min-width: 18px;
+}
+
+.footer-contact li a {
+    color: rgba(255, 240, 240, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact li a:hover {
+    color: #ff4646;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 70, 70, 0.1);
+    border: 1px solid rgba(255, 70, 70, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff4646;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    background: #ff4646;
+    color: #0d0000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 70, 70, 0.4);
+}
+
+.footer-bottom {
+    padding: 25px 0;
+    text-align: center;
+    color: rgba(255, 240, 240, 0.6);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-credit {
+    font-size: 0.85rem;
+    color: rgba(255, 240, 240, 0.5);
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
