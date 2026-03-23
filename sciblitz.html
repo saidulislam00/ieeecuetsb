@@ -1,1299 +1,2093 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SciBlitz 2.0 — IEEE CUET Student Branch</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --teal: #00b4a6;
-    --teal-light: #4ecdc4;
-    --purple-dark: #3d3269;
-    --purple-mid: #5a4d8a;
-    --purple-light: #8b7fc0;
-    --green-neon: #7fff47;
-    --cyan: #00e5ff;
-    --bg-deep: #080612;
-    --bg-mid: #0d0f1e;
-    --bg-card: rgba(13, 15, 30, 0.85);
-    --text: #e8e4f5;
-    --text-dim: #9b93c8;
-    --border: rgba(78, 205, 196, 0.2);
-    --glow-teal: 0 0 20px rgba(0,180,166,0.5);
-    --glow-purple: 0 0 20px rgba(90,77,138,0.6);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciBlitz 2.0 — IEEE CUET Student Branch</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --teal: #00b4a6;
+            --teal-light: #4ecdc4;
+            --purple-dark: #3d3269;
+            --purple-mid: #5a4d8a;
+            --purple-light: #8b7fc0;
+            --green-neon: #7fff47;
+            --cyan: #00e5ff;
+            --bg-deep: #080612;
+            --bg-mid: #0d0f1e;
+            --bg-card: rgba(13, 15, 30, 0.85);
+            --text: #e8e4f5;
+            --text-dim: #9b93c8;
+            --border: rgba(78, 205, 196, 0.2);
+            --glow-teal: 0 0 20px rgba(0, 180, 166, 0.5);
+            --glow-purple: 0 0 20px rgba(90, 77, 138, 0.6);
+        }
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  body {
-    background: var(--bg-deep);
-    color: var(--text);
-    font-family: 'Rajdhani', sans-serif;
-    overflow-x: hidden;
-    cursor: none;
-  }
+        body {
+            background: var(--bg-deep);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            cursor: none;
+        }
 
-  /* Custom cursor */
-  .cursor {
-    position: fixed; width: 12px; height: 12px;
-    background: var(--cyan); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%,-50%);
-    transition: transform 0.1s, opacity 0.2s;
-    mix-blend-mode: screen;
-  }
- 
+        /* Custom cursor */
+        .cursor {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: var(--cyan);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s, opacity 0.2s;
+            mix-blend-mode: screen;
+        }
 
-  /* Aurora canvas */
-  #aurora-canvas {
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0; pointer-events: none;
-    opacity: 0.35;
-  }
 
-  /* Grid overlay */
-  body::before {
-    content: '';
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image:
-      linear-gradient(rgba(78,205,196,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(78,205,196,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    z-index: 1; pointer-events: none;
-  }
+        /* Aurora canvas */
+        #aurora-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
 
-  /* ── NAVBAR ── */
-  nav {
-    position: fixed; top: 0; left: 0; width: 100%;
-    z-index: 1000;
-    padding: 0 2rem;
-    backdrop-filter: blur(20px);
-    background: rgba(8,6,18,0.75);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    height: 68px;
-    transition: all 0.3s;
-  }
-  nav.scrolled { background: rgba(8,6,18,0.95); box-shadow: var(--glow-teal); }
+        /* Grid overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(78, 205, 196, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(78, 205, 196, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 1;
+            pointer-events: none;
+        }
 
-  .nav-brand {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.15rem; font-weight: 800;
-    background: linear-gradient(90deg, var(--teal-light), var(--cyan));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-  }
+        /* ── NAVBAR ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0 2rem;
+            backdrop-filter: blur(20px);
+            background: rgba(8, 6, 18, 0.75);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            transition: all 0.3s;
+        }
 
-  .nav-links {
-    display: flex; align-items: center; gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.95rem; font-weight: 600;
-    color: var(--text-dim); text-decoration: none;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    transition: color 0.2s;
-    position: relative;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 1.5px;
-    background: var(--teal-light);
-    transition: width 0.3s;
-  }
-  .nav-links a:hover { color: var(--teal-light); }
-  .nav-links a:hover::after { width: 100%; }
+        nav.scrolled {
+            background: rgba(8, 6, 18, 0.95);
+            box-shadow: var(--glow-teal);
+        }
 
-  .nav-cta {
-    padding: 0.45rem 1.2rem;
-    background: linear-gradient(135deg, var(--teal), var(--purple-mid));
-    border: none; border-radius: 3px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.7rem; font-weight: 700;
-    color: #fff; text-decoration: none;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: none;
-    transition: all 0.3s;
-    box-shadow: var(--glow-teal);
-  }
-  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,180,166,0.7); }
+        .nav-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--teal-light), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
 
-  /* Hamburger */
-  .hamburger {
-    display: none; flex-direction: column; gap: 5px;
-    cursor: none; background: none; border: none; padding: 4px;
-  }
-  .hamburger span {
-    display: block; width: 24px; height: 2px;
-    background: var(--teal-light);
-    transition: all 0.3s;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
 
-  .mobile-menu {
-    display: none; position: fixed;
-    top: 68px; left: 0; width: 100%;
-    background: rgba(8,6,18,0.98);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(20px);
-    z-index: 999; padding: 1.5rem 2rem;
-    transform: translateY(-10px); opacity: 0;
-    transition: all 0.3s; pointer-events: none;
-  }
-  .mobile-menu.open {
-    display: block; transform: translateY(0);
-    opacity: 1; pointer-events: all;
-  }
-  .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
-  .mobile-menu a {
-    color: var(--text-dim); text-decoration: none;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.1rem; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .mobile-menu a:hover { color: var(--teal-light); }
-  .mobile-menu .m-cta {
-    display: inline-block; margin-top: 0.5rem;
-    padding: 0.6rem 1.5rem;
-    background: linear-gradient(135deg, var(--teal), var(--purple-mid));
-    color: #fff; border-radius: 3px;
-    font-family: 'Orbitron', sans-serif; font-size: 0.75rem;
-    font-weight: 700; letter-spacing: 0.1em;
-  }
+        .nav-links a {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
 
-  /* ── HERO ── */
-  #hero {
-    position: relative; z-index: 2;
-    min-height: 100vh;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-    overflow: hidden;
-  }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--teal-light);
+            transition: width 0.3s;
+        }
 
-  .hero-eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.25em;
-    color: var(--teal-light); text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    animation: fadeSlideUp 0.8s ease both;
-  }
+        .nav-links a:hover {
+            color: var(--teal-light);
+        }
 
-  .hero-logo {
-    width: min(420px, 85vw);
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 30px rgba(0,180,166,0.45));
-    animation: fadeSlideUp 0.9s ease both 0.1s;
-  }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-  .hero-tagline {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    font-weight: 500; letter-spacing: 0.12em;
-    color: var(--text-dim); max-width: 640px;
-    animation: fadeSlideUp 1s ease both 0.2s;
-    line-height: 1.7;
-  }
+        .nav-cta {
+            padding: 0.45rem 1.2rem;
+            background: linear-gradient(135deg, var(--teal), var(--purple-mid));
+            border: none;
+            border-radius: 3px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: none;
+            transition: all 0.3s;
+            box-shadow: var(--glow-teal);
+        }
 
-  .hero-date {
-    margin-top: 2rem;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    font-weight: 700;
-    background: linear-gradient(90deg, var(--teal-light), var(--cyan), var(--green-neon));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    letter-spacing: 0.1em;
-    animation: fadeSlideUp 1.1s ease both 0.3s;
-  }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 180, 166, 0.7);
+        }
 
-  .hero-hosted {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.15em;
-    color: var(--text-dim); margin-top: 0.4rem;
-    animation: fadeSlideUp 1.1s ease both 0.35s;
-  }
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: none;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
 
-  .hero-btns {
-    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    margin-top: 2.5rem;
-    animation: fadeSlideUp 1.2s ease both 0.4s;
-  }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--teal-light);
+            transition: all 0.3s;
+        }
 
-  .btn-primary {
-    padding: 0.85rem 2.2rem;
-    background: linear-gradient(135deg, var(--teal), var(--purple-mid));
-    border: none; border-radius: 3px;
-    font-family: 'Orbitron', sans-serif; font-size: 0.75rem;
-    font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: #fff; text-decoration: none; cursor: none;
-    transition: all 0.3s;
-    box-shadow: 0 0 25px rgba(0,180,166,0.4);
-    position: relative; overflow: hidden;
-  }
-  .btn-primary::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1), transparent);
-    transform: translateX(-100%); transition: transform 0.5s;
-  }
-  .btn-primary:hover::before { transform: translateX(100%); }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 40px rgba(0,180,166,0.7); }
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
 
-  .btn-outline {
-    padding: 0.85rem 2.2rem;
-    background: transparent;
-    border: 1.5px solid var(--teal-light);
-    border-radius: 3px;
-    font-family: 'Orbitron', sans-serif; font-size: 0.75rem;
-    font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--teal-light); text-decoration: none; cursor: none;
-    transition: all 0.3s;
-  }
-  .btn-outline:hover {
-    background: rgba(78,205,196,0.1);
-    box-shadow: 0 0 25px rgba(78,205,196,0.3);
-    transform: translateY(-3px);
-  }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
 
-  /* Countdown */
-  .countdown-wrap {
-    margin-top: 3rem;
-    animation: fadeSlideUp 1.3s ease both 0.5s;
-  }
-  .countdown-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.2em;
-    color: var(--text-dim); text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  .countdown {
-    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
-  }
-  .cd-unit {
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .cd-num {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 800; line-height: 1;
-    background: linear-gradient(180deg, var(--cyan), var(--teal));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    min-width: 70px; text-align: center;
-  }
-  .cd-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.2em;
-    color: var(--text-dim); text-transform: uppercase;
-    margin-top: 0.3rem;
-  }
-  .cd-sep {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem; color: var(--teal);
-    align-self: flex-start; padding-top: 0.1rem;
-    animation: blink 1s infinite;
-  }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
-  /* Scroll indicator */
-.scroll-hint {
-  position: relative;   /* remove absolute */
-  left: unset;
-  transform: unset;
-  margin-top: 3rem;     /* adjust this gap */
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  animation: fadeSlideUp 1.5s ease both 0.8s;
-}
-  .scroll-hint span {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem; letter-spacing: 0.2em;
-    color: var(--text-dim); text-transform: uppercase;
-  }
-  .scroll-arrow {
-    width: 20px; height: 30px;
-    border: 1.5px solid var(--teal-light); border-radius: 10px;
-    position: relative;
-  }
-  .scroll-arrow::after {
-    content: ''; position: absolute;
-    width: 4px; height: 8px; background: var(--teal-light);
-    border-radius: 2px; left: 50%; transform: translateX(-50%);
-    top: 5px; animation: scrollBounce 1.5s infinite;
-  }
-  @keyframes scrollBounce { 0%,100%{top:5px;opacity:1} 70%{top:13px;opacity:0} }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            width: 100%;
+            background: rgba(8, 6, 18, 0.98);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            padding: 1.5rem 2rem;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
 
-  /* ── SECTIONS COMMON ── */
-  section { position: relative; z-index: 2; padding: 6rem 2rem; }
+        .mobile-menu.open {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
 
-  .container { max-width: 1140px; margin: 0 auto; }
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
 
-  .section-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.3em;
-    color: var(--teal); text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section-tag::before {
-    content: ''; display: block; width: 30px; height: 1px;
-    background: var(--teal);
-  }
+        .mobile-menu a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
 
-  .section-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 800; line-height: 1.15;
-    margin-bottom: 1rem;
-  }
+        .mobile-menu a:hover {
+            color: var(--teal-light);
+        }
 
-  .gradient-text {
-    background: linear-gradient(90deg, var(--teal-light), var(--cyan), var(--purple-light));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  }
+        .mobile-menu .m-cta {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, var(--teal), var(--purple-mid));
+            color: #fff;
+            border-radius: 3px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
 
-  .section-desc {
-    font-size: 1.05rem; font-weight: 400;
-    color: var(--text-dim); line-height: 1.8;
-    max-width: 580px;
-  }
+        /* ── HERO ── */
+        #hero {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            overflow: hidden;
+        }
 
-  /* divider */
-  .divider {
-    width: 100%; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--teal), var(--purple-mid), transparent);
-    margin: 0; opacity: 0.4;
-  }
+        .hero-eyebrow {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            color: var(--teal-light);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeSlideUp 0.8s ease both;
+        }
 
-  /* ── ABOUT ── */
-  #about { background: transparent; }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-  }
-  .about-stats {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.5rem; margin-top: 2.5rem;
-  }
-  .stat-card {
-    padding: 1.5rem; background: var(--bg-card);
-    border: 1px solid var(--border); border-radius: 4px;
-    backdrop-filter: blur(10px);
-    transition: border-color 0.3s, transform 0.3s;
-  }
-  .stat-card:hover { border-color: var(--teal); transform: translateY(-4px); }
-  .stat-num {
-    font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 800;
-    background: linear-gradient(90deg, var(--teal-light), var(--cyan));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  }
-  .stat-label {
-    font-size: 0.85rem; color: var(--text-dim);
-    font-weight: 500; letter-spacing: 0.05em; margin-top: 0.25rem;
-  }
-  .about-visual {
-    display: flex; align-items: center; justify-content: center;
-  }
-  .hexgrid {
-    position: relative; width: 300px; height: 300px;
-  }
-  .hex-ring {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    border: 1px solid;
-    animation: hexSpin linear infinite;
-  }
-  .hex-ring:nth-child(1) { width: 280px;height:280px;border-color:rgba(0,180,166,0.2);animation-duration:20s; }
-  .hex-ring:nth-child(2) { width:200px;height:200px;border-color:rgba(90,77,138,0.3);animation-duration:15s;animation-direction:reverse; }
-  .hex-ring:nth-child(3) { width:120px;height:120px;border-color:rgba(0,229,255,0.25);animation-duration:10s; }
-  .hex-center {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem; letter-spacing: 0.1em;
-    color: var(--teal-light); text-align: center; line-height: 1.6;
-  }
-  @keyframes hexSpin { from{transform:translate(-50%,-50%)rotate(0deg)} to{transform:translate(-50%,-50%)rotate(360deg)} }
+        .hero-logo {
+            width: min(420px, 85vw);
+            max-height: 40vh;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 30px rgba(0, 180, 166, 0.45));
+            animation: fadeSlideUp 0.9s ease both 0.1s;
+        }
 
-  /* ── SEGMENTS ── */
-  #segments { background: linear-gradient(180deg, transparent, rgba(13,15,30,0.8), transparent); }
-  .segments-intro { max-width: 680px; margin-bottom: 3.5rem; }
+        #heroLogo {
+            width: 380px;
+            max-width: 85vw;
+            height: auto;
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
 
-  .segments-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 1.5rem;
-  }
+        .hero-tagline {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+            max-width: 640px;
+            animation: fadeSlideUp 1s ease both 0.2s;
+            line-height: 1.7;
+        }
 
-  .seg-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 2rem 1.75rem;
-    backdrop-filter: blur(12px);
-    position: relative; overflow: hidden;
-    transition: all 0.4s;
-    cursor: default;
-  }
-  .seg-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--teal), var(--cyan));
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s;
-  }
-  .seg-card:hover { border-color: rgba(78,205,196,0.5); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.4), var(--glow-teal); }
-  .seg-card:hover::before { transform: scaleX(1); }
-  .seg-card.featured {
-    border-color: rgba(78,205,196,0.4);
-    background: linear-gradient(135deg, rgba(0,180,166,0.08), rgba(90,77,138,0.08));
-  }
-  .seg-card.featured::after {
-    content: 'FLAGSHIP'; position: absolute;
-    top: 1rem; right: 1rem;
-    font-family: 'Space Mono', monospace; font-size: 0.55rem;
-    letter-spacing: 0.15em; color: var(--cyan);
-    padding: 0.2rem 0.5rem; border: 1px solid var(--cyan); border-radius: 2px;
-  }
+        .hero-date {
+            margin-top: 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--teal-light), var(--cyan), var(--green-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.1em;
+            animation: fadeSlideUp 1.1s ease both 0.3s;
+        }
 
-  .seg-icon {
-    font-size: 2rem; margin-bottom: 1rem;
-    display: block;
-  }
-  .seg-name {
-    font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 700;
-    color: var(--teal-light); margin-bottom: 0.5rem; letter-spacing: 0.05em;
-  }
-  .seg-desc {
-    font-size: 0.9rem; color: var(--text-dim); line-height: 1.7;
-    margin-bottom: 1.25rem;
-  }
-  .seg-meta {
-    display: flex; flex-wrap: wrap; gap: 0.5rem;
-  }
-  .tag {
-    font-family: 'Space Mono', monospace; font-size: 0.6rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    border-radius: 2px; border: 1px solid;
-  }
-  .tag-teal { border-color: var(--teal); color: var(--teal); background: rgba(0,180,166,0.08); }
-  .tag-purple { border-color: var(--purple-light); color: var(--purple-light); background: rgba(139,127,192,0.08); }
-  .tag-green { border-color: var(--green-neon); color: var(--green-neon); background: rgba(127,255,71,0.08); }
+        .hero-hosted {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+            margin-top: 0.4rem;
+            animation: fadeSlideUp 1.1s ease both 0.35s;
+        }
 
-  /* ── 3MT DETAIL ── */
-  #three-mt { background: transparent; }
-  .rounds-track {
-    display: flex; gap: 0; flex-wrap: wrap;
-    position: relative; margin-top: 3rem;
-  }
-  .rounds-track::before {
-    content: ''; position: absolute;
-    top: 20px; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--teal), var(--purple-mid), transparent);
-  }
-  .round-item {
-    flex: 1; min-width: 200px; padding: 0 1rem;
-    position: relative; text-align: center;
-  }
-  .round-dot {
-    width: 16px; height: 16px; border-radius: 50%;
-    background: var(--teal); margin: 0 auto 1.5rem;
-    position: relative; z-index: 1;
-    box-shadow: 0 0 15px rgba(0,180,166,0.8);
-  }
-  .round-num {
-    font-family: 'Orbitron', sans-serif; font-size: 0.65rem;
-    font-weight: 700; color: var(--teal); letter-spacing: 0.15em;
-    text-transform: uppercase; margin-bottom: 0.5rem;
-  }
-  .round-title {
-    font-family: 'Rajdhani', sans-serif; font-size: 1rem;
-    font-weight: 700; color: var(--text); margin-bottom: 0.5rem;
-  }
-  .round-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2.5rem;
+            animation: fadeSlideUp 1.2s ease both 0.4s;
+        }
 
-  /* ── REGISTRATION ── */
-  #registration { background: rgba(13,15,30,0.6); }
-  .reg-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem; margin-top: 3rem;
-  }
-  .reg-card {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: 6px; padding: 2rem 1.5rem;
-    backdrop-filter: blur(10px); text-align: center;
-    transition: all 0.3s; position: relative; overflow: hidden;
-  }
-  .reg-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: var(--glow-teal); }
-  .reg-icon { font-size: 2.2rem; margin-bottom: 1rem; }
-  .reg-name {
-    font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700;
-    color: var(--text); letter-spacing: 0.05em; margin-bottom: 1rem;
-  }
-  .reg-price {
-    font-family: 'Orbitron', sans-serif; font-size: 2rem; font-weight: 800;
-    background: linear-gradient(90deg, var(--teal-light), var(--cyan));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    margin-bottom: 0.25rem;
-  }
-  .reg-currency { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 0.3rem; }
-  .reg-note { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 1.5rem; line-height: 1.6; }
-  .reg-details { list-style: none; text-align: left; margin-bottom: 1.5rem; }
-  .reg-details li {
-    font-size: 0.85rem; color: var(--text-dim);
-    padding: 0.35rem 0; border-bottom: 1px solid rgba(78,205,196,0.08);
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .reg-details li::before { content: '▸'; color: var(--teal); font-size: 0.7rem; }
-  .reg-btn {
-    display: block; width: 100%;
-    padding: 0.7rem;
-    background: linear-gradient(135deg, var(--teal), var(--purple-mid));
-    border: none; border-radius: 3px;
-    font-family: 'Orbitron', sans-serif; font-size: 0.65rem;
-    font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: #fff; text-decoration: none; cursor: none;
-    transition: all 0.3s;
-  }
-  .reg-btn:hover { box-shadow: 0 0 20px rgba(0,180,166,0.5); }
+        .btn-primary {
+            padding: 0.85rem 2.2rem;
+            background: linear-gradient(135deg, var(--teal), var(--purple-mid));
+            border: none;
+            border-radius: 3px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            cursor: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 25px rgba(0, 180, 166, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
 
-  /* ── TIMELINE ── */
-  #timeline { background: transparent; }
-  .timeline-wrap { margin-top: 3rem; position: relative; }
-  .timeline-line {
-    position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
-    background: linear-gradient(180deg, var(--teal), var(--purple-mid), transparent);
-    margin-left: 8px;
-  }
-  .tl-group { margin-bottom: 3rem; padding-left: 3rem; position: relative; }
-  .tl-group-title {
-    font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 700;
-    color: var(--teal-light); letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 1rem; position: relative;
-  }
-  .tl-group-title::before {
-    content: ''; position: absolute; left: -2.5rem; top: 50%;
-    transform: translateY(-50%);
-    width: 14px; height: 14px; border-radius: 50%;
-    background: var(--teal); border: 2px solid var(--bg-deep);
-    box-shadow: 0 0 10px rgba(0,180,166,0.7);
-  }
-  .tl-item {
-    display: flex; align-items: flex-start; gap: 1rem;
-    padding: 0.75rem 1rem; margin-bottom: 0.5rem;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
-  .tl-item:hover { background: rgba(78,205,196,0.05); }
-  .tl-date {
-    font-family: 'Space Mono', monospace; font-size: 0.7rem;
-    color: var(--teal); min-width: 110px; padding-top: 0.1rem;
-    letter-spacing: 0.05em;
-  }
-  .tl-event { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
 
-  /* ── FAQ ── */
-  #faq { background: rgba(13,15,30,0.5); }
-  .faq-list { margin-top: 2.5rem; max-width: 740px; }
-  .faq-item {
-    border-bottom: 1px solid var(--border); overflow: hidden;
-  }
-  .faq-q {
-    width: 100%; background: none; border: none; cursor: none;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 0; text-align: left;
-    font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600;
-    color: var(--text); letter-spacing: 0.03em;
-    transition: color 0.2s;
-  }
-  .faq-q:hover { color: var(--teal-light); }
-  .faq-icon {
-    width: 20px; height: 20px; border: 1px solid var(--teal);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: transform 0.3s, background 0.3s;
-    font-size: 0.7rem; color: var(--teal);
-  }
-  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--teal); color: var(--bg-deep); }
-  .faq-a {
-    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
-  }
-  .faq-a p {
-    padding: 0 0 1.25rem;
-    font-size: 0.9rem; color: var(--text-dim); line-height: 1.8;
-  }
-  .faq-item.open .faq-a { max-height: 400px; }
+        .btn-primary:hover::before {
+            transform: translateX(100%);
+        }
 
-  /* ── CONTACT ── */
-  #contact { background: transparent; text-align: center; }
-  .contact-inner { max-width: 600px; margin: 0 auto; }
-  .contact-links {
-    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    margin-top: 2rem;
-  }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.7rem 1.4rem;
-    border: 1px solid var(--border); border-radius: 30px;
-    font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; font-weight: 600;
-    color: var(--text-dim); text-decoration: none;
-    transition: all 0.3s; letter-spacing: 0.05em;
-  }
-  .contact-link:hover { border-color: var(--teal); color: var(--teal-light); background: rgba(78,205,196,0.05); }
-  .ieee-badge {
-    margin-top: 3rem; padding: 1.5rem;
-    border: 1px solid var(--border); border-radius: 6px;
-    display: inline-block;
-    background: var(--bg-card); backdrop-filter: blur(10px);
-  }
-  .ieee-badge p {
-    font-family: 'Space Mono', monospace; font-size: 0.7rem;
-    letter-spacing: 0.15em; color: var(--text-dim); text-transform: uppercase;
-    line-height: 1.8;
-  }
-  .ieee-badge strong { color: var(--teal-light); }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 180, 166, 0.7);
+        }
 
-  /* ── FOOTER ── */
-  footer {
-    position: relative; z-index: 2;
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
-    background: rgba(8,6,18,0.9);
-  }
-  footer p {
-    font-family: 'Space Mono', monospace; font-size: 0.65rem;
-    letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase;
-  }
-/* The Glow Overlay */
-#cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Allows clicking through the glow */
-  z-index: 1; /* Sits above the background grid, below the content */
-  background: radial-gradient(
-    600px circle at var(--x, 0) var(--y, 0), 
-    rgba(0, 180, 166, 0.15), 
-    transparent 40%
-  );
-  transition: background 0.05s ease;
-}
+        .btn-outline {
+            padding: 0.85rem 2.2rem;
+            background: transparent;
+            border: 1.5px solid var(--teal-light);
+            border-radius: 3px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal-light);
+            text-decoration: none;
+            cursor: none;
+            transition: all 0.3s;
+        }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .reveal {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+        .btn-outline:hover {
+            background: rgba(78, 205, 196, 0.1);
+            box-shadow: 0 0 25px rgba(78, 205, 196, 0.3);
+            transform: translateY(-3px);
+        }
 
-  /* Glitch text */
-  .glitch {
-    position: relative; display: inline-block;
-  }
-  .glitch::before, .glitch::after {
-    content: attr(data-text); position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--bg-deep);
-  }
-  .glitch::before {
-    color: var(--cyan); clip: rect(44px,450px,56px,0);
-    animation: glitch1 3s infinite; opacity: 0.6;
-  }
-  .glitch::after {
-    color: var(--purple-light); clip: rect(12px,450px,26px,0);
-    animation: glitch2 3.5s infinite; opacity: 0.6;
-  }
-  @keyframes glitch1 {
-    0%,90%,100%{clip:rect(0,0,0,0)} 92%{clip:rect(44px,9999px,56px,0);transform:translateX(-2px)}
-    94%{clip:rect(12px,9999px,30px,0);transform:translateX(2px)} 96%{clip:rect(0,0,0,0)}
-  }
-  @keyframes glitch2 {
-    0%,85%,100%{clip:rect(0,0,0,0)} 87%{clip:rect(20px,9999px,38px,0);transform:translateX(2px)}
-    89%{clip:rect(5px,9999px,15px,0);transform:translateX(-2px)} 91%{clip:rect(0,0,0,0)}
-  }
+        /* Countdown */
+        .countdown-wrap {
+            margin-top: 3rem;
+            animation: fadeSlideUp 1.3s ease both 0.5s;
+        }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .about-visual { display: none; }
-    .rounds-track::before { display: none; }
-    .round-item { text-align: left; padding-left: 2rem; }
-    .round-dot { margin: 0 0 0.75rem; }
-  }
-  @media (max-width: 768px) {
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    .about-stats { grid-template-columns: 1fr 1fr; }
-    footer { flex-direction: column; text-align: center; }
-  }
-  @media (max-width: 480px) {
-    section { padding: 4rem 1.25rem; }
-    .about-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .countdown { gap: 1rem; }
-    .cd-sep { display: none; }
-    .tl-date { min-width: 90px; font-size: 0.65rem; }
-  }
+        .countdown-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
 
-  /* particles */
-  .particle {
-    position: fixed; border-radius: 50%; pointer-events: none;
-    z-index: 1; animation: floatParticle linear infinite;
-    opacity: 0;
-  }
-  @keyframes floatParticle {
-    0% { transform: translateY(100vh) scale(0); opacity: 0; }
-    10% { opacity: 0.6; }
-    90% { opacity: 0.3; }
-    100% { transform: translateY(-100px) scale(1); opacity: 0; }
-  }
-</style>
+        .countdown {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cd-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cd-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(180deg, var(--cyan), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .cd-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-top: 0.3rem;
+        }
+
+        .cd-sep {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--teal);
+            align-self: flex-start;
+            padding-top: 0.1rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-hint {
+            position: relative;
+            /* remove absolute */
+            left: unset;
+            transform: unset;
+            margin-top: 3rem;
+            /* adjust this gap */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            animation: fadeSlideUp 1.5s ease both 0.8s;
+        }
+
+        .scroll-hint span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 30px;
+            border: 1.5px solid var(--teal-light);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .scroll-arrow::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 8px;
+            background: var(--teal-light);
+            border-radius: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5px;
+            animation: scrollBounce 1.5s infinite;
+        }
+
+        @keyframes scrollBounce {
+
+            0%,
+            100% {
+                top: 5px;
+                opacity: 1
+            }
+
+            70% {
+                top: 13px;
+                opacity: 0
+            }
+        }
+
+        /* ── SECTIONS COMMON ── */
+        section {
+            position: relative;
+            z-index: 2;
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--teal);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: var(--teal);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--teal-light), var(--cyan), var(--purple-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-dim);
+            line-height: 1.8;
+            max-width: 580px;
+        }
+
+        /* divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--teal), var(--purple-mid), transparent);
+            margin: 0;
+            opacity: 0.4;
+        }
+
+        /* ── ABOUT ── */
+        #about {
+            background: transparent;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+
+        .stat-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--teal-light), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .about-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hexgrid {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .hex-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 1px solid;
+            animation: hexSpin linear infinite;
+        }
+
+        .hex-ring:nth-child(1) {
+            width: 280px;
+            height: 280px;
+            border-color: rgba(0, 180, 166, 0.2);
+            animation-duration: 20s;
+        }
+
+        .hex-ring:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            border-color: rgba(90, 77, 138, 0.3);
+            animation-duration: 15s;
+            animation-direction: reverse;
+        }
+
+        .hex-ring:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            border-color: rgba(0, 229, 255, 0.25);
+            animation-duration: 10s;
+        }
+
+        .hex-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--teal-light);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        @keyframes hexSpin {
+            from {
+                transform: translate(-50%, -50%)rotate(0deg)
+            }
+
+            to {
+                transform: translate(-50%, -50%)rotate(360deg)
+            }
+        }
+
+        /* ── SEGMENTS ── */
+        #segments {
+            background: linear-gradient(180deg, transparent, rgba(13, 15, 30, 0.8), transparent);
+        }
+
+        .segments-intro {
+            max-width: 680px;
+            margin-bottom: 3.5rem;
+        }
+
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .seg-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2rem 1.75rem;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            cursor: default;
+        }
+
+        .seg-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal), var(--cyan));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .seg-card:hover {
+            border-color: rgba(78, 205, 196, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--glow-teal);
+        }
+
+        .seg-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .seg-card.featured {
+            border-color: rgba(78, 205, 196, 0.4);
+            background: linear-gradient(135deg, rgba(0, 180, 166, 0.08), rgba(90, 77, 138, 0.08));
+        }
+
+        .seg-card.featured::after {
+            content: 'FLAGSHIP';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            letter-spacing: 0.15em;
+            color: var(--cyan);
+            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--cyan);
+            border-radius: 2px;
+        }
+
+        .seg-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .seg-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--teal-light);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .seg-desc {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .seg-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 2px;
+            border: 1px solid;
+        }
+
+        .tag-teal {
+            border-color: var(--teal);
+            color: var(--teal);
+            background: rgba(0, 180, 166, 0.08);
+        }
+
+        .tag-purple {
+            border-color: var(--purple-light);
+            color: var(--purple-light);
+            background: rgba(139, 127, 192, 0.08);
+        }
+
+        .tag-green {
+            border-color: var(--green-neon);
+            color: var(--green-neon);
+            background: rgba(127, 255, 71, 0.08);
+        }
+
+        /* ── 3MT DETAIL ── */
+        #three-mt {
+            background: transparent;
+        }
+
+        .rounds-track {
+            display: flex;
+            gap: 0;
+            flex-wrap: wrap;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .rounds-track::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--teal), var(--purple-mid), transparent);
+        }
+
+        .round-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 0 1rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .round-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--teal);
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(0, 180, 166, 0.8);
+        }
+
+        .round-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--teal);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .round-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .round-desc {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* ── REGISTRATION ── */
+        #registration {
+            background: rgba(13, 15, 30, 0.6);
+        }
+
+        .reg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .reg-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2rem 1.5rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reg-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+            box-shadow: var(--glow-teal);
+        }
+
+        .reg-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .reg-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .reg-price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--teal-light), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .reg-currency {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-bottom: 0.3rem;
+        }
+
+        .reg-note {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .reg-details {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .reg-details li {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            padding: 0.35rem 0;
+            border-bottom: 1px solid rgba(78, 205, 196, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reg-details li::before {
+            content: '▸';
+            color: var(--teal);
+            font-size: 0.7rem;
+        }
+
+        .reg-btn {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            background: linear-gradient(135deg, var(--teal), var(--purple-mid));
+            border: none;
+            border-radius: 3px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            cursor: none;
+            transition: all 0.3s;
+        }
+
+        .reg-btn:hover {
+            box-shadow: 0 0 20px rgba(0, 180, 166, 0.5);
+        }
+
+        /* ── TIMELINE ── */
+        #timeline {
+            background: transparent;
+        }
+
+        .timeline-wrap {
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, var(--teal), var(--purple-mid), transparent);
+            margin-left: 8px;
+        }
+
+        .tl-group {
+            margin-bottom: 3rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .tl-group-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--teal-light);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .tl-group-title::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--teal);
+            border: 2px solid var(--bg-deep);
+            box-shadow: 0 0 10px rgba(0, 180, 166, 0.7);
+        }
+
+        .tl-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .tl-item:hover {
+            background: rgba(78, 205, 196, 0.05);
+        }
+
+        .tl-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--teal);
+            min-width: 110px;
+            padding-top: 0.1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .tl-event {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* ── FAQ ── */
+        #faq {
+            background: rgba(13, 15, 30, 0.5);
+        }
+
+        .faq-list {
+            margin-top: 2.5rem;
+            max-width: 740px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+            text-align: left;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.03em;
+            transition: color 0.2s;
+        }
+
+        .faq-q:hover {
+            color: var(--teal-light);
+        }
+
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s, background 0.3s;
+            font-size: 0.7rem;
+            color: var(--teal);
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: var(--teal);
+            color: var(--bg-deep);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-a p {
+            padding: 0 0 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 400px;
+        }
+
+        /* ── CONTACT ── */
+        #contact {
+            background: transparent;
+            text-align: center;
+        }
+
+        .contact-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-link:hover {
+            border-color: var(--teal);
+            color: var(--teal-light);
+            background: rgba(78, 205, 196, 0.05);
+        }
+
+        .ieee-badge {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: inline-block;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+
+        .ieee-badge p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            line-height: 1.8;
+        }
+
+        .ieee-badge strong {
+            color: var(--teal-light);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: rgba(8, 6, 18, 0.9);
+        }
+
+        footer p {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        /* The Glow Overlay */
+        #cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            /* Allows clicking through the glow */
+            z-index: 1;
+            /* Sits above the background grid, below the content */
+            background: radial-gradient(600px circle at var(--x, 0) var(--y, 0),
+                    rgba(0, 180, 166, 0.15),
+                    transparent 40%);
+            transition: background 0.05s ease;
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glitch text */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-deep);
+        }
+
+        .glitch::before {
+            color: var(--cyan);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch1 3s infinite;
+            opacity: 0.6;
+        }
+
+        .glitch::after {
+            color: var(--purple-light);
+            clip: rect(12px, 450px, 26px, 0);
+            animation: glitch2 3.5s infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes glitch1 {
+
+            0%,
+            90%,
+            100% {
+                clip: rect(0, 0, 0, 0)
+            }
+
+            92% {
+                clip: rect(44px, 9999px, 56px, 0);
+                transform: translateX(-2px)
+            }
+
+            94% {
+                clip: rect(12px, 9999px, 30px, 0);
+                transform: translateX(2px)
+            }
+
+            96% {
+                clip: rect(0, 0, 0, 0)
+            }
+        }
+
+        @keyframes glitch2 {
+
+            0%,
+            85%,
+            100% {
+                clip: rect(0, 0, 0, 0)
+            }
+
+            87% {
+                clip: rect(20px, 9999px, 38px, 0);
+                transform: translateX(2px)
+            }
+
+            89% {
+                clip: rect(5px, 9999px, 15px, 0);
+                transform: translateX(-2px)
+            }
+
+            91% {
+                clip: rect(0, 0, 0, 0)
+            }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-visual {
+                display: none;
+            }
+
+            .rounds-track::before {
+                display: none;
+            }
+
+            .round-item {
+                text-align: left;
+                padding-left: 2rem;
+            }
+
+            .round-dot {
+                margin: 0 0 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 4rem 1.25rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .cd-sep {
+                display: none;
+            }
+
+            .tl-date {
+                min-width: 90px;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatParticle linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Custom cursor -->
-<div id="cursor-glow"></div>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+    <!-- Custom cursor -->
+    <div id="cursor-glow"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- Aurora background -->
-<canvas id="aurora-canvas"></canvas>
+    <!-- Aurora background -->
+    <canvas id="aurora-canvas"></canvas>
 
-<!-- NAVBAR -->
-<nav id="navbar">
-  <a href="#hero" class="nav-brand">SCIBLITZ 2.0</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#segments">Segments</a></li>
-    <li><a href="#registration">Register</a></li>
-    <li><a href="#timeline">Timeline</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="https://forms.google.com" target="_blank" class="nav-cta">Register Now</a>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="#about" class="mob-link">About</a></li>
-    <li><a href="#segments" class="mob-link">Segments</a></li>
-    <li><a href="#registration" class="mob-link">Register</a></li>
-    <li><a href="#timeline" class="mob-link">Timeline</a></li>
-    <li><a href="#faq" class="mob-link">FAQ</a></li>
-    <li><a href="#contact" class="mob-link">Contact</a></li>
-    <li><a href="https://forms.google.com" target="_blank" class="m-cta">Register Now →</a></li>
-  </ul>
-</div>
-
-<!-- ═══════════════════ HERO ═══════════════════ -->
-<section id="hero">
-  <p class="hero-eyebrow">IEEE CUET Student Branch Presents</p>
-  <img src="ieeecuetsb\assets\images\sciblitz2.0.png" id="hero-logo">
-  <p class="hero-tagline">A nationwide student-led technology day event — where science ignites, ideas accelerate, and innovators emerge.</p>
-  <p class="hero-date">JULY 10 & 11, 2025</p>
-  <p class="hero-hosted">CUET Campus &nbsp;·&nbsp; Chittagong, Bangladesh</p>
-  <div class="hero-btns">
-    <a href="#registration" class="btn-primary">Register Now</a>
-    <a href="#segments" class="btn-outline">Explore Segments</a>
-  </div>
-  <div class="countdown-wrap">
-    <p class="countdown-label">Event Begins In</p>
-    <div class="countdown">
-      <div class="cd-unit"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Minutes</div></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Seconds</div></div>
-    </div>
-  </div>
-  <div class="scroll-hint"><span>Scroll</span><div class="scroll-arrow"></div></div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════ ABOUT ═══════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <p class="section-tag reveal">01 — Overview</p>
-        <h2 class="section-title reveal"><span class="gradient-text">Science Meets</span><br>Innovation</h2>
-        <p class="section-desc reveal">SciBlitz 2.0 is the flagship annual event of IEEE CUET Student Branch — a nationwide, student-powered tech day that brings together young researchers, engineers, and problem-solvers for two electrifying days of competition, collaboration, and discovery.</p>
-        <div class="about-stats">
-          <div class="stat-card reveal">
-            <div class="stat-num">4</div>
-            <div class="stat-label">Segments</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-num">2</div>
-            <div class="stat-label">Days of Action</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-num">3</div>
-            <div class="stat-label">Rounds (3MT)</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-num">🌐</div>
-            <div class="stat-label">Nationwide</div>
-          </div>
-        </div>
-      </div>
-      <div class="about-visual">
-        <div class="hexgrid">
-          <div class="hex-ring"></div>
-          <div class="hex-ring"></div>
-          <div class="hex-ring"></div>
-          <div class="hex-center">IEEE<br>CUET<br>S.B.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════ SEGMENTS ═══════════════════ -->
-<section id="segments">
-  <div class="container">
-    <div class="segments-intro">
-      <p class="section-tag reveal">02 — Competitions</p>
-      <h2 class="section-title reveal">Event <span class="gradient-text">Segments</span></h2>
-      <p class="section-desc reveal">Four distinct tracks designed to challenge and celebrate every dimension of student innovation — from research communication to AI engineering.</p>
-    </div>
-    <div class="segments-grid">
-
-      <!-- 3MT -->
-      <div class="seg-card featured reveal">
-        <span class="seg-icon">🎤</span>
-        <div class="seg-name">3 Minute Thesis</div>
-        <p class="seg-desc">Present your entire research thesis in just 3 minutes. Three-round competition testing clarity, depth, and the art of scientific storytelling. A flagship event of SciBlitz 2.0.</p>
-        <div class="seg-meta">
-          <span class="tag tag-teal">3 Rounds</span>
-          <span class="tag tag-purple">Team: 1–6</span>
-          <span class="tag tag-teal">৳300 + ৳900</span>
-        </div>
-      </div>
-
-      <!-- AI Hackathon -->
-      <div class="seg-card featured reveal">
-        <span class="seg-icon">🤖</span>
-        <div class="seg-name">AI Hackathon</div>
-        <p class="seg-desc">Build real AI-powered solutions under pressure. A flagship segment where teams race against time to code, train, and deploy intelligent systems. Details coming soon.</p>
-        <div class="seg-meta">
-          <span class="tag tag-teal">Details TBD</span>
-          <span class="tag tag-purple">Team: 1–5</span>
-          <span class="tag tag-teal">৳1000</span>
-        </div>
-      </div>
-
-      <!-- Project Showcase -->
-      <div class="seg-card reveal">
-        <span class="seg-icon">🔬</span>
-        <div class="seg-name">Project Showcase</div>
-        <p class="seg-desc">Display your STEM project to judges and peers. Open to university students and Class 9–12 students in two separate categories.</p>
-        <div class="seg-meta">
-          <span class="tag tag-purple">2 Categories</span>
-          <span class="tag tag-teal">Team: 1–3</span>
-          <span class="tag tag-teal">৳500</span>
-        </div>
-      </div>
-
-      <!-- STEM BEE -->
-      <div class="seg-card reveal">
-        <span class="seg-icon">🐝</span>
-        <div class="seg-name">STEM BEE</div>
-        <p class="seg-desc">Like a Spelling Bee — but scientific. Test your rapid-recall knowledge of science, technology, engineering, and math concepts across multiple competitive rounds.</p>
-        <div class="seg-meta">
-          <span class="tag tag-green">Open to All</span>
-          <span class="tag tag-purple">Team: 3</span>
-          <span class="tag tag-teal">৳300</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════ 3MT DETAIL ═══════════════════ -->
-<section id="three-mt">
-  <div class="container">
-    <p class="section-tag reveal">03 — Flagship Event</p>
-    <h2 class="section-title reveal">3 Minute Thesis — <span class="gradient-text">Round Structure</span></h2>
-    <p class="section-desc reveal">A rigorous three-stage journey from abstract submission to live presentation at CUET campus.</p>
-    <div class="rounds-track">
-      <div class="round-item reveal">
-        <div class="round-dot"></div>
-        <div class="round-num">Round 1</div>
-        <div class="round-title">Abstract & Flowchart</div>
-        <p class="round-desc">Submit your research abstract along with a structured work flowchart. Deadline: June 7. Results: June 16.</p>
-      </div>
-      <div class="round-item reveal">
-        <div class="round-dot"></div>
-        <div class="round-num">Round 2</div>
-        <div class="round-title">Video Presentation</div>
-        <p class="round-desc">Record and submit a 3-minute video presentation of your research. Deadline: June 24. Results: July 2.</p>
-      </div>
-      <div class="round-item reveal">
-        <div class="round-dot"></div>
-        <div class="round-num">Round 3 — Final</div>
-        <div class="round-title">On-Stage at CUET</div>
-        <p class="round-desc">Finalists present live before a panel of expert judges on campus. July 10 & 11.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════ REGISTRATION ═══════════════════ -->
-<section id="registration">
-  <div class="container">
-    <p class="section-tag reveal">04 — Join Us</p>
-    <h2 class="section-title reveal"><span class="gradient-text">Register</span> Your Team</h2>
-    <p class="section-desc reveal">All registrations open on <strong style="color:var(--teal-light)">March 30</strong>. Select your segment and register via Google Form.</p>
-
-    <div class="reg-grid">
-      <div class="reg-card reveal">
-        <div class="reg-icon">🎤</div>
-        <div class="reg-name">3 Minute Thesis</div>
-        <div class="reg-price">৳300</div>
-        <div class="reg-currency">Registration Fee</div>
-        <div class="reg-note">+ ৳900 if qualified for Round 2</div>
-        <ul class="reg-details">
-          <li>Team size: 1–6 members</li>
-          <li>Registration closes: May 30</li>
-          <li>Abstract deadline: June 7</li>
-          <li>3 elimination rounds</li>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-brand">SCIBLITZ 2.0</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#segments">Segments</a></li>
+            <li><a href="#registration">Register</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
-      </div>
+        <a href="https://forms.google.com" target="_blank" class="nav-cta">Register Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-      <div class="reg-card reveal">
-        <div class="reg-icon">🤖</div>
-        <div class="reg-name">AI Hackathon</div>
-        <div class="reg-price">৳1000</div>
-        <div class="reg-currency">Registration Fee</div>
-        <div class="reg-note">Details & deadline: TBD</div>
-        <ul class="reg-details">
-          <li>Team size: 1–5 members</li>
-          <li>AI / ML focus</li>
-          <li>Build & deploy solutions</li>
-          <li>Details announced soon</li>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" class="mob-link">About</a></li>
+            <li><a href="#segments" class="mob-link">Segments</a></li>
+            <li><a href="#registration" class="mob-link">Register</a></li>
+            <li><a href="#timeline" class="mob-link">Timeline</a></li>
+            <li><a href="#faq" class="mob-link">FAQ</a></li>
+            <li><a href="#contact" class="mob-link">Contact</a></li>
+            <li><a href="https://forms.google.com" target="_blank" class="m-cta">Register Now →</a></li>
         </ul>
-        <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
-      </div>
-
-      <div class="reg-card reveal">
-        <div class="reg-icon">🔬</div>
-        <div class="reg-name">Project Showcase</div>
-        <div class="reg-price">৳500</div>
-        <div class="reg-currency">Registration Fee</div>
-        <div class="reg-note">University & Class 9–12 categories</div>
-        <ul class="reg-details">
-          <li>Team size: 1–3 members</li>
-          <li>Registration closes: July 6</li>
-          <li>STEM project display</li>
-          <li>Two separate categories</li>
-        </ul>
-        <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
-      </div>
-
-      <div class="reg-card reveal">
-        <div class="reg-icon">🐝</div>
-        <div class="reg-name">STEM BEE</div>
-        <div class="reg-price">৳300</div>
-        <div class="reg-currency">Registration Fee</div>
-        <div class="reg-note">Open to everyone!</div>
-        <ul class="reg-details">
-          <li>Team size: exactly 3</li>
-          <li>Reg. deadline: June 8</li>
-          <li>Round 1: June 12 · Result: June 14</li>
-          <li>Round 2: June 26 · Final: July 10/11</li>
-        </ul>
-        <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
-      </div>
     </div>
-  </div>
-</section>
 
-<div class="divider"></div>
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="hero">
+        <p class="hero-eyebrow">IEEE CUET Student Branch Presents</p>
+        <img src="assets/images/sciblitz2.0.png" id="heroLogo">
+        <p class="hero-tagline">A nationwide student-led technology day event — where science ignites, ideas accelerate,
+            and innovators emerge.</p>
+        <p class="hero-date">JULY 10 & 11, 2025</p>
+        <p class="hero-hosted">CUET Campus &nbsp;·&nbsp; Chittagong, Bangladesh</p>
+        <div class="hero-btns">
+            <a href="#registration" class="btn-primary">Register Now</a>
+            <a href="#segments" class="btn-outline">Explore Segments</a>
+        </div>
+        <div class="countdown-wrap">
+            <p class="countdown-label">Event Begins In</p>
+            <div class="countdown">
+                <div class="cd-unit">
+                    <div class="cd-num" id="cd-days">--</div>
+                    <div class="cd-label">Days</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-unit">
+                    <div class="cd-num" id="cd-hours">--</div>
+                    <div class="cd-label">Hours</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-unit">
+                    <div class="cd-num" id="cd-mins">--</div>
+                    <div class="cd-label">Minutes</div>
+                </div>
+                <div class="cd-sep">:</div>
+                <div class="cd-unit">
+                    <div class="cd-num" id="cd-secs">--</div>
+                    <div class="cd-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint"><span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-<!-- ═══════════════════ TIMELINE ═══════════════════ -->
-<section id="timeline">
-  <div class="container">
-    <p class="section-tag reveal">05 — Schedule</p>
-    <h2 class="section-title reveal">Event <span class="gradient-text">Timeline</span></h2>
-    <div class="timeline-wrap reveal">
-      <div class="timeline-line"></div>
+    <div class="divider"></div>
 
-      <div class="tl-group">
-        <div class="tl-group-title">All Registrations Open</div>
-        <div class="tl-item"><span class="tl-date">Mar 30</span><span class="tl-event">Registrations open for all segments</span></div>
-      </div>
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <p class="section-tag reveal">01 — Overview</p>
+                    <h2 class="section-title reveal"><span class="gradient-text">Science Meets</span><br>Innovation</h2>
+                    <p class="section-desc reveal">SciBlitz 2.0 is the flagship annual event of IEEE CUET Student Branch
+                        — a nationwide, student-powered tech day that brings together young researchers, engineers, and
+                        problem-solvers for two electrifying days of competition, collaboration, and discovery.</p>
+                    <div class="about-stats">
+                        <div class="stat-card reveal">
+                            <div class="stat-num">4</div>
+                            <div class="stat-label">Segments</div>
+                        </div>
+                        <div class="stat-card reveal">
+                            <div class="stat-num">2</div>
+                            <div class="stat-label">Days of Action</div>
+                        </div>
+                        <div class="stat-card reveal">
+                            <div class="stat-num">3</div>
+                            <div class="stat-label">Rounds (3MT)</div>
+                        </div>
+                        <div class="stat-card reveal">
+                            <div class="stat-num">🌐</div>
+                            <div class="stat-label">Nationwide</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="hexgrid">
+                        <div class="hex-ring"></div>
+                        <div class="hex-ring"></div>
+                        <div class="hex-ring"></div>
+                        <div class="hex-center">IEEE<br>CUET<br>S.B.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="tl-group">
-        <div class="tl-group-title">3 Minute Thesis</div>
-        <div class="tl-item"><span class="tl-date">May 30</span><span class="tl-event">3MT Registration closes</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 7</span><span class="tl-event">Abstract & flowchart submission deadline</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 16</span><span class="tl-event">Round 1 results announced</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 24</span><span class="tl-event">Video presentation submission deadline</span></div>
-        <div class="tl-item"><span class="tl-date">Jul 2</span><span class="tl-event">Round 2 results announced</span></div>
-      </div>
+    <div class="divider"></div>
 
-      <div class="tl-group">
-        <div class="tl-group-title">STEM BEE</div>
-        <div class="tl-item"><span class="tl-date">Jun 8</span><span class="tl-event">STEM BEE registration closes</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 12</span><span class="tl-event">STEM BEE First Round</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 14</span><span class="tl-event">First Round results</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 26</span><span class="tl-event">STEM BEE Second Round</span></div>
-        <div class="tl-item"><span class="tl-date">Jun 27</span><span class="tl-event">Second Round results</span></div>
-      </div>
+    <!-- ═══════════════════ SEGMENTS ═══════════════════ -->
+    <section id="segments">
+        <div class="container">
+            <div class="segments-intro">
+                <p class="section-tag reveal">02 — Competitions</p>
+                <h2 class="section-title reveal">Event <span class="gradient-text">Segments</span></h2>
+                <p class="section-desc reveal">Four distinct tracks designed to challenge and celebrate every dimension
+                    of student innovation — from research communication to AI engineering.</p>
+            </div>
+            <div class="segments-grid">
 
-      <div class="tl-group">
-        <div class="tl-group-title">Project Showcase</div>
-        <div class="tl-item"><span class="tl-date">Jul 6</span><span class="tl-event">Project Showcase registration closes</span></div>
-      </div>
+                <!-- 3MT -->
+                <div class="seg-card featured reveal">
+                    <span class="seg-icon">🎤</span>
+                    <div class="seg-name">3 Minute Thesis</div>
+                    <p class="seg-desc">Present your entire research thesis in just 3 minutes. Three-round competition
+                        testing clarity, depth, and the art of scientific storytelling. A flagship event of SciBlitz
+                        2.0.</p>
+                    <div class="seg-meta">
+                        <span class="tag tag-teal">3 Rounds</span>
+                        <span class="tag tag-purple">Team: 1–6</span>
+                        <span class="tag tag-teal">৳300 + ৳900</span>
+                    </div>
+                </div>
 
-      <div class="tl-group">
-        <div class="tl-group-title">🚀 Main Event — CUET Campus</div>
-        <div class="tl-item"><span class="tl-date">Jul 10–11</span><span class="tl-event">SciBlitz 2.0 Final Event at CUET</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+                <!-- AI Hackathon -->
+                <div class="seg-card featured reveal">
+                    <span class="seg-icon">🤖</span>
+                    <div class="seg-name">AI Hackathon</div>
+                    <p class="seg-desc">Build real AI-powered solutions under pressure. A flagship segment where teams
+                        race against time to code, train, and deploy intelligent systems. Details coming soon.</p>
+                    <div class="seg-meta">
+                        <span class="tag tag-teal">Details TBD</span>
+                        <span class="tag tag-purple">Team: 1–5</span>
+                        <span class="tag tag-teal">৳1000</span>
+                    </div>
+                </div>
 
-<div class="divider"></div>
+                <!-- Project Showcase -->
+                <div class="seg-card reveal">
+                    <span class="seg-icon">🔬</span>
+                    <div class="seg-name">Project Showcase</div>
+                    <p class="seg-desc">Display your STEM project to judges and peers. Open to university students and
+                        Class 9–12 students in two separate categories.</p>
+                    <div class="seg-meta">
+                        <span class="tag tag-purple">2 Categories</span>
+                        <span class="tag tag-teal">Team: 1–3</span>
+                        <span class="tag tag-teal">৳500</span>
+                    </div>
+                </div>
 
-<!-- ═══════════════════ FAQ ═══════════════════ -->
-<section id="faq">
-  <div class="container">
-    <p class="section-tag reveal">06 — Questions</p>
-    <h2 class="section-title reveal">Frequently Asked <span class="gradient-text">Questions</span></h2>
-    <div class="faq-list">
+                <!-- STEM BEE -->
+                <div class="seg-card reveal">
+                    <span class="seg-icon">🐝</span>
+                    <div class="seg-name">STEM BEE</div>
+                    <p class="seg-desc">Like a Spelling Bee — but scientific. Test your rapid-recall knowledge of
+                        science, technology, engineering, and math concepts across multiple competitive rounds.</p>
+                    <div class="seg-meta">
+                        <span class="tag tag-green">Open to All</span>
+                        <span class="tag tag-purple">Team: 3</span>
+                        <span class="tag tag-teal">৳300</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">Who can participate in SciBlitz 2.0? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>SciBlitz 2.0 is open nationwide. University students can enter all four segments. Class 9–12 students can participate in the Project Showcase and STEM BEE. STEM BEE is open to all age groups.</p></div>
-      </div>
+    <div class="divider"></div>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">Can I register for multiple segments? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes! You can register for multiple segments. Each segment has its own registration fee and form. Make sure to submit separate registrations for each event you wish to join.</p></div>
-      </div>
+    <!-- ═══════════════════ 3MT DETAIL ═══════════════════ -->
+    <section id="three-mt">
+        <div class="container">
+            <p class="section-tag reveal">03 — Flagship Event</p>
+            <h2 class="section-title reveal">3 Minute Thesis — <span class="gradient-text">Round Structure</span></h2>
+            <p class="section-desc reveal">A rigorous three-stage journey from abstract submission to live presentation
+                at CUET campus.</p>
+            <div class="rounds-track">
+                <div class="round-item reveal">
+                    <div class="round-dot"></div>
+                    <div class="round-num">Round 1</div>
+                    <div class="round-title">Abstract & Flowchart</div>
+                    <p class="round-desc">Submit your research abstract along with a structured work flowchart.
+                        Deadline: June 7. Results: June 16.</p>
+                </div>
+                <div class="round-item reveal">
+                    <div class="round-dot"></div>
+                    <div class="round-num">Round 2</div>
+                    <div class="round-title">Video Presentation</div>
+                    <p class="round-desc">Record and submit a 3-minute video presentation of your research. Deadline:
+                        June 24. Results: July 2.</p>
+                </div>
+                <div class="round-item reveal">
+                    <div class="round-dot"></div>
+                    <div class="round-num">Round 3 — Final</div>
+                    <div class="round-title">On-Stage at CUET</div>
+                    <p class="round-desc">Finalists present live before a panel of expert judges on campus. July 10 &
+                        11.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">How does the 3MT registration fee work? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>The initial Round 1 registration fee is ৳300. If your team qualifies for Round 2, an additional fee of ৳900 BDT will be required. You only pay the second fee if you advance — no advance payment needed for Round 2.</p></div>
-      </div>
+    <div class="divider"></div>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">What is the format of the 3MT video for Round 2? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>The video must be exactly 3 minutes long. It should present your full research clearly, with a single static slide allowed as a visual aid. Specific technical requirements and submission guidelines will be shared with qualified teams after Round 1 results.</p></div>
-      </div>
+    <!-- ═══════════════════ REGISTRATION ═══════════════════ -->
+    <section id="registration">
+        <div class="container">
+            <p class="section-tag reveal">04 — Join Us</p>
+            <h2 class="section-title reveal"><span class="gradient-text">Register</span> Your Team</h2>
+            <p class="section-desc reveal">All registrations open on <strong style="color:var(--teal-light)">March
+                    30</strong>. Select your segment and register via Google Form.</p>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">Where is the final event held? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>The final event will be held on-campus at Chittagong University of Engineering & Technology (CUET), Chittagong, Bangladesh on July 10 & 11, 2025.</p></div>
-      </div>
+            <div class="reg-grid">
+                <div class="reg-card reveal">
+                    <div class="reg-icon">🎤</div>
+                    <div class="reg-name">3 Minute Thesis</div>
+                    <div class="reg-price">৳300</div>
+                    <div class="reg-currency">Registration Fee</div>
+                    <div class="reg-note">+ ৳900 if qualified for Round 2</div>
+                    <ul class="reg-details">
+                        <li>Team size: 1–6 members</li>
+                        <li>Registration closes: May 30</li>
+                        <li>Abstract deadline: June 7</li>
+                        <li>3 elimination rounds</li>
+                    </ul>
+                    <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
+                </div>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">When will AI Hackathon details be released? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>AI Hackathon details including timeline, problem statement format, and specific rules are currently being finalized. Follow our official channels for updates — an announcement will be made well before the registration deadline.</p></div>
-      </div>
+                <div class="reg-card reveal">
+                    <div class="reg-icon">🤖</div>
+                    <div class="reg-name">AI Hackathon</div>
+                    <div class="reg-price">৳1000</div>
+                    <div class="reg-currency">Registration Fee</div>
+                    <div class="reg-note">Details & deadline: TBD</div>
+                    <ul class="reg-details">
+                        <li>Team size: 1–5 members</li>
+                        <li>AI / ML focus</li>
+                        <li>Build & deploy solutions</li>
+                        <li>Details announced soon</li>
+                    </ul>
+                    <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
+                </div>
 
-      <div class="faq-item reveal">
-        <button class="faq-q">How do I pay the registration fee? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Payment instructions will be provided within the registration form. Accepted methods and transaction details will be specified per segment. Keep your transaction ID for confirmation.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+                <div class="reg-card reveal">
+                    <div class="reg-icon">🔬</div>
+                    <div class="reg-name">Project Showcase</div>
+                    <div class="reg-price">৳500</div>
+                    <div class="reg-currency">Registration Fee</div>
+                    <div class="reg-note">University & Class 9–12 categories</div>
+                    <ul class="reg-details">
+                        <li>Team size: 1–3 members</li>
+                        <li>Registration closes: July 6</li>
+                        <li>STEM project display</li>
+                        <li>Two separate categories</li>
+                    </ul>
+                    <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
+                </div>
 
-<div class="divider"></div>
+                <div class="reg-card reveal">
+                    <div class="reg-icon">🐝</div>
+                    <div class="reg-name">STEM BEE</div>
+                    <div class="reg-price">৳300</div>
+                    <div class="reg-currency">Registration Fee</div>
+                    <div class="reg-note">Open to everyone!</div>
+                    <ul class="reg-details">
+                        <li>Team size: exactly 3</li>
+                        <li>Reg. deadline: June 8</li>
+                        <li>Round 1: June 12 · Result: June 14</li>
+                        <li>Round 2: June 26 · Final: July 10/11</li>
+                    </ul>
+                    <a href="https://forms.google.com" target="_blank" class="reg-btn">Register →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ═══════════════════ CONTACT ═══════════════════ -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <p class="section-tag reveal" style="justify-content:center">07 — Get In Touch</p>
-      <h2 class="section-title reveal"><span class="gradient-text">Contact Us</span></h2>
-      <p class="section-desc reveal" style="margin: 0 auto 1rem">Have questions? Reach out to the IEEE CUET Student Branch organizing team.</p>
-      <div class="contact-links reveal">
-        <a href="mailto:ieeecuetsbofficial@cuet.ac.bd" class="contact-link">📧 Email Us</a>
-        <a href="https://facebook.com/ieeecuetsb" target="_blank" class="contact-link">📘 Facebook</a>
-        <a href="https://linkedin.com" target="_blank" class="contact-link">💼 LinkedIn</a>
-        <a href="https://instagram.com" target="_blank" class="contact-link">📸 Instagram</a>
-      </div>
-      <div class="ieee-badge reveal">
-        <p>Organized by <strong>IEEE CUET Student Branch</strong><br>
-        Chittagong University of Engineering & Technology<br>
-        Chittagong, Bangladesh &nbsp;·&nbsp; <strong>sciblitz.ieee-cuet.org</strong></p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="divider"></div>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 SciBlitz 2.0 — IEEE CUET Student Branch</p>
-  <p>Designed by IEEE CUET SB Web Dev Team</p>
-</footer>
+    <!-- ═══════════════════ TIMELINE ═══════════════════ -->
+    <section id="timeline">
+        <div class="container">
+            <p class="section-tag reveal">05 — Schedule</p>
+            <h2 class="section-title reveal">Event <span class="gradient-text">Timeline</span></h2>
+            <div class="timeline-wrap reveal">
+                <div class="timeline-line"></div>
 
-<!-- ═══════════════════ SCRIPTS ═══════════════════ -->
-<script>
-// ── Cursor
-const glow = document.getElementById('cursor-glow');
+                <div class="tl-group">
+                    <div class="tl-group-title">All Registrations Open</div>
+                    <div class="tl-item"><span class="tl-date">Mar 30</span><span class="tl-event">Registrations open
+                            for all segments</span></div>
+                </div>
 
-document.addEventListener('mousemove', (e) => {
-  // Update the CSS variables for the radial gradient center
-  glow.style.setProperty('--x', e.clientX + 'px');
-  glow.style.setProperty('--y', e.clientY + 'px');
-  
-  // Also keep your existing cursor dot logic
-  const cursor = document.getElementById('cursor');
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
+                <div class="tl-group">
+                    <div class="tl-group-title">3 Minute Thesis</div>
+                    <div class="tl-item"><span class="tl-date">May 30</span><span class="tl-event">3MT Registration
+                            closes</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 7</span><span class="tl-event">Abstract & flowchart
+                            submission deadline</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 16</span><span class="tl-event">Round 1 results
+                            announced</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 24</span><span class="tl-event">Video presentation
+                            submission deadline</span></div>
+                    <div class="tl-item"><span class="tl-date">Jul 2</span><span class="tl-event">Round 2 results
+                            announced</span></div>
+                </div>
 
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-  ring.style.left = e.clientX + 'px';
-  ring.style.top = e.clientY + 'px';
-});
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.transform = 'translate(-50%,-50%) scale(1.4)'; });
-  el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
-});
+                <div class="tl-group">
+                    <div class="tl-group-title">STEM BEE</div>
+                    <div class="tl-item"><span class="tl-date">Jun 8</span><span class="tl-event">STEM BEE registration
+                            closes</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 12</span><span class="tl-event">STEM BEE First
+                            Round</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 14</span><span class="tl-event">First Round
+                            results</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 26</span><span class="tl-event">STEM BEE Second
+                            Round</span></div>
+                    <div class="tl-item"><span class="tl-date">Jun 27</span><span class="tl-event">Second Round
+                            results</span></div>
+                </div>
 
-// ── Aurora Canvas
-(function() {
-  const canvas = document.getElementById('aurora-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, t = 0;
-  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-  resize(); window.addEventListener('resize', resize);
+                <div class="tl-group">
+                    <div class="tl-group-title">Project Showcase</div>
+                    <div class="tl-item"><span class="tl-date">Jul 6</span><span class="tl-event">Project Showcase
+                            registration closes</span></div>
+                </div>
 
-  const WAVES = [
-    { color: [180, 0, 255], amp: 0.3, freq: 0.8, speed: 0.003, phase: 0 }, // Electric Purple
-    { color: [90, 77, 138], amp: 0.25, freq: 1.2, speed: 0.004, phase: 2 }, // Deep Muted Purple
-    { color: [0, 229, 255], amp: 0.2, freq: 0.6, speed: 0.002, phase: 4 },  // Keep Cyan for contrast
-    { color: [255, 0, 255], amp: 0.15, freq: 1.5, speed: 0.005, phase: 1 }, // Magenta highlight
-];
+                <div class="tl-group">
+                    <div class="tl-group-title">🚀 Main Event — CUET Campus</div>
+                    <div class="tl-item"><span class="tl-date">Jul 10–11</span><span class="tl-event">SciBlitz 2.0 Final
+                            Event at CUET</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  function drawAurora() {
-    ctx.clearRect(0,0,W,H);
-    WAVES.forEach(w => {
-      const grad = ctx.createLinearGradient(0, H*0.2, 0, H*0.85);
-      grad.addColorStop(0, `rgba(${w.color},0.0)`);
-      grad.addColorStop(0.3, `rgba(${w.color},0.25)`);
-      grad.addColorStop(0.6, `rgba(${w.color},0.15)`);
-      grad.addColorStop(1, `rgba(${w.color},0.0)`);
-      ctx.beginPath();
-      ctx.moveTo(0, H);
-      for (let x = 0; x <= W; x += 4) {
-        const y = H * 0.5 + Math.sin(x / W * Math.PI * w.freq * 2 + t * w.speed * 1000 + w.phase) * H * w.amp
-                       + Math.sin(x / W * Math.PI * w.freq * 3.7 + t * w.speed * 800 + w.phase * 1.5) * H * w.amp * 0.4;
-        ctx.lineTo(x, y);
-      }
-      ctx.lineTo(W, H); ctx.closePath();
-      ctx.fillStyle = grad; ctx.fill();
-    });
-    t += 0.016;
-    requestAnimationFrame(drawAurora);
-  }
-  drawAurora();
-})();
+    <div class="divider"></div>
 
-// ── Navbar scroll
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-});
+    <!-- ═══════════════════ FAQ ═══════════════════ -->
+    <section id="faq">
+        <div class="container">
+            <p class="section-tag reveal">06 — Questions</p>
+            <h2 class="section-title reveal">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            <div class="faq-list">
 
-// ── Hamburger
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-ham.addEventListener('click', () => {
-  ham.classList.toggle('open'); mob.classList.toggle('open');
-});
-document.querySelectorAll('.mob-link').forEach(l => {
-  l.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); });
-});
+                <div class="faq-item reveal">
+                    <button class="faq-q">Who can participate in SciBlitz 2.0? <span class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>SciBlitz 2.0 is open nationwide. University students can enter all four segments. Class 9–12
+                            students can participate in the Project Showcase and STEM BEE. STEM BEE is open to all age
+                            groups.</p>
+                    </div>
+                </div>
 
-// ── Countdown to July 10 2025
-function updateCountdown() {
-  const target = new Date('2026-07-10T09:00:00+06:00').getTime();
-  const now = Date.now();
-  const diff = Math.max(0, target - now);
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-}
-updateCountdown(); setInterval(updateCountdown, 1000);
+                <div class="faq-item reveal">
+                    <button class="faq-q">Can I register for multiple segments? <span class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Yes! You can register for multiple segments. Each segment has its own registration fee and
+                            form. Make sure to submit separate registrations for each event you wish to join.</p>
+                    </div>
+                </div>
 
-// ── Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.12 });
-revealEls.forEach(el => observer.observe(el));
+                <div class="faq-item reveal">
+                    <button class="faq-q">How does the 3MT registration fee work? <span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>The initial Round 1 registration fee is ৳300. If your team qualifies for Round 2, an
+                            additional fee of ৳900 BDT will be required. You only pay the second fee if you advance — no
+                            advance payment needed for Round 2.</p>
+                    </div>
+                </div>
 
-// ── FAQ accordion
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
+                <div class="faq-item reveal">
+                    <button class="faq-q">What is the format of the 3MT video for Round 2? <span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>The video must be exactly 3 minutes long. It should present your full research clearly, with
+                            a single static slide allowed as a visual aid. Specific technical requirements and
+                            submission guidelines will be shared with qualified teams after Round 1 results.</p>
+                    </div>
+                </div>
 
-// ── Floating particles
-(function() {
-  const colors = ['rgba(0,180,166,0.7)', 'rgba(0,229,255,0.6)', 'rgba(90,77,138,0.6)', 'rgba(127,255,71,0.5)'];
-  for (let i = 0; i < 22; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 3 + 1;
-    p.style.cssText = `
+                <div class="faq-item reveal">
+                    <button class="faq-q">Where is the final event held? <span class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>The final event will be held on-campus at Chittagong University of Engineering & Technology
+                            (CUET), Chittagong, Bangladesh on July 10 & 11, 2025.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-q">When will AI Hackathon details be released? <span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>AI Hackathon details including timeline, problem statement format, and specific rules are
+                            currently being finalized. Follow our official channels for updates — an announcement will
+                            be made well before the registration deadline.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-q">How do I pay the registration fee? <span class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Payment instructions will be provided within the registration form. Accepted methods and
+                            transaction details will be specified per segment. Keep your transaction ID for
+                            confirmation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-inner">
+                <p class="section-tag reveal" style="justify-content:center">07 — Get In Touch</p>
+                <h2 class="section-title reveal"><span class="gradient-text">Contact Us</span></h2>
+                <p class="section-desc reveal" style="margin: 0 auto 1rem">Have questions? Reach out to the IEEE CUET
+                    Student Branch organizing team.</p>
+                <div class="contact-links reveal">
+                    <a href="mailto:ieeecuetsbofficial@cuet.ac.bd" class="contact-link">📧 Email Us</a>
+                    <a href="https://facebook.com/ieeecuetsb" target="_blank" class="contact-link">📘 Facebook</a>
+                    <a href="https://linkedin.com" target="_blank" class="contact-link">💼 LinkedIn</a>
+                    <a href="https://instagram.com" target="_blank" class="contact-link">📸 Instagram</a>
+                </div>
+                <div class="ieee-badge reveal">
+                    <p>Organized by <strong>IEEE CUET Student Branch</strong><br>
+                        Chittagong University of Engineering & Technology<br>
+                        Chittagong, Bangladesh &nbsp;·&nbsp; <strong>sciblitz.ieee-cuet.org</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 SciBlitz 2.0 — IEEE CUET Student Branch</p>
+        <p>Designed by IEEE CUET SB Web Dev Team</p>
+    </footer>
+
+    <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+    <script>
+        // ── Cursor
+        const glow = document.getElementById('cursor-glow');
+
+        document.addEventListener('mousemove', (e) => {
+            // Update the CSS variables for the radial gradient center
+            glow.style.setProperty('--x', e.clientX + 'px');
+            glow.style.setProperty('--y', e.clientY + 'px');
+
+            // Also keep your existing cursor dot logic
+            const cursor = document.getElementById('cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            ring.style.left = e.clientX + 'px';
+            ring.style.top = e.clientY + 'px';
+        });
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.transform = 'translate(-50%,-50%) scale(1.4)'; });
+            el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
+        });
+
+        // ── Aurora Canvas
+        (function () {
+            const canvas = document.getElementById('aurora-canvas');
+            const ctx = canvas.getContext('2d');
+            let W, H, t = 0;
+            function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+            resize(); window.addEventListener('resize', resize);
+
+            const WAVES = [
+                { color: [180, 0, 255], amp: 0.3, freq: 0.8, speed: 0.003, phase: 0 }, // Electric Purple
+                { color: [90, 77, 138], amp: 0.25, freq: 1.2, speed: 0.004, phase: 2 }, // Deep Muted Purple
+                { color: [0, 229, 255], amp: 0.2, freq: 0.6, speed: 0.002, phase: 4 },  // Keep Cyan for contrast
+                { color: [255, 0, 255], amp: 0.15, freq: 1.5, speed: 0.005, phase: 1 }, // Magenta highlight
+            ];
+
+            function drawAurora() {
+                ctx.clearRect(0, 0, W, H);
+                WAVES.forEach(w => {
+                    const grad = ctx.createLinearGradient(0, H * 0.2, 0, H * 0.85);
+                    grad.addColorStop(0, `rgba(${w.color},0.0)`);
+                    grad.addColorStop(0.3, `rgba(${w.color},0.25)`);
+                    grad.addColorStop(0.6, `rgba(${w.color},0.15)`);
+                    grad.addColorStop(1, `rgba(${w.color},0.0)`);
+                    ctx.beginPath();
+                    ctx.moveTo(0, H);
+                    for (let x = 0; x <= W; x += 4) {
+                        const y = H * 0.5 + Math.sin(x / W * Math.PI * w.freq * 2 + t * w.speed * 1000 + w.phase) * H * w.amp
+                            + Math.sin(x / W * Math.PI * w.freq * 3.7 + t * w.speed * 800 + w.phase * 1.5) * H * w.amp * 0.4;
+                        ctx.lineTo(x, y);
+                    }
+                    ctx.lineTo(W, H); ctx.closePath();
+                    ctx.fillStyle = grad; ctx.fill();
+                });
+                t += 0.016;
+                requestAnimationFrame(drawAurora);
+            }
+            drawAurora();
+        })();
+
+        // ── Navbar scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ── Hamburger
+        const ham = document.getElementById('hamburger');
+        const mob = document.getElementById('mobileMenu');
+        ham.addEventListener('click', () => {
+            ham.classList.toggle('open'); mob.classList.toggle('open');
+        });
+        document.querySelectorAll('.mob-link').forEach(l => {
+            l.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); });
+        });
+
+        // ── Countdown to July 10 2025
+        function updateCountdown() {
+            const target = new Date('2026-07-10T09:00:00+06:00').getTime();
+            const now = Date.now();
+            const diff = Math.max(0, target - now);
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+            document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+            document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+        }
+        updateCountdown(); setInterval(updateCountdown, 1000);
+
+        // ── Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => observer.observe(el));
+
+        // ── FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // ── Floating particles
+        (function () {
+            const colors = ['rgba(0,180,166,0.7)', 'rgba(0,229,255,0.6)', 'rgba(90,77,138,0.6)', 'rgba(127,255,71,0.5)'];
+            for (let i = 0; i < 22; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.random() * 3 + 1;
+                p.style.cssText = `
       width:${size}px; height:${size}px;
-      left:${Math.random()*100}vw;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      animation-duration:${Math.random()*15+10}s;
-      animation-delay:${Math.random()*10}s;
+      left:${Math.random() * 100}vw;
+      background:${colors[Math.floor(Math.random() * colors.length)]};
+      animation-duration:${Math.random() * 15 + 10}s;
+      animation-delay:${Math.random() * 10}s;
     `;
-    document.body.appendChild(p);
-  }
-})();
-</script>
+                document.body.appendChild(p);
+            }
+        })();
+    </script>
 </body>
+
 </html>
