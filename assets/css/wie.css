@@ -3,6 +3,7 @@
     --purple-primary: #af34ff;
     --neon-soft: #ff9aff;
     --cyan-glow: #00ffcc; /* Used for subtle contrast in the existing code */
+    --max-width: 1200px;
 }
 
 /* ================= GLOBAL STYLES ================= */
@@ -281,6 +282,7 @@ section:not(#wie-hero) {
     font-weight: 700;
     background: linear-gradient(135deg, #ff9aff, #c868ff);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     text-shadow: 0 0 22px rgba(255, 150, 255, 0.4);
 }
@@ -852,7 +854,7 @@ section:not(#wie-hero) {
 }
 
 /* Mobile: One card visible at a time */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .events-grid {
         grid-auto-columns: 100%;
         gap: 0;
@@ -1037,9 +1039,6 @@ section:not(#wie-hero) {
     box-shadow: 0 0 18px rgba(255, 80, 255, 0.35);
 }
 
-
-
-
 .top-counselors {
     display: flex;
     flex-direction: row;
@@ -1197,9 +1196,9 @@ footer {
     padding: 30px 25px;
     margin-top: 50px;
     border-top: 1px solid rgba(255, 154, 255, 0.2);
-  }
-  
-  .footer-inner {
+}
+
+.footer-inner {
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -1208,33 +1207,33 @@ footer {
     flex-wrap: wrap;
     color: #d8c2ff; /* Pale purple text */
     font-size: 0.95rem;
-  }
-  
-  .footer-links {
-      display: flex;
-      gap: 16px;
-  }
-  
-  .footer-links a {
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links a {
     color: var(--neon-soft); /* Neon Magenta */
     text-decoration: none;
     transition: 0.3s ease;
     font-weight: 500;
-  }
-  
-  .footer-links a:hover {
+}
+
+.footer-links a:hover {
     color: #ffffff;
     text-shadow: 0 0 10px var(--neon-soft);
-  }
-  
-  /* Responsive adjustments for Footer */
-  @media (max-width: 600px) {
-      .footer-inner {
-          flex-direction: column;
-          text-align: center;
-          gap: 15px;
-      }
-  }
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 600px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
 /* ===================== PROFESSIONAL FOOTER - WIE THEME ===================== */
 #contact {
     background: linear-gradient(135deg, #0f001a 0%, #1a0028 100%);
