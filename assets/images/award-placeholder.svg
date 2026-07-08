@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="IEEE CUET SB Award">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="0.55" stop-color="#00305f"/>
+      <stop offset="1" stop-color="#001428"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#3cf2ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3cf2ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect width="600" height="400" fill="url(#glow)"/>
+  <!-- trophy -->
+  <g fill="none" stroke="#3cf2ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" transform="translate(300 176)">
+    <path d="M-46 -58 h92 v26 a46 46 0 0 1 -92 0 z" fill="#3cf2ff" fill-opacity="0.12"/>
+    <path d="M-46 -46 h-22 a16 16 0 0 0 16 30 h6"/>
+    <path d="M46 -46 h22 a16 16 0 0 1 -16 30 h-6"/>
+    <path d="M0 20 v22"/>
+    <path d="M-22 42 h44"/>
+    <path d="M-30 58 h60 v-4 a12 12 0 0 0 -12 -12 h-36 a12 12 0 0 0 -12 12 z" fill="#3cf2ff" fill-opacity="0.18"/>
+  </g>
+  <text x="300" y="300" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="24" font-weight="700" fill="#9af9ff" letter-spacing="1">IEEE CUET SB</text>
+  <text x="300" y="330" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="15" fill="#7fbfff" letter-spacing="3">ACHIEVEMENT</text>
+</svg>

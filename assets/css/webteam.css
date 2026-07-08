@@ -1,29 +1,41 @@
-/* ROOT VARIABLES for WebTeam Theme (GitHub/Coding inspired) */
+/* ============================================================
+   WEB MANAGEMENT TEAM — IEEE brand theme (deep blue + cyan glow)
+   Redesign: centered profile cards
+   ============================================================ */
 :root {
-    --github-blue: #58a6ff;
-    --github-green: #7ee787;
-    --github-purple: #d2a8ff;
-    --github-dark: #0d1117;
-    --github-darker: #010409;
-    --github-card: #161b22;
+    --blue-1: #001a36;
+    --blue-2: #003060;
+    --blue-3: #004e92;
+    --cyan-glow: #3cf2ff;
+    --neon-soft: #9af9ff;
+    --page-bg: #001428;
+    --card-bg: rgba(0, 22, 40, 0.75);
+    --max-width: 1200px;
+
+    /* Tier accents (kept within the brand palette) */
+    --lead-accent: #3cf2ff;   /* cyan  */
+    --senior-accent: #3affc8; /* mint  */
+    --junior-accent: #b98cff; /* violet */
 }
 
-/* ================= GLOBAL STYLES ================= */
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: var(--github-dark);
-    color: #c9d1d9;
+    background: var(--page-bg);
+    color: #e9f4ff;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-/* Global Section Spacing */
 section:not(#webteam-hero) {
-    padding: 70px 20px;
-    margin-bottom: 50px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 60px 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
     overflow-x: hidden;
 }
 
@@ -32,7 +44,7 @@ section:not(#webteam-hero) {
     margin: auto;
 }
 
-/* ================= NAVBAR (WebTeam Theme) ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     width: 100%;
     padding: 12px 0;
@@ -40,11 +52,11 @@ section:not(#webteam-hero) {
     top: 0;
     z-index: 1000;
     background: transparent;
-    border-bottom: 1px solid rgba(88, 166, 255, 0.25);
+    border-bottom: 1px solid rgba(60, 242, 255, 0.2);
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -52,57 +64,55 @@ section:not(#webteam-hero) {
     padding: 0 25px;
 }
 
-/* LOGO */
 .logo-img {
     width: 55px;
 }
 
-/* DESKTOP MENU */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 22px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li a {
-    color: #c9d1d9;
+    color: #d7eaff;
     text-decoration: none;
     font-size: 0.85rem;
     transition: 0.25s;
 }
 
 .nav-links li a:hover {
-    color: var(--github-blue);
-    text-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
+    color: var(--cyan-glow);
+    text-shadow: 0 0 8px rgba(60, 242, 255, 0.6);
 }
 
-/* PORTAL BUTTON (DESKTOP ONLY) */
 .portal-btn {
-    background: linear-gradient(135deg, #238636, #2ea043);
+    background: linear-gradient(135deg, #004e92, #0077c7);
     padding: 10px 18px;
     color: white;
-    border-radius: 8px;
+    border-radius: 50px;
     text-decoration: none;
     font-size: 0.85rem;
     transition: 0.3s;
 }
 
 .portal-btn:hover {
-    box-shadow: 0 0 15px rgba(126, 231, 135, 0.5);
+    box-shadow: 0 0 18px rgba(60, 242, 255, 0.45);
     transform: translateY(-2px);
 }
 
-/* MOBILE MENU TOGGLE */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: var(--github-blue);
+    color: var(--cyan-glow);
     font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* Dropdown Menu */
+/* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -112,15 +122,14 @@ section:not(#webteam-hero) {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(22, 27, 34, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 20, 40, 0.95);
+    backdrop-filter: blur(12px);
     list-style: none;
-    padding: 10px 0;
-    margin-top: 0;
-    padding-top: 15px;
-    border-radius: 8px;
+    padding: 15px 0 10px;
+    margin: 0;
+    border-radius: 10px;
     min-width: 220px;
-    border: 1px solid rgba(88, 166, 255, 0.3);
+    border: 1px solid rgba(60, 242, 255, 0.3);
     z-index: 1000;
 }
 
@@ -128,48 +137,43 @@ section:not(#webteam-hero) {
     display: block;
 }
 
-.dropdown-menu li {
-    padding: 0;
-}
-
 .dropdown-menu li a {
     display: block;
     padding: 10px 20px;
-    color: #c9d1d9;
+    color: #d7eaff;
     font-size: 0.85rem;
+    text-decoration: none;
 }
 
 .dropdown-menu li a:hover {
-    background: rgba(88, 166, 255, 0.1);
-    color: var(--github-blue);
+    background: rgba(60, 242, 255, 0.1);
+    color: var(--cyan-glow);
 }
 
-/* ================= HERO SECTION ================= */
+/* ================= HERO ================= */
 #webteam-hero {
-    min-height: 70vh;
+    min-height: 78vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #0d1117, #161b22);
+    background:
+        radial-gradient(circle at 50% 120%, rgba(60, 242, 255, 0.18), transparent 55%),
+        linear-gradient(135deg, #001a36 0%, #002b52 55%, #001428 100%);
 }
 
 .webteam-hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(13, 17, 23, 0.9), rgba(22, 27, 34, 0.8));
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 20, 40, 0.2), rgba(0, 20, 40, 0.85));
     z-index: 1;
 }
 
-/* Floating Background Shapes */
+/* Floating shapes */
 .webteam-floating-bg {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 0;
     overflow: hidden;
 }
@@ -177,279 +181,238 @@ section:not(#webteam-hero) {
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(88, 166, 255, 0.15), transparent);
+    background: radial-gradient(circle, rgba(60, 242, 255, 0.2), transparent 70%);
     animation: float 8s ease-in-out infinite;
 }
 
-.circle.c1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.circle.c2 {
-    width: 200px;
-    height: 200px;
-    top: 60%;
-    right: 10%;
-    animation-delay: 2s;
-}
-
-.circle.c3 {
-    width: 250px;
-    height: 250px;
-    bottom: 5%;
-    left: 50%;
-    animation-delay: 4s;
-}
+.circle.c1 { width: 300px; height: 300px; top: 8%;  left: 5%;  animation-delay: 0s; }
+.circle.c2 { width: 200px; height: 200px; top: 55%; right: 8%; animation-delay: 2s; }
+.circle.c3 { width: 250px; height: 250px; bottom: 0%; left: 48%; animation-delay: 4s; }
 
 .triangle {
     position: absolute;
     width: 0;
     height: 0;
     border-style: solid;
-    opacity: 0.1;
+    opacity: 0.12;
     animation: float 10s ease-in-out infinite;
 }
 
 .triangle.t1 {
     border-width: 0 75px 130px 75px;
-    border-color: transparent transparent var(--github-green) transparent;
-    top: 20%;
-    right: 15%;
-    animation-delay: 1s;
+    border-color: transparent transparent var(--cyan-glow) transparent;
+    top: 18%; right: 15%; animation-delay: 1s;
 }
-
 .triangle.t2 {
     border-width: 0 60px 104px 60px;
-    border-color: transparent transparent var(--github-purple) transparent;
-    bottom: 20%;
-    left: 10%;
-    animation-delay: 3s;
+    border-color: transparent transparent var(--neon-soft) transparent;
+    bottom: 18%; left: 10%; animation-delay: 3s;
 }
-
 .triangle.t3 {
     border-width: 0 50px 87px 50px;
-    border-color: transparent transparent var(--github-blue) transparent;
-    top: 50%;
-    left: 25%;
-    animation-delay: 5s;
+    border-color: transparent transparent var(--blue-3) transparent;
+    top: 50%; left: 25%; animation-delay: 5s;
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-30px) rotate(5deg);
-    }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-30px) rotate(5deg); }
 }
 
-/* Hero Content */
 .webteam-hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 100px 20px 50px 20px;
+    padding: 110px 20px 60px;
+    max-width: 820px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 7px 18px;
+    margin-bottom: 22px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--neon-soft);
+    background: rgba(60, 242, 255, 0.08);
+    border: 1px solid rgba(60, 242, 255, 0.35);
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+}
+
+.hero-badge i {
+    margin-right: 6px;
 }
 
 .webteam-title {
-    font-size: 3.5rem;
-    background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+    font-size: 3.6rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--cyan-glow), var(--neon-soft));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 15px;
+    margin: 0 0 16px;
     font-weight: 700;
+    text-shadow: 0 0 30px rgba(60, 242, 255, 0.3);
 }
 
 .webteam-subtitle {
-    font-size: 1.3rem;
-    color: var(--github-green);
+    font-size: 1.2rem;
+    color: var(--neon-soft);
     font-family: 'Courier New', monospace;
-    margin-top: 10px;
+    margin: 0;
+    opacity: 0.9;
 }
 
-/* ================= COMMITTEE SECTION ================= */
-#webteam-committee {
-    padding: 70px 20px;
+/* ================= TEAM SECTIONS ================= */
+.webteam-committee {
+    padding: 55px 20px;
 }
 
 .committee-title {
-    font-size: 2.2rem;
-    color: var(--github-blue);
-    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--neon-soft);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
     position: relative;
-    text-align: left;
+    padding-bottom: 16px;
 }
 
 .committee-title::after {
     content: "";
-    width: 160px;
-    height: 3px;
-    background: var(--github-blue);
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cyan-glow), var(--neon-soft));
     position: absolute;
-    bottom: -8px;
-    left: 0;
-    opacity: 0.6;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(60, 242, 255, 0.5);
 }
 
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 28px;
+    max-width: 1000px;
+    margin: 55px auto 0;
+    justify-content: center;
 }
 
-/* Card styling */
+/* Single-member rows stay centered, not stretched full width */
+.committee-grid:has(.committee-card:only-child) {
+    grid-template-columns: minmax(230px, 260px);
+}
+
+/* ---- Card ---- */
 .committee-card {
-    background: linear-gradient(135deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: left;
-    border: 2px solid rgba(88, 166, 255, 0.3);
-    backdrop-filter: blur(15px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--card-bg);
+    border: 1px solid rgba(60, 242, 255, 0.25);
+    border-radius: 18px;
+    padding: 32px 22px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    backdrop-filter: blur(12px);
+    transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    gap: 25px;
 }
 
-/* Gradient overlay effect */
+/* animated top accent bar */
 .committee-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    width: 5px;
-    background: linear-gradient(180deg, var(--github-blue), var(--github-purple));
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cyan-glow), var(--neon-soft));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
 }
 
 .committee-card:hover::before {
-    opacity: 1;
+    transform: scaleX(1);
 }
 
-/* Lead cards - Blue theme */
-.committee-card.lead {
-    border-color: rgba(88, 166, 255, 0.4);
+.committee-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan-glow);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 24px rgba(60, 242, 255, 0.3);
 }
 
-.committee-card.lead::before {
-    background: linear-gradient(180deg, #1f6feb, var(--github-blue), #58a6ff);
-}
-
-.committee-card.lead:hover {
-    border-color: var(--github-blue);
-    box-shadow: 0 10px 40px rgba(88, 166, 255, 0.3), 0 0 0 1px rgba(88, 166, 255, 0.1) inset;
-    transform: translateX(8px);
-}
-
-.committee-card.lead .role {
-    color: var(--github-blue);
-}
-
-/* Senior cards - Green theme */
-.committee-card.senior {
-    border-color: rgba(126, 231, 135, 0.4);
-}
-
-.committee-card.senior::before {
-    background: linear-gradient(180deg, #238636, var(--github-green), #7ee787);
-}
-
-.committee-card.senior:hover {
-    border-color: var(--github-green);
-    box-shadow: 0 10px 40px rgba(126, 231, 135, 0.3), 0 0 0 1px rgba(126, 231, 135, 0.1) inset;
-    transform: translateX(8px);
-}
-
-.committee-card.senior .role {
-    color: var(--github-green);
-}
-
-/* Junior cards - Purple theme */
-.committee-card.junior {
-    border-color: rgba(210, 168, 255, 0.4);
-}
-
-.committee-card.junior::before {
-    background: linear-gradient(180deg, #8957e5, var(--github-purple), #d2a8ff);
-}
-
-.committee-card.junior:hover {
-    border-color: var(--github-purple);
-    box-shadow: 0 10px 40px rgba(210, 168, 255, 0.3), 0 0 0 1px rgba(210, 168, 255, 0.1) inset;
-    transform: translateX(8px);
-}
-
-.committee-card.junior .role {
-    color: var(--github-purple);
-}
-
-/* Member images */
+/* Avatar */
 .committee-img {
-    width: 90px;
-    height: 90px;
+    width: 104px;
+    height: 104px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(88, 166, 255, 0.2);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    flex-shrink: 0;
+    padding: 4px;
+    border: 3px solid rgba(60, 242, 255, 0.35);
+    background: rgba(60, 242, 255, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: all 0.35s ease;
 }
 
 .committee-card:hover .committee-img {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 30px rgba(88, 166, 255, 0.4);
+    transform: scale(1.06);
+    box-shadow: 0 0 22px rgba(60, 242, 255, 0.45);
 }
 
-.committee-card.lead:hover .committee-img {
-    border-color: var(--github-blue);
-}
-
-.committee-card.senior:hover .committee-img {
-    border-color: var(--github-green);
-}
-
-.committee-card.junior:hover .committee-img {
-    border-color: var(--github-purple);
-}
-
-/* Card content wrapper */
 .card-content {
-    flex: 1;
     min-width: 0;
 }
 
-/* Role label */
 .role {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: #c9d1d9;
-    margin-bottom: 5px;
-    text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: color 0.3s ease;
-    opacity: 0.8;
+    text-transform: uppercase;
+    color: var(--cyan-glow);
+    margin: 0 0 5px;
 }
 
-/* Member name */
 .name {
-    font-size: 1.25rem;
-    color: #e6edf3;
-    margin: 0;
+    font-size: 1.05rem;
     font-weight: 600;
-    line-height: 1.4;
+    color: #eaf6ff;
+    margin: 0;
+    line-height: 1.35;
 }
 
-/* Reveal Animation */
+/* ---- Tier accents ---- */
+.committee-card.lead::before  { background: linear-gradient(90deg, #0077c7, var(--lead-accent)); }
+.committee-card.lead .role    { color: var(--lead-accent); }
+.committee-card.lead .committee-img { border-color: rgba(60, 242, 255, 0.4); }
+.committee-card.lead:hover {
+    border-color: var(--lead-accent);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 24px rgba(60, 242, 255, 0.35);
+}
+
+.committee-card.senior::before { background: linear-gradient(90deg, #14b58c, var(--senior-accent)); }
+.committee-card.senior .role   { color: var(--senior-accent); }
+.committee-card.senior .committee-img { border-color: rgba(58, 255, 200, 0.4); }
+.committee-card.senior:hover {
+    border-color: var(--senior-accent);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 24px rgba(58, 255, 200, 0.35);
+}
+
+.committee-card.junior::before { background: linear-gradient(90deg, #7a4fe0, var(--junior-accent)); }
+.committee-card.junior .role   { color: var(--junior-accent); }
+.committee-card.junior .committee-img { border-color: rgba(185, 140, 255, 0.4); }
+.committee-card.junior:hover {
+    border-color: var(--junior-accent);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 24px rgba(185, 140, 255, 0.35);
+}
+
+/* ================= REVEAL ANIMATION ================= */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -463,9 +426,11 @@ section:not(#webteam-hero) {
 
 /* ================= FOOTER ================= */
 #contact {
-    background: linear-gradient(135deg, #0d1117, #161b22);
-    color: #c9d1d9;
-    padding: 50px 20px 20px;
+    background: linear-gradient(135deg, #001428 0%, #001a36 100%);
+    color: #d7eaff;
+    padding: 60px 20px 20px;
+    border-top: 2px solid rgba(60, 242, 255, 0.25);
+    max-width: none;
 }
 
 .footer-container {
@@ -481,7 +446,7 @@ section:not(#webteam-hero) {
 }
 
 .footer-section h3 {
-    color: var(--github-blue);
+    color: var(--cyan-glow);
     margin-bottom: 20px;
     font-size: 1.2rem;
 }
@@ -491,15 +456,18 @@ section:not(#webteam-hero) {
     margin-bottom: 15px;
 }
 
+.footer-desc,
 .footer-about {
-    color: #8b949e;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(212, 234, 255, 0.8);
+    font-size: 0.92rem;
 }
 
-.footer-links {
+.footer-links,
+.footer-contact {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
@@ -507,7 +475,7 @@ section:not(#webteam-hero) {
 }
 
 .footer-links li a {
-    color: #8b949e;
+    color: rgba(212, 234, 255, 0.8);
     text-decoration: none;
     transition: 0.3s;
     display: flex;
@@ -516,7 +484,7 @@ section:not(#webteam-hero) {
 }
 
 .footer-links li a:hover {
-    color: var(--github-blue);
+    color: var(--cyan-glow);
     padding-left: 5px;
 }
 
@@ -524,13 +492,8 @@ section:not(#webteam-hero) {
     font-size: 0.8rem;
 }
 
-.footer-contact {
-    list-style: none;
-    padding: 0;
-}
-
 .footer-contact li {
-    color: #8b949e;
+    color: rgba(212, 234, 255, 0.8);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -538,7 +501,7 @@ section:not(#webteam-hero) {
 }
 
 .footer-contact li i {
-    color: var(--github-blue);
+    color: var(--cyan-glow);
     width: 20px;
 }
 
@@ -551,48 +514,43 @@ section:not(#webteam-hero) {
 .footer-social a {
     width: 40px;
     height: 40px;
-    background: rgba(88, 166, 255, 0.1);
-    border: 1px solid rgba(88, 166, 255, 0.3);
+    background: rgba(60, 242, 255, 0.1);
+    border: 1px solid rgba(60, 242, 255, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--github-blue);
+    color: var(--cyan-glow);
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .footer-social a:hover {
-    background: var(--github-blue);
-    color: white;
-    box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+    background: var(--cyan-glow);
+    color: #001428;
+    box-shadow: 0 0 15px rgba(60, 242, 255, 0.5);
     transform: translateY(-3px);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(88, 166, 255, 0.2);
+    border-top: 1px solid rgba(60, 242, 255, 0.2);
     padding-top: 20px;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: #8b949e;
+    color: #aac9ff;
     font-size: 0.9rem;
 }
 
-.footer-title {
-    color: var(--github-blue);
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
+.footer-title,
 .footer-heading {
-    color: var(--github-blue);
+    color: var(--cyan-glow);
     margin-bottom: 15px;
-    margin-top: 20px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
-/* ================= RESPONSIVE DESIGN ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
     .footer-top {
         grid-template-columns: repeat(2, 1fr);
@@ -609,12 +567,12 @@ section:not(#webteam-hero) {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(13, 17, 23, 0.98);
+        background: rgba(0, 20, 40, 0.98);
         flex-direction: column;
         padding: 20px;
         gap: 0;
         display: none;
-        border-top: 1px solid rgba(88, 166, 255, 0.3);
+        border-top: 1px solid rgba(60, 242, 255, 0.3);
     }
 
     .nav-links.active {
@@ -624,17 +582,17 @@ section:not(#webteam-hero) {
     .nav-links li {
         width: 100%;
         padding: 12px 0;
-        border-bottom: 1px solid rgba(88, 166, 255, 0.1);
+        border-bottom: 1px solid rgba(60, 242, 255, 0.1);
     }
 
     .dropdown-menu {
         position: static;
         margin-top: 10px;
         border: none;
-        background: rgba(22, 27, 34, 0.5);
+        background: rgba(0, 22, 40, 0.5);
         display: none;
     }
-    
+
     .dropdown.open .dropdown-menu {
         display: block;
     }
@@ -652,17 +610,8 @@ section:not(#webteam-hero) {
     }
 
     .committee-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-    }
-    
-    .committee-card {
-        padding: 30px 20px;
-    }
-    
-    .committee-img {
-        width: 100px;
-        height: 100px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
     }
 }
 
@@ -672,10 +621,14 @@ section:not(#webteam-hero) {
     }
 
     .committee-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .webteam-title {
         font-size: 2rem;
+    }
+
+    .hero-badge {
+        font-size: 0.72rem;
     }
 }
