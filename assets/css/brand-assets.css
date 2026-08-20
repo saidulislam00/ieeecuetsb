@@ -1,0 +1,457 @@
+/* Shared presentation for the official branch and chapter logo assets. */
+
+.logo-img {
+    display: block;
+    width: auto;
+    height: 55px;
+    max-width: 86px;
+    object-fit: contain;
+}
+
+/* Fixed navbar space: reserve a safe 90px in normal document flow.
+   Hero sections then begin below the glass navigation instead of behind it. */
+:root {
+    --site-navbar-height: 90px;
+}
+
+body:has(> .navbar),
+body.excom-page {
+    padding-top: var(--site-navbar-height) !important;
+}
+
+body.excom-page .excom-hero {
+    padding-top: 55px;
+}
+
+/* ===================== CHAPTER LOGO LOCKUP =====================
+   The source logos range from a 0.98 square (WIE) to a 3.50 wordmark (SPS),
+   so a fixed-aspect plate would either strand a small mark in empty space or
+   crop a wide one. Instead the plate keeps a constant HEIGHT across every
+   chapter page — so the hero rhythm is identical site-wide — while its width
+   hugs whatever it holds.
+
+   Each logo's height is set from its aspect ratio (h = 78 / ratio^0.4) rather
+   than a shared value, because a square mark and a wide wordmark of the same
+   height do not read as the same size. This keeps their optical weight even.
+   The files themselves are pre-trimmed of transparent padding, so no
+   per-logo transform hacks are needed. */
+
+.chapter-brand-plate {
+    --plate-height: 116px;
+    --logo-scale: 1;
+
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: max-content;
+    max-width: min(100%, 340px);
+    height: calc(var(--plate-height) * var(--logo-scale));
+    margin: 0 auto 26px;
+    padding-inline: clamp(20px, 2.6vw, 30px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.6) inset,
+        0 16px 38px rgba(0, 0, 0, 0.26);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.chapter-brand-plate img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: calc(var(--logo-h, 64px) * var(--logo-scale));
+    object-fit: contain;
+}
+
+/* Optically matched heights, derived from each mark's trimmed aspect ratio. */
+.chapter-brand-plate[data-logo="wie"] { --logo-h: 79px; }   /* 0.98 */
+.chapter-brand-plate[data-logo="pes"] { --logo-h: 78px; }   /* 0.99 */
+.chapter-brand-plate[data-logo="aps"] { --logo-h: 62px; }   /* 1.78 */
+.chapter-brand-plate[data-logo="embs"] { --logo-h: 59px; }  /* 2.04 */
+.chapter-brand-plate[data-logo="ras"] { --logo-h: 56px; }   /* 2.30 */
+.chapter-brand-plate[data-logo="photonics"] { --logo-h: 54px; } /* 2.53 */
+.chapter-brand-plate[data-logo="sps"] { --logo-h: 47px; }   /* 3.50 */
+
+#aps-hero,
+#embs-hero,
+#pes-hero,
+#pho-hero,
+#ras-hero,
+#sps-hero,
+#wie-hero {
+    min-height: 600px;
+}
+
+/* The WIE hero is left-aligned; every other chapter hero is centred. */
+#wie-hero .chapter-brand-plate {
+    margin-inline: 0;
+}
+
+@media (max-width: 720px) {
+    .chapter-brand-plate {
+        --logo-scale: 0.82;
+        margin-bottom: 20px;
+        padding-inline: clamp(16px, 4vw, 22px);
+        border-radius: 16px;
+    }
+
+    #wie-hero .chapter-brand-plate {
+        margin-inline: auto;
+    }
+
+    body.excom-page .excom-hero {
+        padding-top: 42px;
+    }
+}
+
+/* ===================== TOUCH TARGET SIZING =====================
+   The hamburger and the footer link lists were 29x43 and 24px tall, under the
+   44px that Apple/Google recommend for a comfortable thumb target. These sit
+   in the shared sheet so every page picks them up. */
+
+/* Sized with text-align/line-height rather than grid centring, because the
+   shared mobile rules further down this file set `display: block` and would
+   otherwise win the cascade and leave the glyph off-centre. */
+.navbar .menu-toggle {
+    box-sizing: border-box;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    text-align: center;
+    line-height: 44px;
+}
+
+/* Footer lists: give each row a full-height hit area without stretching the
+   footer's vertical rhythm, by trading the old margin for padding. */
+@media (max-width: 1120px), (pointer: coarse) {
+    .footer-list li,
+    .footer-contact li {
+        margin-bottom: 0;
+    }
+
+    .footer-list li a,
+    .footer-contact li a {
+        min-height: 44px;
+        padding-block: 6px;
+    }
+
+    .footer-social a {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Content call-to-action buttons. Every CTA in this codebase ends in
+       "-btn", so match on that rather than listing each theme's class.
+       They need inline-flex because min-height does nothing on an inline box. */
+    a[class$="-btn"],
+    a[class*="-btn "],
+    button[class$="-btn"],
+    button[class*="-btn "] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+    }
+}
+
+/* Shared navbar refinements -------------------------------------------------
+   These rules sit after the page themes so every branch/chapter navbar keeps
+   the same disclosure behavior and remains usable when the Ex-Com item is
+   added. */
+.navbar .nav-links {
+    gap: clamp(8px, 1.15vw, 18px);
+}
+
+.navbar .nav-dropdown-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #d7eaff;
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.navbar .nav-dropdown-toggle:hover,
+.navbar .nav-dropdown-toggle:focus-visible,
+.navbar .nav-dropdown-toggle[aria-expanded="true"] {
+    color: var(--cyan-glow, #3cf2ff);
+}
+
+.navbar .dropdown.open > .dropdown-menu {
+    display: block !important;
+}
+
+.navbar :is(a, button):focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--cyan-glow, #3cf2ff) 78%, white);
+    outline-offset: 4px;
+}
+
+@media (max-width: 1120px) {
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar .desktop-only {
+        display: none;
+    }
+
+    .navbar .nav-links {
+        position: absolute;
+        top: 75px;
+        right: 16px;
+        left: auto;
+        width: min(330px, calc(100vw - 32px));
+        max-height: calc(100vh - 95px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 16px;
+        border: 1px solid rgba(60, 242, 255, 0.2);
+        border-radius: 14px;
+        background: rgba(0, 18, 36, 0.96);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.42);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links > li {
+        width: 100%;
+        padding: 0;
+        border: 0;
+    }
+
+    .navbar .nav-links > li > :is(a, button) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 44px;
+        padding: 9px 10px;
+        color: #e8f4ff;
+        font-size: 0.94rem;
+        border-radius: 8px;
+    }
+
+    .navbar .nav-links > li > :is(a, button):hover,
+    .navbar .nav-links > li > :is(a, button):focus-visible {
+        background: rgba(60, 242, 255, 0.08);
+    }
+
+    .navbar .dropdown:hover > .dropdown-menu,
+    .navbar .dropdown:focus-within:not(.open) > .dropdown-menu {
+        display: none !important;
+    }
+
+    .navbar .dropdown-menu {
+        position: static;
+        inset: auto;
+        width: 100%;
+        display: none !important;
+        flex-direction: column;
+        gap: 2px;
+        margin: 2px 0 7px;
+        padding: 5px 0 5px 10px;
+        border: 0;
+        border-left: 1px solid rgba(60, 242, 255, 0.25);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .navbar .dropdown.open > .dropdown-menu {
+        display: flex !important;
+    }
+
+    .navbar .dropdown-menu li a {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 7px;
+        white-space: normal;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar .nav-links,
+    .navbar .nav-dropdown-toggle {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===================== SHARED NAVIGATION CONTROLS ===================== */
+.navbar .nav-links {
+    gap: clamp(10px, 1.35vw, 18px);
+}
+
+.navbar button.nav-dropdown-toggle {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.navbar .nav-links > li > button.nav-dropdown-toggle {
+    color: inherit;
+    font-size: 0.85rem;
+}
+
+.navbar .nav-dropdown-toggle .nav-caret {
+    display: inline-block;
+    margin-left: 0.2em;
+    transition: transform 180ms ease;
+}
+
+.navbar .dropdown.open > .nav-dropdown-toggle .nav-caret,
+.navbar .dropdown.open > .dropdown-link .nav-caret {
+    transform: rotate(180deg);
+}
+
+.navbar a:focus-visible,
+.navbar button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+@media (min-width: 1121px) {
+    .navbar .dropdown.open > .dropdown-menu,
+    .navbar .dropdown:focus-within > .dropdown-menu {
+        display: block !important;
+    }
+}
+
+@media (max-width: 1120px) {
+    .navbar .nav-container {
+        position: relative;
+        padding-inline: clamp(16px, 4vw, 28px);
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar .desktop-only {
+        display: none !important;
+    }
+
+    .navbar .nav-links {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: clamp(12px, 3vw, 24px);
+        left: auto;
+        width: min(340px, calc(100vw - 24px));
+        max-height: calc(100vh - 96px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        margin: 0;
+        padding: 14px;
+        list-style: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 14px;
+        background: rgba(0, 13, 28, 0.96);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        transform: none;
+        animation: none;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links > li {
+        width: 100%;
+        padding: 0;
+        border: 0;
+    }
+
+    .navbar .nav-links > li > a,
+    .navbar .nav-links > li > button.nav-dropdown-toggle {
+        display: flex;
+        width: 100%;
+        min-height: 44px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px;
+        color: inherit;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+    .navbar .dropdown > .dropdown-menu,
+    .navbar .dropdown:hover > .dropdown-menu,
+    .navbar .dropdown:focus-within > .dropdown-menu {
+        position: static;
+        display: none !important;
+        width: 100%;
+        min-width: 0;
+        margin: 2px 0 8px;
+        padding: 4px 0 4px 14px;
+        list-style: none;
+        border: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .navbar .dropdown.open > .dropdown-menu {
+        display: flex !important;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .navbar .dropdown-menu li a {
+        display: flex;
+        min-height: 40px;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 7px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar *,
+    .navbar *::before,
+    .navbar *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

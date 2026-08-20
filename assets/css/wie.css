@@ -395,73 +395,6 @@ section:not(#wie-hero) {
     transform: translateY(-3px) scale(1.03);
 }
 
-/* ===================== ABOUT IEEE WIE ===================== */
-#wie-about-wrapper {
-    /* Removed the global background and used section padding instead */
-    padding: 0;
-    margin: 0;
-    margin-bottom: 50px; /* Add margin-bottom here */
-}
-
-#wie-about {
-    /* No change */
-    padding: 90px 20px;
-    background: linear-gradient(135deg, #3a0057, #5e008c);
-    border-radius: 12px;
-    max-width: 1100px; /* Adjusted to fit content */
-    margin: auto;
-}
-
-.wie-about-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* Logo */
-.wie-about-logo img {
-    width: 160px;
-    height: auto;
-    filter: drop-shadow(0 0 12px rgba(255, 60, 255, 0.3));
-    transition: 0.35s ease;
-}
-
-/* Glow hover effect */
-.wie-about-logo img:hover {
-    transform: scale(1.06);
-    filter: drop-shadow(0 0 25px rgba(255, 60, 255, 0.55));
-}
-
-/* Text */
-.wie-about-text h2 {
-    font-size: 2.3rem;
-    color: var(--neon-soft);
-    margin-bottom: 20px;
-}
-
-.wie-about-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #e7d9ff;
-    max-width: 650px;
-    text-align: justify;
-}
-
-/* Mobile Responsive */
-@media (max-width: 840px) {
-    .wie-about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .wie-about-text p {
-        margin: auto;
-    }
-}
-
-
 /* ===================== MISSION & VISION ===================== */
 #mv-section {
     padding: 80px 20px;
@@ -1474,4 +1407,18 @@ footer {
 @media (max-width: 640px) {
   .achievements-grid { grid-template-columns: 1fr; }
   .award-title { font-size: 1.05rem; }
+}
+
+/* ===================== STICKY NAVBAR ===================== */
+.navbar {
+  position: fixed;
+  background: rgba(20, 0, 32, 0.76);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Offset in-page anchor jumps so headings clear the fixed navbar */
+html {
+  scroll-padding-top: 90px;
 }

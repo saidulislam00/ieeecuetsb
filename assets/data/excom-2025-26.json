@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 1,
+  "year": "2025-26",
+  "source": "IEEE CUET ExCom 2025-26.pdf",
+  "entities": {
+    "sb": {
+      "members": [
+        {
+          "name": "Dr. Mohammad Shamsul Arefin",
+          "role": "Advisory Panel",
+          "details": [
+            "Professor, Department of Computer Science & Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1KLuW6vNUzefFMrU-mdc4pvELDLIQkBel=s400"
+        },
+        {
+          "name": "Dr. Jamal Uddin Ahamed",
+          "role": "Advisory Panel",
+          "details": [
+            "Professor, Department of Mechanical Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1Hz7I7C22UlXZwLUtKtgapd3NQvwhsuD6=s400"
+        },
+        {
+          "name": "Dr. Muhammad Ahsanullah",
+          "role": "Advisory Panel",
+          "details": [
+            "Professor, Department of Electrical and Electronic Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1NYtM_e92Qh9UVgyUI7JT1vupXFq7UbjQ=s400"
+        },
+        {
+          "name": "Dr. Nur Mohammad",
+          "role": "Advisory Panel",
+          "details": [
+            "Professor, Department of Electrical and Electronic Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1JVGB1xuvRF0nWjOgM_XHKM4q92AmkhQG=s400"
+        },
+        {
+          "name": "Dr. Mehdi Hasan Chowdhury",
+          "role": "Counselor",
+          "details": [
+            "Professor, Department of Electrical and Electronic Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1Jj-zUjKtr6o-Ebi2DO0aRjM9kibraFHX=s400"
+        },
+        {
+          "name": "Md. Inzamam Ul Hoque",
+          "role": "Branch Chair",
+          "image": "https://lh3.googleusercontent.com/d/11ruZcMJXkrRG8sC4VwyTijvz7TIUhgVQ=s400"
+        },
+        {
+          "name": "Mehreen Rahman",
+          "role": "Vice Chair (Admin)",
+          "image": "https://lh3.googleusercontent.com/d/10GrkVjFKNEHQ-aW5giIlRUAybR1IJsah=s400"
+        },
+        {
+          "name": "Syed Chinaul Islam Yeash",
+          "role": "Vice Chair (Technical)",
+          "image": "https://lh3.googleusercontent.com/d/1_3fcKGWHyEqAOV4pEeG2UeP8PcqW8bZn=s400"
+        },
+        {
+          "name": "Iftekhar Nayeem Tasin",
+          "role": "Vice Chair (Operations)",
+          "image": "https://lh3.googleusercontent.com/d/155w2jExEp-t-m9J0MryQ0OPry94Wspmw=s400"
+        },
+        {
+          "name": "Md. Junaeid Safkath",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1CIFTFTqGlWKGUmTurgxA7Jox9cdJFzZT=s400"
+        },
+        {
+          "name": "Md. Zia Uddin Azad Sifat",
+          "role": "Joint General Secretary (Admin)",
+          "image": "https://lh3.googleusercontent.com/d/136C30BrSkqjwlQtpUjU0mZi4WoGnbe7k=s400"
+        },
+        {
+          "name": "Dibya Joti Ghosh",
+          "role": "Joint General Secretary (Activity)",
+          "image": "https://lh3.googleusercontent.com/d/17ONUtzK4EkMGsvYjJhxd6qVtOgk5BqSW=s400"
+        },
+        {
+          "name": "Md. Ashraful Alam Tamim",
+          "role": "Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1U7Qad-UR1K-1G2fXwUZDnf-0t4CFEvhE=s400"
+        },
+        {
+          "name": "Shomen Dasgupta",
+          "role": "Joint Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1FBNgqOdYPaw7ftGa1fPFqAAU8ijGW2sY=s400"
+        },
+        {
+          "name": "Pamel Das",
+          "role": "Joint Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1lZ1Qu1_8igZKTL46a-Tyza2EIygeuYMB=s400"
+        },
+        {
+          "name": "Maspukul Alam Arzu",
+          "role": "Treasurer",
+          "image": "https://lh3.googleusercontent.com/d/138uvADZdsIRNOPn-ydLhUnp2Y9V1daC2=s400"
+        },
+        {
+          "name": "Arnab Chowdhury",
+          "role": "Industry Relation Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1EXdemhvcabyhRs52q03c03-JKnpAl0NN=s400"
+        },
+        {
+          "name": "Sagar Bhattacharya",
+          "role": "Public Relation Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1H2WiOpr8kUviZ1dbdiGEg-HgvHSYU00d=s400"
+        },
+        {
+          "name": "Udhay Chowdhury",
+          "role": "Research and Publication Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1eQ_o3VI1pnbnUdyyg1qJiar1ahgt4ED1=s400"
+        },
+        {
+          "name": "Abdullah Mohammad",
+          "role": "Research and Publication Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1lm-k0uPssAbs8FTz77OD2Qxng84xu5kn=s400"
+        },
+        {
+          "name": "Susmit Acharjee",
+          "role": "Logistics Secretary",
+          "image": "https://lh3.googleusercontent.com/d/17VSd4EyUgj-5PWXYqIP9zGNG0aToLtW8=s400"
+        },
+        {
+          "name": "Md. Saidul Islam",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1xmg1SDeJ1ODRARxFo1sH1vV1xdnFKLbv=s400"
+        },
+        {
+          "name": "Fardin Shah Azmi",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1CY8AHuvs4ppnOUWSc12Ry9vbtbmLSFFB=s400"
+        },
+        {
+          "name": "Samin Yeasar",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1gEKVyUfbriJ98DXaE78b-3dPWW5KQLmt=s400"
+        },
+        {
+          "name": "Md. Towhidul Islam Emon",
+          "role": "Research Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1sS-llrIE7LXbkTPHJ7oonYi7Uj7bsSXy=s400"
+        },
+        {
+          "name": "Nirupam Debnath",
+          "role": "Design Lead",
+          "image": "https://lh3.googleusercontent.com/d/1i54ii53HICUW7GlLxQ-KvyzIy_j8WXaN=s400"
+        },
+        {
+          "name": "Kazi Nabila Raisa",
+          "role": "Design Lead",
+          "image": "https://lh3.googleusercontent.com/d/1QtPvAQD8b9SmPPcuMndJ-M1Q_VTkNC4b=s400"
+        },
+        {
+          "name": "Mohammad Mesbahul Alam",
+          "role": "Videography Lead",
+          "image": "https://lh3.googleusercontent.com/d/1GB4u9cXrDI2t9D-cV30LO2H1HDuqbrY-=s400"
+        },
+        {
+          "name": "Arpan Paul Sanju",
+          "role": "Membership Development Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1cS-p07K9ZZJh_9rtjW0HOEu4mutMK5T4=s400"
+        },
+        {
+          "name": "Shuvra Chandra Das",
+          "role": "Membership Development Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1DfmaQMXXAMUpJGo0Xm8mPcoFk1VkCF3e=s400"
+        },
+        {
+          "name": "Kiswar Sultana",
+          "role": "Social Lead",
+          "image": "https://lh3.googleusercontent.com/d/12Wf_Sg2QRYFtf_W7TvHNCzyXnD6yby-D=s400"
+        },
+        {
+          "name": "Nisat Sayara",
+          "role": "Content Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1xg9odxqzo-x_PWmIyV76uk-kdkfLSr7u=s400"
+        },
+        {
+          "name": "Tahmidul Islam Samin",
+          "role": "Industry Relation Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/14ZM2yduO9Z-4s_nXBcp9PN0Wgpt_66Bm=s400"
+        },
+        {
+          "name": "Md. Manon Haque",
+          "role": "Website Development Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1QPZdJ67qnvxxNPAd9kPS7k9R5JBYUgvI=s400"
+        },
+        {
+          "name": "Md. Anas Bin Hossain",
+          "role": "Activity Outreach Wing Lead",
+          "image": "https://lh3.googleusercontent.com/d/1HUP0WC_ym6BNTHOpvLwp_eUCcDY5rgx8=s400"
+        },
+        {
+          "name": "Md. Abtahee Kabir",
+          "role": "Student Activity Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1sA6ySwSEZ0DOHrZNLcen67iDD674KDZz=s400"
+        },
+        {
+          "name": "Amit Kumar Dey",
+          "role": "Publicity Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1xEJUrbhh7-roXzqFqEV9N1B9QrJHoJGY=s400"
+        },
+        {
+          "name": "Subah Maisha Sneha",
+          "role": "Newsletter Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1nJENu-nXgSXSNesiakzh3SFHYLvUWb40=s400"
+        },
+        {
+          "name": "Saeed Salam",
+          "role": "Humanitarian Activity Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1FrWsbsXboG_oLyyPw5U4HcoX2wQiKMfD=s400"
+        },
+        {
+          "name": "Kawsar Mostafa",
+          "role": "Humanitarian Activity Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/19NLsLsfHZ6WZ459-aHwYdxpGyJtxBVj1=s400"
+        },
+        {
+          "name": "Parthasarathi Goswami",
+          "role": "Photographic Lead",
+          "image": "https://lh3.googleusercontent.com/d/1wxq2TFZwLE1IO8KQd6-FCyHiDhspNxNi=s400"
+        }
+      ]
+    },
+    "wie": {
+      "members": [
+        {
+          "name": "Nusrat Jahan Ikra",
+          "role": "Advisor",
+          "details": [
+            "Lecturer, Department of Electrical and Electronic Engineering, CUET"
+          ]
+        },
+        {
+          "name": "Umme Mabrura Umama",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/10MVw-zFWHKaWna_QfdFm2LBRDotLneWy=s400"
+        },
+        {
+          "name": "Tasfia Islam Oboni",
+          "role": "Vice Chair (Admin)",
+          "image": "https://lh3.googleusercontent.com/d/1i2Zd1XMCIF2pjCRgaVTcHK1ISJKpG58Z=s400"
+        },
+        {
+          "name": "Israt Jahan Habiba",
+          "role": "Vice Chair (Technical)",
+          "image": "https://lh3.googleusercontent.com/d/1-8Wc7nAE1qzfdke91OFMLcUzvL0yVbLl=s400"
+        },
+        {
+          "name": "Fairoj Tasnim Ruhi",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1iIvyW3I6C7-IOUdsrwHh5kGtlcNa4l33=s400"
+        },
+        {
+          "name": "Nowshin Proma",
+          "role": "Joint General Secretary"
+        },
+        {
+          "name": "Nadia Sultana",
+          "role": "Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1vGhCketelt2SxQppQ0erXw2srkZp1iLh=s400"
+        },
+        {
+          "name": "Nazya Mustafiz",
+          "role": "Joint Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1MVZFMzh8gUhu-BDgmhTBBpWTExmpwHdY=s400"
+        },
+        {
+          "name": "Arupa Barua",
+          "role": "Joint Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/10nAyfZRCSWlqqgoE71eDxZTCMhx79ane=s400"
+        },
+        {
+          "name": "Debasmita Dhar",
+          "role": "Treasurer",
+          "image": "https://lh3.googleusercontent.com/d/18NyDkLtXG_uLpbxqfOeSsEzEen4RkRuN=s400"
+        },
+        {
+          "name": "Samala Shoulin",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/16h1LsjSmgCH-XQQWhyK_sV9NOxqMW4ke=s400"
+        },
+        {
+          "name": "Rajnita Barua",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/12441sF2G2tTVVbppcAXCY9ecarrmeQUh=s400"
+        },
+        {
+          "name": "Maowa Alam Khan",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1Vjdqpv7WabDkkCR8HVRZki7jjZmj1-kS=s400"
+        },
+        {
+          "name": "Aditi Das Poonam",
+          "role": "Design Lead",
+          "image": "https://lh3.googleusercontent.com/d/1lepZf5jNb83JThcX2efsC5r5cPV9MY-K=s400"
+        },
+        {
+          "name": "Debarati Chakraborty",
+          "role": "Social Lead",
+          "image": "https://lh3.googleusercontent.com/d/11lHpyOyuu1kAZ5H_MxVMbpap8AshMVXE=s400"
+        },
+        {
+          "name": "Moumita Barua",
+          "role": "Research Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1ySOXIqnp6fmtw9OKxD0noNt9XWDfVDiV=s400"
+        },
+        {
+          "name": "Chinmoyee Paul",
+          "role": "Membership Development Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1hcLXqkmqBQNA2vrFe0EBj_LPOSAVUc1E=s400"
+        },
+        {
+          "name": "Pushpita Paul Joya",
+          "role": "Membership Development Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1_PWRSu7UuSYvQWjIPq1I12oFyN48kOnP=s400"
+        },
+        {
+          "name": "Rabeya Islam Dolon",
+          "role": "Student Activity Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1UxAtgS01347AVMMSSwVWhK6a1q3lNOl2=s400"
+        },
+        {
+          "name": "Jannatul Ferdous Chowa",
+          "role": "Publicity Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1dDEbiNdewMfHMt1mdxH8g5D677fCyFYs=s400"
+        }
+      ]
+    },
+    "embs": {
+      "members": [
+        {
+          "name": "Dr. Sumit Majumder",
+          "role": "Advisor",
+          "details": [
+            "Assistant Professor, Department of Biomedical Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1W4A_GhZmXItN_KhStxkCm198VZQBTGxs=s400"
+        },
+        {
+          "name": "Md. Fazlul Karim Khondakar",
+          "role": "Moderator",
+          "details": [
+            "Assistant Professor, Department of Biomedical Engineering, CUET"
+          ],
+          "image": "https://app.cuet.ac.bd/storage/Admins/67cdcfe7ab6ba.jpg"
+        },
+        {
+          "name": "Nizam Uddin Babu",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/1Loa82SfeFcCutXETEboeAVQq9iuKxxvM=s400"
+        },
+        {
+          "name": "Jannatul Mawa Taki",
+          "role": "Vice Chair (Admin)",
+          "image": "https://lh3.googleusercontent.com/d/1JMbvTwIbObXtY0tZH5pG2NMJ1hz5z3P5=s400"
+        },
+        {
+          "name": "Musarat Habib",
+          "role": "Vice Chair (Technical)",
+          "image": "https://lh3.googleusercontent.com/d/1IgB9DP2MR__A32tBIRKXF_gBXXbr1RYj=s400"
+        },
+        {
+          "name": "Sifat Chowdhury",
+          "role": "Vice Chair (Operations)",
+          "image": "https://lh3.googleusercontent.com/d/1HX0XcQ_gapuYXWVd1jKRNsp-L3IKCLr7=s400"
+        },
+        {
+          "name": "Dip Muhuri",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1v_KOglc1WpHqFJ4Vy6VDd_bcTDeaGA6-=s400"
+        },
+        {
+          "name": "Eshat Jahan Arifa",
+          "role": "Joint General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1fpEmqzvfdkBtb9tFe8n7JcIzz6x5pxjj=s400"
+        },
+        {
+          "name": "Md. Tarikul Islam Nahid",
+          "role": "Joint General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1inqO8qZsRRgRkEFXx6kNtjPYkVsLiq4L=s400"
+        },
+        {
+          "name": "Md. Misbah Khan Shiam",
+          "role": "Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1pkoIVRxs5ipnxHxWU25-UJz5iOZhBvn2=s400"
+        },
+        {
+          "name": "Dip Paul",
+          "role": "Joint Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1Kvn3lBucToE-0UjTQ9_jLAfOnMO29Owl=s400"
+        },
+        {
+          "name": "Israt Jahan Sinthia",
+          "role": "Joint Organizing Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1AUkZXNEzbhHmjWJ58wBX711uicYO6ZY3=s400"
+        },
+        {
+          "name": "Md. Zakaria Islam Mahi",
+          "role": "Treasurer",
+          "image": "https://lh3.googleusercontent.com/d/1TqrYTK1tPHfrZ3_3ky4BKHzorCUCCdkX=s400"
+        },
+        {
+          "name": "Rudra Chakraborty",
+          "role": "Treasurer",
+          "image": "https://lh3.googleusercontent.com/d/1OGk6oEi5YejN4JOK6XA-93R6Ogo6-VKu=s400"
+        },
+        {
+          "name": "Mehernuba Tahia Raha",
+          "role": "Research and Publication Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1RZtBvIK1tqTtWKNJzgQPAsVVyWpiHYTrResearch=s400"
+        },
+        {
+          "name": "Upama Devi",
+          "role": "Research and Publication Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1TB46zfx1Cs10iA389xk0MCpOX2xBu_M7=s400"
+        },
+        {
+          "name": "Ayesha Noor Hashemi",
+          "role": "Research and Publication Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1HbErUMlFG5nX8DniCOwqahbG7wAiJYve=s400"
+        },
+        {
+          "name": "Humaira Jahan",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/11zZKJxJotjXn8aIBOTdIEZHL81j7Slee=s400"
+        },
+        {
+          "name": "Rafiule Mumin Rian",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1G5m1n0Jq6hlwI2yU9BO0VmzRYp0TcA_R=s400"
+        },
+        {
+          "name": "Hasan Alam Siyam",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1L_K1zIOZLw5evXYq6sOuayZe2zMw9FZS=s400"
+        },
+        {
+          "name": "Al Amin",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/13BkSmTbXyNePF6vCc4mX_gM6u1_Hv3Wi=s400"
+        }
+      ]
+    },
+    "photonics": {
+      "members": [
+        {
+          "name": "Dr. Md. Istiaque Reja",
+          "role": "Advisor",
+          "details": [
+            "Associate Professor, Department of Electrical and Electronic Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1u5e-NXnZ4_YtEgs9wqsgOqhmxnrPFUPM=s400"
+        },
+        {
+          "name": "Rajesh Mitra",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/1gGKpXthRMjeN0OlnsAlIt-oXLMPHc5SE=s400"
+        },
+        {
+          "name": "Tanvir Hasan",
+          "role": "Vice Chair",
+          "image": "https://lh3.googleusercontent.com/d/1QK5VyviFpBtaLdwBadbUzgltRGIZ8l2R=s400"
+        },
+        {
+          "name": "Mohammad Sakib Raihan",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/18QM0GsV1MLbLWgfY_J_iPKiOYrHFWqAy=s400"
+        },
+        {
+          "name": "Trisha Rani Dey",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1yhr064CgsBFp3mBvorMzeQk5qIfuSlOo=s400"
+        },
+        {
+          "name": "S M Nurul Hasnat",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1tPg7vd78UC-Dji1hy8rL1_faSFC4Nx14=s400"
+        }
+      ]
+    },
+    "sps": {
+      "members": [
+        {
+          "name": "Dr. Md Jahedul Islam",
+          "role": "Advisor",
+          "details": [
+            "Head and Professor, Department of Electronics and Telecommunication Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1QaIwJq8MgfhtNqCCBiiHNjfsWou7Uk85=s400"
+        },
+        {
+          "name": "Aditta Chowdhury",
+          "role": "Moderator",
+          "details": [
+            "Assistant Professor, Department of Electrical and Electronic Engineering, CUET"
+          ],
+          "image": "https://app.cuet.ac.bd/storage/Admins/68cc495aebaed.jpg"
+        },
+        {
+          "name": "Md. Jahidur Rahman Noman",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/1a62FjCHzu2SFELZ_wXYsQLMqAk95kROt=s400"
+        },
+        {
+          "name": "Saiful Islam Sakib",
+          "role": "Vice Chair",
+          "image": "https://lh3.googleusercontent.com/d/13MxEGDT-3Yp5bVJrng6qWl6r58uxQze5=s400"
+        },
+        {
+          "name": "Sajib Talukder",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1VENn68xZMSiusc0XMifcMe1qgchRkIzc=s400"
+        },
+        {
+          "name": "Sakibur Rahman",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1FlIOD3yNLUpHhv1ALsjnOJaKnd9AZmSM=s400"
+        },
+        {
+          "name": "Amlan Sarker Turna",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1jeVAKR-WR_NPs01rG7WtR9yNo3RClQw6=s400"
+        }
+      ]
+    },
+    "pes": {
+      "members": [
+        {
+          "name": "Dr. Nipu Kumar Das",
+          "role": "Advisor",
+          "details": [
+            "Head, Department of Biomedical Engineering, CUET",
+            "Professor, Department of Electrical and Electronic Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1uAV8nH2rJ758SpJRRhRLYQkRv8WVZh7W=s400"
+        },
+        {
+          "name": "Mohammad Salman Asif",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/16ye7rvSJKFje_BHZAfRuppltzGr3HW2u=s400"
+        },
+        {
+          "name": "Al Hasnat Piyas",
+          "role": "Vice Chair",
+          "image": "https://lh3.googleusercontent.com/d/152xkk7G8LdPLt-MRuFsezV7NGqBVzdP4=s400"
+        },
+        {
+          "name": "Efaz Afnan Feroz",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1wHsjF4RYXQbdxxA3kZf9z8WnYpkl3C0Z=s400"
+        },
+        {
+          "name": "Tasnia Afrin",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1uFd_0nhFo2tIEqZuioOSi7vJalQL1yPo=s400"
+        },
+        {
+          "name": "Md. Mahmud Siddiq Fahim",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1PeO1zWxcfMVHurKW6Fh4unGJWC5xuwO0=s400"
+        }
+      ]
+    },
+    "aps": {
+      "members": [
+        {
+          "name": "Dr. Md. Azad Hossain",
+          "role": "Advisor",
+          "details": [
+            "Professor, Department of Electronics and Telecommunication Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1pivboP_84RgyQRAu5og7V7cKaXOzDOe3=s400"
+        },
+        {
+          "name": "Mishu Mitra Jakey",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/1q7adY5lCtmQrrbMNVNLrCH5gyFrwGs8z=s400"
+        },
+        {
+          "name": "Mueez Mejbah",
+          "role": "Vice Chair",
+          "image": "https://lh3.googleusercontent.com/d/1KOBFChUhNCZ3HrrQmC5tHt9xmHU8WvVT=s400"
+        },
+        {
+          "name": "Tasnova Islam",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/1rMaIBi81nnMf9KkHi1DZZVdq6dMkM-Da=s400"
+        },
+        {
+          "name": "Nabila Sultana",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1uXe1LkKnnv3qkGvBfc1psYDBsp2mGXTi=s400"
+        },
+        {
+          "name": "Bonoshree Talukder Tondra",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1b1MSuAtuPnUXyeJnTT8Va7xaTPKnrTrB=s400"
+        }
+      ]
+    },
+    "ras": {
+      "members": [
+        {
+          "name": "Dr. Md. Mamunur Roshid",
+          "role": "Advisor",
+          "details": [
+            "Professor, Department of Mechanical Engineering, CUET"
+          ],
+          "image": "https://lh3.googleusercontent.com/d/1pmJe9tawNXSRUiLI8Ooa11I1QAokISg5=s400"
+        },
+        {
+          "name": "Ashim Dey",
+          "role": "Moderator",
+          "details": [
+            "Assistant Professor, Department of Computer Science and Engineering, CUET"
+          ],
+          "image": "https://app.cuet.ac.bd/storage/Admins/6795d66c25d8d.png"
+        },
+        {
+          "name": "Zaber Ahsan Bhuiyan",
+          "role": "Chair",
+          "image": "https://lh3.googleusercontent.com/d/1NXeDRCL3sDCHlcc_shAKp-KyBYQ6BBb7=s400"
+        },
+        {
+          "name": "Md. Isfaq Ahmed Jim",
+          "role": "Vice Chair",
+          "image": "https://lh3.googleusercontent.com/d/1MIYceqD-0o6-hhlFFN11Gvk92Nw-Rmzx=s400"
+        },
+        {
+          "name": "Md. Khaled Arafat",
+          "role": "General Secretary",
+          "image": "https://lh3.googleusercontent.com/d/13kaOssAqyMSVfl-un1tJ7_T-9bOvpNz1=s400"
+        },
+        {
+          "name": "Robin Barua",
+          "role": "Webmaster",
+          "image": "https://lh3.googleusercontent.com/d/1fX9EdSVxd1CcNIfP5ORpy-nJNGDKz-4J=s400"
+        },
+        {
+          "name": "Torikul Hakim Sajid",
+          "role": "Program Coordinator",
+          "image": "https://lh3.googleusercontent.com/d/1OiwPoIiZDS7ZakiNX85HZrr_19GvMDv7=s400"
+        }
+      ]
+    }
+  }
+}

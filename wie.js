@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =============== SCROLL REVEAL ANIMATION =============== */
     const revealEls = document.querySelectorAll(
-        '#competitions, #wie-about-wrapper, #mv-section, #wie-events, #wie-committee, .competition-card, .event-card, .committee-card, .mv-row'
+        '#competitions, #mv-section, #wie-events, #wie-committee, .competition-card, .event-card, .committee-card, .mv-row'
     );
 
     const observer = new IntersectionObserver((entries) => {

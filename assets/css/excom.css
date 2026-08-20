@@ -1,0 +1,254 @@
+:root {
+    --excom-accent: #3cf2ff;
+    --excom-accent-rgb: 60, 242, 255;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.excom-page {
+    min-height: 100vh;
+    margin: 0;
+    color: #eaf5ff;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(var(--excom-accent-rgb), 0.12), transparent 34rem),
+        linear-gradient(145deg, #000914 0%, #001326 55%, #000b16 100%);
+}
+
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 10px;
+    z-index: 10000;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #00101e;
+    background: #fff;
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+#excom-site-nav {
+    position: relative;
+    z-index: 1000;
+}
+
+.excom-hero {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    min-height: 390px;
+    padding: 135px 24px 72px;
+    overflow: hidden;
+    text-align: center;
+    background:
+        linear-gradient(180deg, rgba(0, 9, 20, 0.2), rgba(0, 9, 20, 0.92)),
+        radial-gradient(circle at 50% 18%, rgba(var(--excom-accent-rgb), 0.22), transparent 32rem);
+}
+
+.excom-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.28;
+    background-image:
+        linear-gradient(rgba(var(--excom-accent-rgb), 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--excom-accent-rgb), 0.14) 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+/* The society stylesheets give .container a content-box `padding: 0 25px`, which
+   would otherwise add 50px on top of this width and scroll the page sideways. */
+.excom-hero-inner {
+    box-sizing: border-box;
+    width: min(980px, 100%);
+    margin: 0 auto;
+}
+
+.excom-kicker {
+    max-width: 820px;
+    margin: 0 auto 18px;
+    color: var(--excom-accent);
+    font-size: clamp(0.78rem, 1.4vw, 0.96rem);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.excom-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.25rem, 6vw, 4.8rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+}
+
+.excom-session {
+    display: inline-flex;
+    margin: 25px 0 0;
+    padding: 8px 18px;
+    border: 1px solid rgba(var(--excom-accent-rgb), 0.52);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(var(--excom-accent-rgb), 0.1);
+    box-shadow: 0 0 24px rgba(var(--excom-accent-rgb), 0.12);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* border-box because the society stylesheets apply a generic
+   `section { padding: 0 25px }` that would otherwise be added on top of this
+   width and scroll the page sideways on narrow viewports. */
+.excom-roster-shell {
+    box-sizing: border-box;
+    width: min(1180px, calc(100% - 32px));
+    min-height: 300px;
+    margin: 0 auto;
+    padding: clamp(52px, 7vw, 88px) 0 90px;
+}
+
+body[data-excom-year="2025-26"] .excom-roster-shell,
+body[data-excom-year="2026-27"] .excom-roster-shell {
+    padding-top: 28px;
+}
+
+#excom-content > section,
+#excom-content > .excom-source-roster {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+#excom-content :is(.section-title, .committee-title) {
+    margin-top: 0;
+    text-align: center;
+}
+
+#excom-content .committee-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.excom-loading {
+    padding: 80px 20px;
+    color: #b9cee1;
+    text-align: center;
+}
+
+.excom-placeholder {
+    box-sizing: border-box;
+    width: min(720px, 100%);
+    margin: 0 auto;
+    padding: clamp(32px, 6vw, 58px);
+    border: 1px solid rgba(var(--excom-accent-rgb), 0.24);
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(var(--excom-accent-rgb), 0.045));
+    box-shadow: 0 24px 65px rgba(0, 0, 0, 0.26);
+    text-align: center;
+}
+
+.excom-placeholder-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 22px;
+    border-radius: 16px;
+    color: var(--excom-accent);
+    background: rgba(var(--excom-accent-rgb), 0.11);
+    font-size: 1.35rem;
+}
+
+.excom-placeholder h2 {
+    margin: 0 0 13px;
+    color: #fff;
+    font-size: clamp(1.45rem, 3vw, 2.1rem);
+}
+
+.excom-placeholder p {
+    max-width: 590px;
+    margin: 0 auto;
+    color: #bed1e2;
+    line-height: 1.7;
+}
+
+.excom-placeholder a,
+.excom-error-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    margin-top: 25px;
+    padding: 10px 18px;
+    border: 1px solid rgba(var(--excom-accent-rgb), 0.48);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(var(--excom-accent-rgb), 0.1);
+    text-decoration: none;
+}
+
+.excom-placeholder a:hover,
+.excom-placeholder a:focus-visible,
+.excom-error-link:hover,
+.excom-error-link:focus-visible {
+    border-color: var(--excom-accent);
+    background: rgba(var(--excom-accent-rgb), 0.19);
+}
+
+@media (max-width: 720px) {
+    .excom-hero {
+        min-height: 340px;
+        padding: 120px 18px 58px;
+    }
+
+    .excom-roster-shell {
+        width: min(100% - 24px, 1180px);
+        padding-block: 46px 66px;
+    }
+
+    body[data-excom-year="2025-26"] .excom-roster-shell,
+    body[data-excom-year="2026-27"] .excom-roster-shell {
+        padding-top: 22px;
+    }
+
+    .excom-placeholder {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .skip-link,
+    .excom-placeholder a,
+    .excom-error-link {
+        transition: none !important;
+    }
+}

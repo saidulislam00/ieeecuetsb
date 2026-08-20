@@ -765,3 +765,17 @@ footer {
         gap: 30px;
     }
 }
+
+/* ===================== STICKY NAVBAR ===================== */
+.navbar {
+  position: fixed;
+  background: rgba(0, 13, 23, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Offset in-page anchor jumps so headings clear the fixed navbar */
+html {
+  scroll-padding-top: 90px;
+}

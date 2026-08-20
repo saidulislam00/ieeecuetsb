@@ -4,62 +4,67 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IEEE CUET Student Branch</title> 
-<link rel="icon" href="favicon.png">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="canonical" href="https://ieeecuetsb.org/">
+<script>
+if (window.location.pathname.endsWith('/index.html')) {
+    const cleanPath = window.location.pathname.slice(0, -'index.html'.length);
+    window.location.replace(cleanPath + window.location.search + window.location.hash);
+}
+</script>
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/favicon.png?v=2">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/typography.css">
+<link rel="stylesheet" href="/assets/css/brand-assets.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
 <!-- ===================== NAVBAR ===================== -->
-<nav class="navbar">
+<nav class="navbar" aria-label="Primary navigation">
     <div class="nav-container">
-  
-      <div class="logo-area">
-        <a href="index.html">
-          <img src="assets/images/ieee-logo.png" class="logo-img">
-        </a>
-      </div>
-  
-      <!-- Mobile menu toggle -->
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        &#9776;
-      </button>
-  
-      <!-- Navigation Menu -->
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-            <a href="#about" class="dropdown-link">About ▾</a>
-            <ul class="dropdown-menu">
-                <li><a href="ieee.html">IEEE</a></li>
-                <li><a href="ieeebd.html">IEEE Bangladesh Section</a></li>
-                <li><a href="ieeecuetsb.html">IEEE CUET Student Branch</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#societies" class="dropdown-link">Societies & Chapters ▾</a>
-  
-              <ul class="dropdown-menu">
-                  <li><a href="wie.html">WIE Affinity Group</a></li>
-                  <li><a href="ras.html">Robotics & Automation Society (RAS)</a></li>
-                  <li><a href="pes.html">Power & Energy Society (PES)</a></li>
-                  <li><a href="embs.html">IEEE EMBS Society</a></li>
-                  <li><a href="photonics.html">Photonics Society</a></li>
-                  <li><a href="sps.html">Signal Processing Society</a></li>
-                  <li><a href="aps.html">Antenna & Propagation Society (APS)</a></li>
-              </ul>
-      </li>
-  
-        <li><a href="index.html">Events</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="webteam.html">Web Management Team</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-  
-      <a href="https://www.ieee.org" class="portal-btn desktop-only">IEEE Portal</a>
-  
+        <div class="logo-area">
+            <a href="/" aria-label="IEEE CUET Student Branch home">
+                <img src="/assets/images/Logos/IEEE%20CUET%20SB.png" class="logo-img" alt="IEEE CUET Student Branch">
+            </a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <button type="button" class="dropdown-link nav-dropdown-toggle" data-nav-dropdown-toggle aria-expanded="false">About <span class="nav-caret" aria-hidden="true">&#9662;</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="/ieee/">IEEE</a></li>
+                    <li><a href="/ieeebd/">IEEE Bangladesh Section</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button type="button" class="dropdown-link nav-dropdown-toggle" data-nav-dropdown-toggle aria-expanded="false">Societies &amp; Chapters <span class="nav-caret" aria-hidden="true">&#9662;</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="/wie/">Women in Engineering Affinity Group</a></li>
+                    <li><a href="/ras/">Robotics and Automation Society</a></li>
+                    <li><a href="/pes/">Power and Energy Society</a></li>
+                    <li><a href="/embs/">Engineering in Medicine and Biology Society</a></li>
+                    <li><a href="/photonics/">Photonics Society</a></li>
+                    <li><a href="/sps/">Signal Processing Society</a></li>
+                    <li><a href="/aps/">Antennas and Propagation Society</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button type="button" class="dropdown-link nav-dropdown-toggle" data-nav-dropdown-toggle aria-expanded="false">Ex-Com <span class="nav-caret" aria-hidden="true">&#9662;</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="/ieeecuetsb/excom/2026-27/">26-27</a></li>
+                    <li><a href="/ieeecuetsb/excom/2025-26/">25-26</a></li>
+                    <li><a href="/ieeecuetsb/excom/2024-25/">24-25</a></li>
+                </ul>
+            </li>
+            <li><a href="/#events">Events</a></li>
+            <li><a href="/#achievements">Achievements</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <a href="https://forms.gle/Kp3cq83bWSMQXaCu8" target="_blank" rel="noopener noreferrer" class="portal-btn desktop-only">Join IEEE</a>
     </div>
-  </nav>
+</nav>
 <!-- ===================== HERO SECTION (FULL IMAGE) ===================== -->
 <header id="hero">
     <div class="hero-overlay"></div>
@@ -98,19 +103,19 @@
             <!-- SciBlitz -->
             <div class="competition-card">
                 <div class="competition-img">
-                    <img src="assets/images/sciblitz2.0.png" alt="SciBlitz">
+                    <img src="/assets/images/sciblitz2.0.png" alt="SciBlitz">
                 </div>
                 <h3 class="competition-title">SciBlitz</h3>
                 <p class="competition-text">
                     A national student-led tech day.
                 </p>
-                <a href="sciblitz.html" class="competition-btn">Learn More</a>
+                <a href="/sciblitz/" class="competition-btn">Learn More</a>
             </div>
 
             <!-- TRISCEND -->
             <div class="competition-card">
                 <div class="competition-img">
-                    <img src="assets/images/triscend.jpg" alt="TRISCEND">
+                    <img src="/assets/images/triscend.jpg" alt="TRISCEND">
                 </div>
                 <h3 class="competition-title">TRISCEND</h3>
                 <p class="competition-text">
@@ -122,7 +127,7 @@
             <!-- DLD -->
             <div class="competition-card">
                 <div class="competition-img">
-                    <img src="assets/images/dld.jpg" alt="Coming Soon">
+                    <img src="/assets/images/dld.jpg" alt="Coming Soon">
                 </div>
                 <h3 class="competition-title">Digital Logic Design</h3>
                 <p class="competition-text">
@@ -218,46 +223,64 @@
 
 
 <!-- ===================== SOCIETIES ===================== -->
-<section id="societies" class="reveal">
-    <h2 class="section-title">Societies & Chapters</h2>
+<section id="societies" class="chapter-showcase reveal" aria-labelledby="societies-title">
+    <div class="chapter-showcase-container">
+        <header class="chapter-showcase-header">
+            <h2 class="section-title" id="societies-title">Affinity Group and Chapters</h2>
+            <p class="section-subtitle">Choose a community to discover where your interests can become expertise, collaboration, and impact.</p>
+        </header>
 
-    <div class="society-grid">
+        <div class="chapter-showcase-grid">
+            <nav class="chapter-selector" aria-label="IEEE CUET affinity group and chapters">
+                <a href="/wie/" class="chapter-tab is-active" id="chapter-tab-wie" data-chapter="wie" aria-label="IEEE Women in Engineering Affinity Group">
+                    <span class="chapter-tab-copy"><strong>WIE</strong><small>Women in Engineering</small></span>
+                </a>
 
-        <a href="wie.html" class="society-card">
-            <h3>IEEE WIE Affinity Group</h3>
-            <p>Empowering women in engineering through leadership and innovation.</p>
-        </a>
+                <a href="/ras/" class="chapter-tab" id="chapter-tab-ras" data-chapter="ras" aria-label="IEEE Robotics and Automation Society CUET Student Branch Chapter">
+                    <span class="chapter-tab-copy"><strong>RAS</strong><small>Robotics & Automation</small></span>
+                </a>
 
-        <a href="ras.html" class="society-card">
-            <h3>IEEE RAS CUET SBC</h3>
-            <p>Robotics, automation & intelligent systems for the future.</p>
-        </a>
+                <a href="/pes/" class="chapter-tab" id="chapter-tab-pes" data-chapter="pes" aria-label="IEEE Power and Energy Society CUET Student Branch Chapter">
+                    <span class="chapter-tab-copy"><strong>PES</strong><small>Power & Energy</small></span>
+                </a>
 
-        <a href="pes.html" class="society-card">
-            <h3>IEEE PES CUET SBC</h3>
-            <p>Shaping the future of electrical power & energy research.</p>
-        </a>
+                <a href="/embs/" class="chapter-tab" id="chapter-tab-embs" data-chapter="embs" aria-label="IEEE Engineering in Medicine and Biology Society CUET Student Branch Chapter">
+                    <span class="chapter-tab-copy"><strong>EMBS</strong><small>Engineering in Medicine</small></span>
+                </a>
 
-        <a href="photonics.html" class="society-card">
-            <h3>IEEE Photonics CUET SBC</h3>
-            <p>Exploring the science of light & optical technologies.</p>
-        </a>
+                <a href="/photonics/" class="chapter-tab" id="chapter-tab-photonics" data-chapter="photonics" aria-label="IEEE Photonics Society CUET Student Branch Chapter">
+                    <span class="chapter-tab-copy"><strong>Photonics</strong><small>Light-based technologies</small></span>
+                </a>
 
-        <a href="sps.html" class="society-card">
-            <h3>IEEE SPS CUET SBC</h3>
-            <p>Signal processing, data insights & intelligent systems.</p>
-        </a>
+                <a href="/sps/" class="chapter-tab" id="chapter-tab-sps" data-chapter="sps" aria-label="IEEE Signal Processing Society CUET Student Branch Chapter">
+                    <span class="chapter-tab-copy"><strong>SPS</strong><small>Signal Processing</small></span>
+                </a>
 
-        <a href="embs.html" class="society-card">
-            <h3>IEEE EMBS CUET SBC</h3>
-            <p>Biomedical engineering & healthcare innovations.</p>
-        </a>
+                <a href="/aps/" class="chapter-tab" id="chapter-tab-aps" data-chapter="aps" aria-label="IEEE Antennas and Propagation Society CUET Student Branch Chapter">
+                    <span class="chapter-tab-copy"><strong>APS</strong><small>Antennas & Propagation</small></span>
+                </a>
+            </nav>
 
-        <a href="aps.html" class="society-card">
-            <h3>IEEE APS CUET SBC</h3>
-            <p>Antenna & Propagation Society.</p>
-        </a>
+            <article class="chapter-stage" id="chapter-panel">
+                <div class="chapter-visual">
+                    <div class="chapter-visual-fallback" aria-hidden="true"><i id="chapter-watermark" class="fas fa-venus"></i></div>
+                    <img id="chapter-image" src="/assets/images/Logos/WIE%20landscape.PNG" alt="IEEE CUET Women in Engineering Affinity Group logo" loading="lazy" decoding="async">
+                </div>
 
+                <div class="chapter-details">
+                    <div class="chapter-meta">
+                        <span class="chapter-kind" id="chapter-kind">Affinity Group</span>
+                    </div>
+                    <h3 class="chapter-acronym" id="chapter-acronym">WIE</h3>
+                    <p class="chapter-full-name" id="chapter-full-name">Women in Engineering Affinity Group</p>
+                    <p class="chapter-description" id="chapter-description">Empowering women in engineering through mentorship, leadership, and a stronger technical community.</p>
+                    <a class="chapter-cta" id="chapter-link" href="/wie/">
+                        <span>Explore WIE</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
     </div>
 </section>
 
@@ -273,8 +296,8 @@
         <!-- Best EMBS Regional Student Branch Chapter 2026 -->
         <div class="award-card reveal">
             <div class="award-img">
-                <img src="assets/images/embs-best-regional-2026.jpg" alt="Best EMBS Regional Student Branch Chapter 2026"
-                     onerror="this.onerror=null;this.src='assets/images/award-placeholder.svg';">
+                <img src="/assets/images/embs-best-regional-2026.jpg" alt="Best EMBS Regional Student Branch Chapter 2026"
+                     onerror="this.onerror=null;this.src='/assets/images/award-placeholder.svg';">
                 <span class="award-year">2026</span>
             </div>
             <div class="award-body">
@@ -286,8 +309,8 @@
         <!-- Outstanding Student Branch Award 2025 -->
         <div class="award-card reveal">
             <div class="award-img">
-                <img src="assets/images/Outstanding Student Branch Award 2025.jpeg" alt="Outstanding Student Branch Award 2025"
-                     onerror="this.onerror=null;this.src='assets/images/award-placeholder.svg';">
+                <img src="/assets/images/Outstanding Student Branch Award 2025.jpeg" alt="Outstanding Student Branch Award 2025"
+                     onerror="this.onerror=null;this.src='/assets/images/award-placeholder.svg';">
                 <span class="award-year">2025</span>
             </div>
             <div class="award-body">
@@ -299,8 +322,8 @@
         <!-- WIE Outstanding Student Branch Affinity Group Award 2025 -->
         <div class="award-card reveal">
             <div class="award-img">
-                <img src="assets/images/WIE Outstanding SB AG Award 2025.jpeg" alt="WIE Outstanding Student Branch Affinity Group Award 2025"
-                     onerror="this.onerror=null;this.src='assets/images/award-placeholder.svg';">
+                <img src="/assets/images/WIE Outstanding SB AG Award 2025.jpeg" alt="WIE Outstanding Student Branch Affinity Group Award 2025"
+                     onerror="this.onerror=null;this.src='/assets/images/award-placeholder.svg';">
                 <span class="award-year">2025</span>
             </div>
             <div class="award-body">
@@ -312,8 +335,8 @@
         <!-- Student Branch Chapter Growth Reward 2025 (SPS) -->
         <div class="award-card reveal">
             <div class="award-img">
-                <img src="assets/images/sps-growth-2025.jpg" alt="Student Branch Chapter Growth Reward 2025"
-                     onerror="this.onerror=null;this.src='assets/images/award-placeholder.svg';">
+                <img src="/assets/images/sps-growth-2025.jpg" alt="Student Branch Chapter Growth Reward 2025"
+                     onerror="this.onerror=null;this.src='/assets/images/award-placeholder.svg';">
                 <span class="award-year">2025</span>
             </div>
             <div class="award-body">
@@ -325,8 +348,8 @@
         <!-- Student Branch Chapter Growth Reward 2024 (SPS) -->
         <div class="award-card reveal">
             <div class="award-img">
-                <img src="assets/images/sps-growth-2024.jpg" alt="Student Branch Chapter Growth Reward 2024"
-                     onerror="this.onerror=null;this.src='assets/images/award-placeholder.svg';">
+                <img src="/assets/images/sps-growth-2024.jpg" alt="Student Branch Chapter Growth Reward 2024"
+                     onerror="this.onerror=null;this.src='/assets/images/award-placeholder.svg';">
                 <span class="award-year">2024</span>
             </div>
             <div class="award-body">
@@ -338,8 +361,8 @@
         <!-- IEEE Bangladesh Section Emerging Student Branch Award 2015 -->
         <div class="award-card reveal">
             <div class="award-img">
-                <img src="assets/images/IEEE Bangladesh Section Emerging Student Branch Award 2015.jpeg" alt="IEEE Bangladesh Section Emerging Student Branch Award 2015"
-                     onerror="this.onerror=null;this.src='assets/images/award-placeholder.svg';">
+                <img src="/assets/images/IEEE Bangladesh Section Emerging Student Branch Award 2015.jpeg" alt="IEEE Bangladesh Section Emerging Student Branch Award 2015"
+                     onerror="this.onerror=null;this.src='/assets/images/award-placeholder.svg';">
                 <span class="award-year">2015</span>
             </div>
             <div class="award-body">
@@ -352,91 +375,9 @@
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer id="contact">
-    <div class="footer-container">
-        <!-- Footer Top Section -->
-        <div class="footer-top">
-            <!-- About Section -->
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="assets/images/ieee-logo.png" alt="IEEE CUET SB Logo" style="height: 80px; margin-bottom: 15px;">
-                </div>
-                <h3 class="footer-title">IEEE CUET Student Branch</h3>
-                <p class="footer-desc">
-                    Advancing Technology for Humanity through innovation, collaboration, and technical excellence at Chittagong University of Engineering & Technology.
-                </p>
-            </div>
+    <footer id="contact"></footer>
 
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-list">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="ieee.html"><i class="fas fa-chevron-right"></i> About IEEE</a></li>
-                    <li><a href="ieeebd.html"><i class="fas fa-chevron-right"></i> IEEE Bangladesh Section</a></li>
-                    <li><a href="ieeecuetsb.html"><i class="fas fa-chevron-right"></i> IEEE CUET SB</a></li>
-                    <li><a href="https://www.ieeer10.org/" target="_blank"><i class="fas fa-chevron-right"></i> IEEE R10</a></li>
-                </ul>
-            </div>
-
-            <!-- Societies -->
-            <div class="footer-section">
-                <h4 class="footer-heading">Societies & Chapters</h4>
-                <ul class="footer-list">
-                    <li><a href="wie.html"><i class="fas fa-chevron-right"></i> WIE Affinity Group</a></li>
-                    <li><a href="ras.html"><i class="fas fa-chevron-right"></i> RAS</a></li>
-                    <li><a href="sps.html"><i class="fas fa-chevron-right"></i> SPS</a></li>
-                    <li><a href="pes.html"><i class="fas fa-chevron-right"></i> PES</a></li>
-                    <li><a href="embs.html"><i class="fas fa-chevron-right"></i> EMBS</a></li>
-                    <li><a href="photonics.html"><i class="fas fa-chevron-right"></i> Photonics</a></li>
-                    <li><a href="aps.html"><i class="fas fa-chevron-right"></i> APS</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="footer-section">
-                <h4 class="footer-heading">Get In Touch</h4>
-                <ul class="footer-contact">
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Chittagong University of Engineering & Technology<br>Chattogram 4349, Bangladesh</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:ieeecuetsbofficial@cuet.ac.bd">ieeecuetsbofficial@cuet.ac.bd</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-globe"></i>
-                        <a href="https://www.ieee.org" target="_blank">www.ieee.org</a>
-                    </li>
-                </ul>
-                <!-- Social Media -->
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/ieeecuetsb" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/ieeesbcuet/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/ieee-cuet-student-branch/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@ieeecuetsb" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>&copy; 2025 IEEE CUET Student Branch. All Rights Reserved.</p>
-            <p class="footer-credit">Designed & Developed by IEEE CUET SB Web Management Team</p>
-        </div>
-    </div>
-</footer>
-
-<script src="assets\js\script.js"></script>
+<script src="/assets/js/script.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
 
@@ -466,5 +407,7 @@ document.querySelectorAll(".dropdown-link").forEach(link => {
 });
 
 </script>
+<script src="/assets/js/section-navigation.js"></script>
+<script src="/assets/js/site-footer.js"></script>
 </body>
 </html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE CUET Student Branch - About Us</title>
+    <link rel="canonical" href="https://ieeecuetsb.org/ieeecuetsb/">
+    <script>if (window.location.pathname.endsWith('/index.html')) window.location.replace('./' + window.location.search + window.location.hash);</script>
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/typography.css">
+    <link rel="stylesheet" href="/assets/css/brand-assets.css">
+    <link rel="stylesheet" href="/assets/css/committee-cards.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Disable default hero slider backgrounds for this page */
+        #hero {
+            background-image: none !important;
+            position: relative;
+        }
+
+        /* Custom hero background slider for CUET SB page */
+        #hero::before,
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        #hero::before {
+            background-image: url('https://lh3.googleusercontent.com/d/1a-ZetY_03vpu69ctT-pDlHju48cl7hzv=s2048');
+            animation: fade1 15s infinite;
+        }
+
+        #hero::after {
+            background-image: url('https://lh3.googleusercontent.com/d/1NyStaII4TO7k6UP3Aapc4DO-SjWLttlg=s2048');
+            animation: fade2 15s infinite;
+        }
+
+        @keyframes fade1 {
+            0%, 30% { opacity: 1; }
+            33%, 97% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fade2 {
+            0%, 30% { opacity: 0; }
+            33%, 63% { opacity: 1; }
+            66%, 100% { opacity: 0; }
+        }
+
+        /* Third image using body pseudo-element to avoid loading duplicates */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://lh3.googleusercontent.com/d/1Lfw9KEw6PuMYLwMhD_8sLabgvAtclh_K=s2048');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            animation: fade3 15s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fade3 {
+            0%, 63% { opacity: 0; }
+            66%, 97% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" aria-label="Primary navigation">
+    <div class="nav-container">
+        <div class="logo-area">
+            <a href="/" aria-label="IEEE CUET Student Branch home">
+                <img src="/assets/images/Logos/IEEE%20CUET%20SB.png" class="logo-img" alt="IEEE CUET Student Branch">
+            </a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <button type="button" class="dropdown-link nav-dropdown-toggle" data-nav-dropdown-toggle aria-expanded="false">About <span class="nav-caret" aria-hidden="true">&#9662;</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="/ieee/">IEEE</a></li>
+                    <li><a href="/ieeebd/">IEEE Bangladesh Section</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button type="button" class="dropdown-link nav-dropdown-toggle" data-nav-dropdown-toggle aria-expanded="false">Societies &amp; Chapters <span class="nav-caret" aria-hidden="true">&#9662;</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="/wie/">Women in Engineering Affinity Group</a></li>
+                    <li><a href="/ras/">Robotics and Automation Society</a></li>
+                    <li><a href="/pes/">Power and Energy Society</a></li>
+                    <li><a href="/embs/">Engineering in Medicine and Biology Society</a></li>
+                    <li><a href="/photonics/">Photonics Society</a></li>
+                    <li><a href="/sps/">Signal Processing Society</a></li>
+                    <li><a href="/aps/">Antennas and Propagation Society</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <button type="button" class="dropdown-link nav-dropdown-toggle" data-nav-dropdown-toggle aria-expanded="false">Ex-Com <span class="nav-caret" aria-hidden="true">&#9662;</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="/ieeecuetsb/excom/2026-27/">26-27</a></li>
+                    <li><a href="/ieeecuetsb/excom/2025-26/">25-26</a></li>
+                    <li><a href="/ieeecuetsb/excom/2024-25/">24-25</a></li>
+                </ul>
+            </li>
+            <li><a href="/#events">Events</a></li>
+            <li><a href="/#achievements">Achievements</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <a href="https://forms.gle/Kp3cq83bWSMQXaCu8" target="_blank" rel="noopener noreferrer" class="portal-btn desktop-only">Join IEEE</a>
+    </div>
+</nav>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <header id="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">
+                <span>Accelerating</span> Knowledge and Innovation
+            </h1>
+
+            <p class="hero-subtitle" id="hero-subtitle">
+                Advancing the academic and professional growth of CUET students through collaborative research, innovation and technical proficiency.
+            </p>
+
+            <a href="#societies" class="hero-btn" id="hero-btn">Explore Our Societies</a>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="hero-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </header>
+
+    <!-- ===================== SOCIETIES & AFFINITY GROUPS ===================== -->
+    <section id="societies" class="reveal" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Societies & Affinity Groups</h2>
+            <p class="section-subtitle">
+                Explore our technical communities driving innovation at CUET
+            </p>
+
+            <!-- Societies Grid with Images -->
+            <div class="society-grid">
+
+                <!-- WIE Affinity Group -->
+                <a href="/wie/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1XPfVnp0h9JWGSKu5MuuHQIQe_r5O-iyP=s2048" alt="IEEE WIE Affinity Group CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE WIE Affinity Group</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- RAS -->
+                <a href="/ras/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1xj_erDGbSabPqPJOhsrvOnAXvkRVEUJU=s2048" alt="IEEE RAS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE RAS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- SPS -->
+                <a href="/sps/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/196laknzmTE-LNCg38SPj5oWbetJepJ8P=s2048" alt="IEEE SPS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE SPS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Photonics -->
+                <a href="/photonics/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1wt4N7SN1ho6V9cu-yf6SiKZozuVoGwq4=s2048" alt="IEEE Photonics Society CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE Photonics</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Computer Society -->
+                <a href="#" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1fI4Y98ZqvM1fN0wG9psi55ICUS-kCnok=s2048" alt="IEEE Computer Society CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE Computer Society</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PES -->
+                <a href="/pes/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1XeFRzOMxXLpfaBnX9LvrnE0zDUTZ65qf=s2048" alt="IEEE PES CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE PES</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EMBS -->
+                <a href="/embs/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1Tt8lGzKeYLxwQvKT4WnHN5FhNrAryYT1=s2048" alt="IEEE EMBS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE EMBS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- APS -->
+                <a href="/aps/" class="society-card-link">
+                    <div class="society-card-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1OnTZYdAQv7J7r2zeHUpTlaTlqDo25H5w=s2048" alt="IEEE APS CUET Student Chapter" class="society-card-img">
+                        <div class="society-card-overlay">
+                            <h3 class="society-card-title">IEEE APS</h3>
+                            <p class="society-card-subtitle">CUET Student Chapter</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXECUTIVE COMMITTEE ===================== -->
+    <section id="cuetsb-excom" class="reveal" style="background: linear-gradient(135deg, #000d1a 0%, #001428 100%); padding: 80px 0;">
+        <div class="container">
+            <h3 style="text-align: center; color: var(--cyan-glow); margin: 60px 0 40px; font-size: 1.8rem;">Executive Committee 2025-26</h3>
+
+            <h3 style="text-align: center; color: var(--cyan-glow); margin: 60px 0 40px; font-size: 1.8rem;">Advisory Panel and Counselor Board</h3>
+            <!-- Advisory Panel -->
+            <div class="teachers">
+                <!-- Advisor 1 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1owOBlTwT4uD5n7TmAv24YiL6P7OXHxx8=s2048" alt="Dr. Mohammad Shamsul Arefin" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Mohammad Shamsul Arefin</h3>
+                    <p class="committee-dept">Professor, Department of Computer Science & Engineering</p>
+                </div>
+
+                <!-- Advisor 2 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1wEtzP77hc4P-4b_fxaKc3liQgyRvNKed=s2048" alt="Dr. Jamal Uddin Ahmed" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Jamal Uddin Ahmed</h3>
+                    <p class="committee-dept">Professor, Department of Mechanical Engineering</p>
+                </div>
+
+                <!-- Advisor 3 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1nq_8KHez0M35aBl_UQYE1YOJteON87U4=s2048" alt="Dr. Muhammad Ahsanullah" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Muhammad Ahsanullah</h3>
+                    <p class="committee-dept">Professor, Department of Electrical and Electronic Engineering</p>
+                </div>
+
+                <!-- Advisor 4 -->
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1-VEdKtkFVEK1qTAoOXgSB2_1ggg1BPpH=s2048" alt="Dr. Nur Mohammad" class="committee-img">
+                    <h3 class="committee-role">Advisory Panel</h3>
+                    <h3 class="committee-name">Dr. Nur Mohammad</h3>
+                    <p class="committee-dept">Professor, Department of Electrical and Electronic Engineering</p>
+                </div>
+            </div>
+
+            <!-- Counselor -->
+            <div class="teachers single">
+                <div class="committee-card senior">
+                    <img src="https://lh3.googleusercontent.com/d/1BthWEjYp1wttXhLnvzXqbkYry6vu5TSm=s2048" alt="Dr. Mehdi Hasan Chowdhury" class="committee-img">
+                    <h3 class="committee-role">Counselor</h3>
+                    <h3 class="committee-name">Dr. Mehdi Hasan Chowdhury</h3>
+                    <p class="committee-dept">Professor, Department of Electrical and Electronic Engineering</p>
+                </div>
+            </div>
+
+            <!-- Executive Committee Members -->
+            <h3 style="text-align: center; color: var(--cyan-glow); margin: 60px 0 40px; font-size: 1.8rem; padding-top: 100px;">Executive Committee</h3>
+            
+            
+            <div class="committee-grid">
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Fardin+Shah+Azmi&background=00bcd4&color=fff" class="committee-img" alt="Fardin Shah Azmi" />
+                    <h3 class="committee-name">Fardin Shah Azmi</h3>
+                    <p class="committee-role">Chair</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Maowa+Alam+Khan&background=00bcd4&color=fff" class="committee-img" alt="Maowa Alam Khan" />
+                    <h3 class="committee-name">Maowa Alam Khan</h3>
+                    <p class="committee-role">Vice Chair (Admin.)</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Nirupam+Debnath&background=00bcd4&color=fff" class="committee-img" alt="Nirupam Debnath" />
+                    <h3 class="committee-name">Nirupam Debnath</h3>
+                    <p class="committee-role">Vice Chair (Technical)</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Suvra+Chandra+Das&background=00bcd4&color=fff" class="committee-img" alt="Suvra Chandra Das" />
+                    <h3 class="committee-name">Suvra Chandra Das</h3>
+                    <p class="committee-role">Vice Chair (Operations)</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Samin+Yeasar&background=00bcd4&color=fff" class="committee-img" alt="Samin Yeasar" />
+                    <h3 class="committee-name">Samin Yeasar</h3>
+                    <p class="committee-role">General Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md.+Manon+Haque&background=00bcd4&color=fff" class="committee-img" alt="Md. Manon Haque" />
+                    <h3 class="committee-name">Md. Manon Haque</h3>
+                    <p class="committee-role">Joint General Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md.+Saidul+Islam&background=00bcd4&color=fff" class="committee-img" alt="Md. Saidul Islam" />
+                    <h3 class="committee-name">Md. Saidul Islam</h3>
+                    <p class="committee-role">Organizing Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md.+Towhidul+Islam&background=00bcd4&color=fff" class="committee-img" alt="Md. Towhidul Islam" />
+                    <h3 class="committee-name">Md. Towhidul Islam</h3>
+                    <p class="committee-role">Joint Organizing Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Mohammad+Mesbahul+Alam&background=00bcd4&color=fff" class="committee-img" alt="Mohammad Mesbahul Alam" />
+                    <h3 class="committee-name">Mohammad Mesbahul Alam</h3>
+                    <p class="committee-role">Treasurer</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Partha+Sarathi+Goswami&background=00bcd4&color=fff" class="committee-img" alt="Partha Sarathi Goswami" />
+                    <h3 class="committee-name">Partha Sarathi Goswami</h3>
+                    <p class="committee-role">Logistics &amp; Creative Operations Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md.+Abtahee+Kabir&background=00bcd4&color=fff" class="committee-img" alt="Md. Abtahee Kabir" />
+                    <h3 class="committee-name">Md. Abtahee Kabir</h3>
+                    <p class="committee-role">Research &amp; Publication Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Mueez+Mejbah&background=00bcd4&color=fff" class="committee-img" alt="Mueez Mejbah" />
+                    <h3 class="committee-name">Mueez Mejbah</h3>
+                    <p class="committee-role">Public Relation Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Rabeya+Islam+Dolon&background=00bcd4&color=fff" class="committee-img" alt="Rabeya Islam Dolon" />
+                    <h3 class="committee-name">Rabeya Islam Dolon</h3>
+                    <p class="committee-role">Media &amp; Newsletter Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Arpan+Paul+Sanju&background=00bcd4&color=fff" class="committee-img" alt="Arpan Paul Sanju" />
+                    <h3 class="committee-name">Arpan Paul Sanju</h3>
+                    <p class="committee-role">Industry Relation Secretary</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Abdullah+Al+Rafi+Tanim&background=00bcd4&color=fff" class="committee-img" alt="Abdullah- Al Rafi Tanim" />
+                    <h3 class="committee-name">Abdullah- Al Rafi Tanim</h3>
+                    <p class="committee-role">Program Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Pulak+Bhowmik&background=00bcd4&color=fff" class="committee-img" alt="Pulak Bhowmik" />
+                    <h3 class="committee-name">Pulak Bhowmik</h3>
+                    <p class="committee-role">Webmaster</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Sorder+Rakib+Hassan&background=00bcd4&color=fff" class="committee-img" alt="Sorder Rakib Hassan" />
+                    <h3 class="committee-name">Sorder Rakib Hassan</h3>
+                    <p class="committee-role">Webmaster</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Shah+Mohammad+Tahsin&background=00bcd4&color=fff" class="committee-img" alt="Shah Mohammad Tahsin" />
+                    <h3 class="committee-name">Shah Mohammad Tahsin</h3>
+                    <p class="committee-role">Logistics Lead</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Nazifa+Tasnim+Zifa&background=00bcd4&color=fff" class="committee-img" alt="Nazifa Tasnim Zifa" />
+                    <h3 class="committee-name">Nazifa Tasnim Zifa</h3>
+                    <p class="committee-role">Design Lead</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Ekram+Ahamed&background=00bcd4&color=fff" class="committee-img" alt="Ekram Ahamed" />
+                    <h3 class="committee-name">Ekram Ahamed</h3>
+                    <p class="committee-role">Design Lead</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Tasnimul+Rayhan+Tanim&background=00bcd4&color=fff" class="committee-img" alt="Tasnimul Rayhan Tanim" />
+                    <h3 class="committee-name">Tasnimul Rayhan Tanim</h3>
+                    <p class="committee-role">Creative Operations Lead</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Jonayed+Hasan+Bhuiyan&background=00bcd4&color=fff" class="committee-img" alt="Jonayed Hasan Bhuiyan" />
+                    <h3 class="committee-name">Jonayed Hasan Bhuiyan</h3>
+                    <p class="committee-role">Social Lead</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Abidur+Rahman&background=00bcd4&color=fff" class="committee-img" alt="Abidur Rahman" />
+                    <h3 class="committee-name">Abidur Rahman</h3>
+                    <p class="committee-role">Research Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Mushira+Nawar+Ealma&background=00bcd4&color=fff" class="committee-img" alt="Mushira Nawar Ealma" />
+                    <h3 class="committee-name">Mushira Nawar Ealma</h3>
+                    <p class="committee-role">Content Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Asif+Hasnat+Nihal&background=00bcd4&color=fff" class="committee-img" alt="Asif Hasnat Nihal" />
+                    <h3 class="committee-name">Asif Hasnat Nihal</h3>
+                    <p class="committee-role">Student Activity Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md.+Sazzad+Hossain+Rupok&background=00bcd4&color=fff" class="committee-img" alt="Md. Sazzad Hossain Rupok" />
+                    <h3 class="committee-name">Md. Sazzad Hossain Rupok</h3>
+                    <p class="committee-role">Industry Relation Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md.+Jahangir+Alam+Jony&background=00bcd4&color=fff" class="committee-img" alt="Md. Jahangir Alam Jony" />
+                    <h3 class="committee-name">Md. Jahangir Alam Jony</h3>
+                    <p class="committee-role">Newsletter Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Imtiaz+Shayer&background=00bcd4&color=fff" class="committee-img" alt="Imtiaz Shayer" />
+                    <h3 class="committee-name">Imtiaz Shayer</h3>
+                    <p class="committee-role">Membership Development Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Sadnan+Wasi&background=00bcd4&color=fff" class="committee-img" alt="Sadnan Wasi" />
+                    <h3 class="committee-name">Sadnan Wasi</h3>
+                    <p class="committee-role">Membership Development Coordinator</p>
+                </div>
+                <div class="committee-card">
+                    <img src="https://ui-avatars.com/api/?name=Md+Tanvir+Ahmed+Bhuiyan&background=00bcd4&color=fff" class="committee-img" alt="Md Tanvir Ahmed Bhuiyan" />
+                    <h3 class="committee-name">Md Tanvir Ahmed Bhuiyan</h3>
+                    <p class="committee-role">Visual Content Lead</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="contact"></footer>
+
+    <script>
+        // Disable hero slider for this page - BEFORE loading script.js
+        const disableHeroSlider = true;
+        
+        // Override the DOMContentLoaded to prevent slider initialization
+        const originalAddEventListener = document.addEventListener;
+        document.addEventListener = function(type, listener, options) {
+            if (type === 'DOMContentLoaded' && disableHeroSlider) {
+                // Skip the hero slider initialization
+                return;
+            }
+            return originalAddEventListener.call(this, type, listener, options);
+        };
+    </script>
+
+    <!-- Include the main JS file -->
+    <script src="/assets/js/script.js"></script>
+
+    <script>
+        // Restore addEventListener and disable dots
+        document.addEventListener = originalAddEventListener;
+        
+        // Disable dot interactions
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.style.pointerEvents = 'none';
+                dot.onclick = null;
+            });
+        });
+    </script>
+    <script src="/assets/js/committee-contacts.js"></script>
+    <script src="/assets/js/committee-cards.js"></script>
+    <script src="/assets/js/section-navigation.js"></script>
+
+<script src="/assets/js/site-footer.js"></script>
+</body>
+
+</html>
