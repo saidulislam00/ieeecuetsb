@@ -36,6 +36,10 @@
        the order the official roster lists them. */
     const flatEntities = ['sps', 'aps', 'pes', 'embs', 'photonics'];
 
+    /* As above, but the Chair is lifted onto a row of their own between the
+       faculty row and the rest of the committee. */
+    const chairLedEntities = ['ras'];
+
     /* Cards per row when a tier has to be split. Four keeps a seven-person
        advisory panel as 4 + 3 instead of wrapping to 3 + 3 + 1. */
     const maxCardsPerRow = 4;
@@ -435,7 +439,9 @@
             section.querySelector('.committee-grid');
         if (!primaryGrid) return;
 
-        const flat = flatEntities.indexOf(rosterEntity(section)) > -1;
+        const entity = rosterEntity(section);
+        const chairLed = chairLedEntities.indexOf(entity) > -1;
+        const flat = chairLed || flatEntities.indexOf(entity) > -1;
         const hasCounselor = records.some(function (record) {
             return isCounselorRole(record.identity.role);
         });
@@ -457,15 +463,22 @@
                     left.sourceIndex - right.sourceIndex;
             })
             .forEach(function (record) {
-                const tier = flat
-                    ? (isFacultyRole(record.identity.role) ? 'advisors' : 'members')
-                    : hierarchyTier(record.identity.role, hasCounselor);
+                let tier;
+                if (flat) {
+                    const role = record.identity.role;
+                    if (isFacultyRole(role)) tier = 'advisors';
+                    else if (chairLed && /^(?:branch )?chair$/.test(normalizedRole(role))) tier = 'chair';
+                    else tier = 'members';
+                } else {
+                    tier = hierarchyTier(record.identity.role, hasCounselor);
+                }
                 record.card.dataset.committeeTier = tier;
                 buckets[tier].push(record.card);
             });
 
         const tierDefinitions = flat ? [
             { key: 'advisors', label: facultyLabel(buckets.advisors) },
+            { key: 'chair', label: 'Chair' },
             { key: 'members', label: 'Executive Committee members', perRow: maxCardsPerRow }
         ] : [
             { key: 'counselor', label: hasCounselor ? 'Counselor' : 'Advisor' },

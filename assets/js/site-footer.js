@@ -83,7 +83,7 @@
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>&copy; 2025 IEEE CUET Student Branch. All Rights Reserved.</p>
-                <p class="footer-credit">Designed &amp; Developed by IEEE CUET SB Web Management Team</p>
+                <p class="footer-credit">Designed &amp; Developed by IEEE CUET SB Web Development Team</p>
             </div>
         </div>`;
 

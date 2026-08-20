@@ -304,41 +304,51 @@
         }
     }
 
+    /* Portraits are the same Drive files the roster uses, so a member's photo
+       matches the one on their Executive Committee card. Anyone without one
+       falls back to the shared initials avatar, as elsewhere on the site. */
     const WEB_TEAM_TIERS = [
         {
             title: 'WEB LEADS',
             role: 'Web Lead',
             cardClass: 'lead',
-            members: ['Saidul Islam', 'Samin Yeasar', 'Shuvro Das', 'Debarati Chakraborty']
+            members: [
+                { name: 'Saidul Islam', image: 'https://lh3.googleusercontent.com/d/1XnqWGzDHSRdZIG0A6LJHG580Y6a5XlAZ=s400' },
+                { name: 'Samin Yeasar', image: 'https://lh3.googleusercontent.com/d/1iYhAV2gHqK_tSvQhOQ9z8PRX6vk7wOmz=s400' },
+                { name: 'Shuvro Das', image: 'https://lh3.googleusercontent.com/d/1O63wt9P0tTYw2Z3-6Jbwt30_bFkHGmZ5=s400' },
+                { name: 'Debarati Chakraborty', image: 'https://lh3.googleusercontent.com/d/11lHpyOyuu1kAZ5H_MxVMbpap8AshMVXE=s400' }
+            ]
         },
         {
             title: 'SENIOR DEVELOPERS',
             role: 'Senior Developer',
             cardClass: 'senior',
-            members: ['Pulak Bhowmik', 'Sorder Rakib Hassan', 'Sababa Tamanna', 'Chyan Datta', 'Tanim Rayhan', 'Ishmam Mahir']
-        },
-        {
-            title: 'JUNIOR DEVELOPERS',
-            role: 'Junior Developer',
-            cardClass: 'junior',
-            members: ['Al Khalid']
+            members: [
+                { name: 'Pulak Bhowmik', image: 'https://lh3.googleusercontent.com/d/1Z3nFuGuZdcTDCN_GDICqMkLkG6LD8txT=s400' },
+                { name: 'Sorder Rakib Hassan', image: 'https://lh3.googleusercontent.com/d/13fbP5yWcVX9rE9LpqCq5EDJI6haQV5qz=s400' },
+                { name: 'Sababa Tamanna', image: 'https://lh3.googleusercontent.com/d/1SzL0P64X_Aq3-tjaA7zmctlrtTCOglXK=s400' },
+                { name: 'Chyan Datta', image: 'https://lh3.googleusercontent.com/d/1gs5mipCCVrHNYRy5ZysByVLe6LeO7dGe=s400' },
+                { name: 'Tasnimul Rayhan Tanim', image: 'https://lh3.googleusercontent.com/d/1OMSpfBKt2AEPUq9EBbESlLlzN7Jh_rxV=s400' }
+            ]
         }
     ];
 
-    function buildWebTeamCard(name, tier) {
+    function buildWebTeamCard(member, tier) {
         const card = document.createElement('div');
         card.className = 'committee-card ' + tier.cardClass;
 
-        const image = document.createElement('img');
-        image.className = 'committee-img';
-        image.loading = 'lazy';
-        image.decoding = 'async';
-        image.alt = name;
-        image.src = 'https://api.dicebear.com/9.x/identicon/svg?seed=' + encodeURIComponent(name) + '&backgroundColor=001a36';
-        card.appendChild(image);
+        if (member.image) {
+            const image = document.createElement('img');
+            image.className = 'committee-img';
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            image.alt = member.name;
+            image.src = member.image;
+            card.appendChild(image);
+        }
 
         card.appendChild(createTextElement('h3', 'committee-role', tier.role));
-        card.appendChild(createTextElement('p', 'committee-name', name));
+        card.appendChild(createTextElement('p', 'committee-name', member.name));
 
         return card;
     }
@@ -351,7 +361,7 @@
         const heading = document.createElement('h2');
         heading.id = 'webteam-heading';
         heading.className = 'excom-webteam-title';
-        heading.textContent = 'Web Management Team';
+        heading.textContent = 'Web Development Team';
         wrapper.appendChild(heading);
 
         WEB_TEAM_TIERS.forEach(function (tier) {
@@ -361,8 +371,8 @@
 
             const grid = document.createElement('div');
             grid.className = 'committee-grid';
-            tier.members.forEach(function (name) {
-                grid.appendChild(buildWebTeamCard(name, tier));
+            tier.members.forEach(function (member) {
+                grid.appendChild(buildWebTeamCard(member, tier));
             });
             tierSection.appendChild(grid);
 
